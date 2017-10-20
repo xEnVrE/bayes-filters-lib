@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classbfl_1_1FilteringAlgorithm.html" title="bfl::FilteringAlgorithm" alt="" coords="5,81,149,108"/>
+<area shape="rect" id="node2" href="$classbfl_1_1KalmanFilter.html" title="bfl::KalmanFilter" alt="" coords="229,5,345,32"/>
+<area shape="rect" id="node3" href="$classbfl_1_1ParticleFilter.html" title="bfl::ParticleFilter" alt="" coords="229,56,345,83"/>
+<area shape="rect" id="node5" href="$classbfl_1_1UnscentedKalmanFilter.html" title="bfl::UnscentedKalmanFilter" alt="" coords="197,107,376,133"/>
+<area shape="rect" id="node6" href="$classbfl_1_1VisualParticleFilter.html" title="bfl::VisualParticleFilter" alt="" coords="211,157,363,184"/>
+<area shape="rect" id="node4" href="$classbfl_1_1SIS.html" title="bfl::SIS" alt="" coords="424,56,488,83"/>
+</map>

@@ -1,0 +1,187 @@
+\hypertarget{classbfl_1_1ObservationModelDecorator}{}\section{bfl\+:\+:Observation\+Model\+Decorator Class Reference}
+\label{classbfl_1_1ObservationModelDecorator}\index{bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}}
+
+
+{\ttfamily \#include $<$Observation\+Model\+Decorator.\+h$>$}
+
+
+
+Inheritance diagram for bfl\+:\+:Observation\+Model\+Decorator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classbfl_1_1ObservationModelDecorator__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_aa2b83722ba591ab268def7a39e4e16b0}{observe}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&cur\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ observations) override
+\item 
+void \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_a6b0da9bcfe0fd1beb119c79f83f8cc9a}{measure}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&cur\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ measurements) override
+\item 
+Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_a3e8cecfbd2402944d1f9e4682d5fd9a0}{get\+Noise\+Sample}} (const int num) override
+\item 
+Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_a60faf028d6c83e02cf0a88c58064abf2}{get\+Noise\+Covariance\+Matrix}} () override
+\item 
+bool \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_a0d6ab787754a56159e3d1bc6d56a961c}{set\+Property}} (const std\+::string property) override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_ac48b0ef08d89cfddb689e0ecef2cb0f9}{Observation\+Model\+Decorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1ObservationModel}{Observation\+Model}} $>$ observation\+\_\+model) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_a7ab0e6fdcd159a52886559e22ac475ba}{Observation\+Model\+Decorator}} (\mbox{\hyperlink{classbfl_1_1ObservationModelDecorator}{Observation\+Model\+Decorator}} \&\&observation\+\_\+model) noexcept
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_a3bad5ad9085e34b71557d9444c6280f4}{$\sim$\+Observation\+Model\+Decorator}} () noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1ObservationModelDecorator}{Observation\+Model\+Decorator}} \& \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_ade8f68b2598a40e9db26fcdbc0aa6638}{operator=}} (\mbox{\hyperlink{classbfl_1_1ObservationModelDecorator}{Observation\+Model\+Decorator}} \&\&observation\+\_\+model) noexcept
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1ObservationModel}{Observation\+Model}} $>$ \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_abec4efacd0bb8e55bb9a6aade1bb28ad}{observation\+\_\+model\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Observation\+Model\+Decorator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1ObservationModelDecorator_ac48b0ef08d89cfddb689e0ecef2cb0f9}\label{classbfl_1_1ObservationModelDecorator_ac48b0ef08d89cfddb689e0ecef2cb0f9}} 
+\index{bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}!Observation\+Model\+Decorator@{Observation\+Model\+Decorator}}
+\index{Observation\+Model\+Decorator@{Observation\+Model\+Decorator}!bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{Observation\+Model\+Decorator()}{ObservationModelDecorator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Observation\+Model\+Decorator\+::\+Observation\+Model\+Decorator (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1ObservationModel}{Observation\+Model}} $>$}]{observation\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 7 of file Observation\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1ObservationModelDecorator_a7ab0e6fdcd159a52886559e22ac475ba}\label{classbfl_1_1ObservationModelDecorator_a7ab0e6fdcd159a52886559e22ac475ba}} 
+\index{bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}!Observation\+Model\+Decorator@{Observation\+Model\+Decorator}}
+\index{Observation\+Model\+Decorator@{Observation\+Model\+Decorator}!bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{Observation\+Model\+Decorator()}{ObservationModelDecorator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Observation\+Model\+Decorator\+::\+Observation\+Model\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1ObservationModelDecorator}{Observation\+Model\+Decorator}} \&\&}]{observation\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 11 of file Observation\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1ObservationModelDecorator_a3bad5ad9085e34b71557d9444c6280f4}\label{classbfl_1_1ObservationModelDecorator_a3bad5ad9085e34b71557d9444c6280f4}} 
+\index{bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}!````~Observation\+Model\+Decorator@{$\sim$\+Observation\+Model\+Decorator}}
+\index{````~Observation\+Model\+Decorator@{$\sim$\+Observation\+Model\+Decorator}!bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{$\sim$\+Observation\+Model\+Decorator()}{~ObservationModelDecorator()}}
+{\footnotesize\ttfamily Observation\+Model\+Decorator\+::$\sim$\+Observation\+Model\+Decorator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 15 of file Observation\+Model\+Decorator.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1ObservationModelDecorator_a60faf028d6c83e02cf0a88c58064abf2}\label{classbfl_1_1ObservationModelDecorator_a60faf028d6c83e02cf0a88c58064abf2}} 
+\index{bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}!get\+Noise\+Covariance\+Matrix@{get\+Noise\+Covariance\+Matrix}}
+\index{get\+Noise\+Covariance\+Matrix@{get\+Noise\+Covariance\+Matrix}!bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{get\+Noise\+Covariance\+Matrix()}{getNoiseCovarianceMatrix()}}
+{\footnotesize\ttfamily Matrix\+Xf Observation\+Model\+Decorator\+::get\+Noise\+Covariance\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1ObservationModel_a63357b1456a4a5387e55d31ddb0b9b50}{bfl\+::\+Observation\+Model}}.
+
+
+
+Definition at line 44 of file Observation\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1ObservationModelDecorator_a3e8cecfbd2402944d1f9e4682d5fd9a0}\label{classbfl_1_1ObservationModelDecorator_a3e8cecfbd2402944d1f9e4682d5fd9a0}} 
+\index{bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}!get\+Noise\+Sample@{get\+Noise\+Sample}}
+\index{get\+Noise\+Sample@{get\+Noise\+Sample}!bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{get\+Noise\+Sample()}{getNoiseSample()}}
+{\footnotesize\ttfamily Matrix\+Xf Observation\+Model\+Decorator\+::get\+Noise\+Sample (\begin{DoxyParamCaption}\item[{const int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1ObservationModel_a45e8cec2a18ef49bf586c8895c13a31b}{bfl\+::\+Observation\+Model}}.
+
+
+
+Definition at line 38 of file Observation\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1ObservationModelDecorator_a6b0da9bcfe0fd1beb119c79f83f8cc9a}\label{classbfl_1_1ObservationModelDecorator_a6b0da9bcfe0fd1beb119c79f83f8cc9a}} 
+\index{bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}!measure@{measure}}
+\index{measure@{measure}!bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{measure()}{measure()}}
+{\footnotesize\ttfamily void Observation\+Model\+Decorator\+::measure (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{cur\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{measurements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1ObservationModel_a0cde643e52b6c24d80d1b49e1b58f4c0}{bfl\+::\+Observation\+Model}}.
+
+
+
+Definition at line 32 of file Observation\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1ObservationModelDecorator_aa2b83722ba591ab268def7a39e4e16b0}\label{classbfl_1_1ObservationModelDecorator_aa2b83722ba591ab268def7a39e4e16b0}} 
+\index{bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}!observe@{observe}}
+\index{observe@{observe}!bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{observe()}{observe()}}
+{\footnotesize\ttfamily void Observation\+Model\+Decorator\+::observe (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{cur\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{observations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1ObservationModel_a2dd06fa6df453e491e1ab73e46f33d18}{bfl\+::\+Observation\+Model}}.
+
+
+
+Definition at line 26 of file Observation\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1ObservationModelDecorator_ade8f68b2598a40e9db26fcdbc0aa6638}\label{classbfl_1_1ObservationModelDecorator_ade8f68b2598a40e9db26fcdbc0aa6638}} 
+\index{bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}!operator=@{operator=}}
+\index{operator=@{operator=}!bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator}{Observation\+Model\+Decorator}} \& Observation\+Model\+Decorator\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1ObservationModelDecorator}{Observation\+Model\+Decorator}} \&\&}]{observation\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 18 of file Observation\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1ObservationModelDecorator_a0d6ab787754a56159e3d1bc6d56a961c}\label{classbfl_1_1ObservationModelDecorator_a0d6ab787754a56159e3d1bc6d56a961c}} 
+\index{bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}!set\+Property@{set\+Property}}
+\index{set\+Property@{set\+Property}!bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{set\+Property()}{setProperty()}}
+{\footnotesize\ttfamily bool Observation\+Model\+Decorator\+::set\+Property (\begin{DoxyParamCaption}\item[{const std\+::string}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1ObservationModel_a05991496674f63b6ea6c8a34da34194d}{bfl\+::\+Observation\+Model}}.
+
+
+
+Definition at line 50 of file Observation\+Model\+Decorator.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbfl_1_1ObservationModelDecorator_abec4efacd0bb8e55bb9a6aade1bb28ad}\label{classbfl_1_1ObservationModelDecorator_abec4efacd0bb8e55bb9a6aade1bb28ad}} 
+\index{bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}!observation\+\_\+model\+\_\+@{observation\+\_\+model\+\_\+}}
+\index{observation\+\_\+model\+\_\+@{observation\+\_\+model\+\_\+}!bfl\+::\+Observation\+Model\+Decorator@{bfl\+::\+Observation\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{observation\+\_\+model\+\_\+}{observation\_model\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classbfl_1_1ObservationModel}{Observation\+Model}}$>$ bfl\+::\+Observation\+Model\+Decorator\+::observation\+\_\+model\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file Observation\+Model\+Decorator.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{ObservationModelDecorator_8h}{Observation\+Model\+Decorator.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/src/\mbox{\hyperlink{ObservationModelDecorator_8cpp}{Observation\+Model\+Decorator.\+cpp}}\end{DoxyCompactItemize}

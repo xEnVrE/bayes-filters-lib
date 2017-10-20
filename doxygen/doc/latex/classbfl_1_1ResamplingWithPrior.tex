@@ -1,0 +1,199 @@
+\hypertarget{classbfl_1_1ResamplingWithPrior}{}\section{bfl\+:\+:Resampling\+With\+Prior Class Reference}
+\label{classbfl_1_1ResamplingWithPrior}\index{bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}}
+
+
+{\ttfamily \#include $<$Resampling\+With\+Prior.\+h$>$}
+
+
+
+Inheritance diagram for bfl\+:\+:Resampling\+With\+Prior\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classbfl_1_1ResamplingWithPrior__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbfl_1_1ResamplingWithPrior_a48293e554e60451e5d455ad1a13dda44}{Resampling\+With\+Prior}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Initialization}{bfl\+::\+Initialization}} $>$ init\+\_\+model, const double prior\+\_\+ratio, const unsigned int seed) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1ResamplingWithPrior_a82ab650342bfcf94a302072827994db9}{Resampling\+With\+Prior}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Initialization}{bfl\+::\+Initialization}} $>$ init\+\_\+model, const double prior\+\_\+ratio) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1ResamplingWithPrior_a768d0bf1834f48d067a230b9554cb8cb}{Resampling\+With\+Prior}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Initialization}{bfl\+::\+Initialization}} $>$ init\+\_\+model) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1ResamplingWithPrior_a8b813e6d3d80b914d06fdc60e46c3a53}{Resampling\+With\+Prior}} (\mbox{\hyperlink{classbfl_1_1ResamplingWithPrior}{Resampling\+With\+Prior}} \&\&resampling) noexcept
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1ResamplingWithPrior_a686fa89037df955d6e657f2364644462}{$\sim$\+Resampling\+With\+Prior}} () noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1ResamplingWithPrior}{Resampling\+With\+Prior}} \& \mbox{\hyperlink{classbfl_1_1ResamplingWithPrior_a79ed56028dc2f97f0fb400a481998010}{operator=}} (\mbox{\hyperlink{classbfl_1_1ResamplingWithPrior}{Resampling\+With\+Prior}} \&\&resampling) noexcept
+\item 
+void \mbox{\hyperlink{classbfl_1_1ResamplingWithPrior_a440090305ac024e1f5ad06fd36cccd34}{resample}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&pred\+\_\+particles, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&cor\+\_\+weights, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ res\+\_\+particles, Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$ res\+\_\+weights, Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$ res\+\_\+parents) override
+\item 
+virtual float \mbox{\hyperlink{classbfl_1_1Resampling_aacbdbcf3f6c8620785ed6446928cd1f1}{neff}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&cor\+\_\+weights)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Initialization}{bfl\+::\+Initialization}} $>$ \mbox{\hyperlink{classbfl_1_1ResamplingWithPrior_ae5902ab0af10d76ddb9c12a15db42947}{init\+\_\+model\+\_\+}}
+\item 
+double \mbox{\hyperlink{classbfl_1_1ResamplingWithPrior_a5f2d0d6f948348428a992232de091c66}{prior\+\_\+ratio\+\_\+}} = 0.\+5
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{classbfl_1_1ResamplingWithPrior_a9b96b3b950fccbabc6964a0443bc1a1c}{sort\+\_\+indices}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&vector)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file Resampling\+With\+Prior.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1ResamplingWithPrior_a48293e554e60451e5d455ad1a13dda44}\label{classbfl_1_1ResamplingWithPrior_a48293e554e60451e5d455ad1a13dda44}} 
+\index{bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}!Resampling\+With\+Prior@{Resampling\+With\+Prior}}
+\index{Resampling\+With\+Prior@{Resampling\+With\+Prior}!bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}}
+\subsubsection{\texorpdfstring{Resampling\+With\+Prior()}{ResamplingWithPrior()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Resampling\+With\+Prior\+::\+Resampling\+With\+Prior (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Initialization}{bfl\+::\+Initialization}} $>$}]{init\+\_\+model,  }\item[{const double}]{prior\+\_\+ratio,  }\item[{const unsigned int}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 11 of file Resampling\+With\+Prior.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1ResamplingWithPrior_a82ab650342bfcf94a302072827994db9}\label{classbfl_1_1ResamplingWithPrior_a82ab650342bfcf94a302072827994db9}} 
+\index{bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}!Resampling\+With\+Prior@{Resampling\+With\+Prior}}
+\index{Resampling\+With\+Prior@{Resampling\+With\+Prior}!bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}}
+\subsubsection{\texorpdfstring{Resampling\+With\+Prior()}{ResamplingWithPrior()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bfl\+::\+Resampling\+With\+Prior\+::\+Resampling\+With\+Prior (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Initialization}{bfl\+::\+Initialization}} $>$}]{init\+\_\+model,  }\item[{const double}]{prior\+\_\+ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classbfl_1_1ResamplingWithPrior_a768d0bf1834f48d067a230b9554cb8cb}\label{classbfl_1_1ResamplingWithPrior_a768d0bf1834f48d067a230b9554cb8cb}} 
+\index{bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}!Resampling\+With\+Prior@{Resampling\+With\+Prior}}
+\index{Resampling\+With\+Prior@{Resampling\+With\+Prior}!bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}}
+\subsubsection{\texorpdfstring{Resampling\+With\+Prior()}{ResamplingWithPrior()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bfl\+::\+Resampling\+With\+Prior\+::\+Resampling\+With\+Prior (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Initialization}{bfl\+::\+Initialization}} $>$}]{init\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classbfl_1_1ResamplingWithPrior_a8b813e6d3d80b914d06fdc60e46c3a53}\label{classbfl_1_1ResamplingWithPrior_a8b813e6d3d80b914d06fdc60e46c3a53}} 
+\index{bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}!Resampling\+With\+Prior@{Resampling\+With\+Prior}}
+\index{Resampling\+With\+Prior@{Resampling\+With\+Prior}!bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}}
+\subsubsection{\texorpdfstring{Resampling\+With\+Prior()}{ResamplingWithPrior()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Resampling\+With\+Prior\+::\+Resampling\+With\+Prior (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1ResamplingWithPrior}{Resampling\+With\+Prior}} \&\&}]{resampling }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 28 of file Resampling\+With\+Prior.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1ResamplingWithPrior_a686fa89037df955d6e657f2364644462}\label{classbfl_1_1ResamplingWithPrior_a686fa89037df955d6e657f2364644462}} 
+\index{bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}!````~Resampling\+With\+Prior@{$\sim$\+Resampling\+With\+Prior}}
+\index{````~Resampling\+With\+Prior@{$\sim$\+Resampling\+With\+Prior}!bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}}
+\subsubsection{\texorpdfstring{$\sim$\+Resampling\+With\+Prior()}{~ResamplingWithPrior()}}
+{\footnotesize\ttfamily Resampling\+With\+Prior\+::$\sim$\+Resampling\+With\+Prior (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 37 of file Resampling\+With\+Prior.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1Resampling_aacbdbcf3f6c8620785ed6446928cd1f1}\label{classbfl_1_1Resampling_aacbdbcf3f6c8620785ed6446928cd1f1}} 
+\index{bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}!neff@{neff}}
+\index{neff@{neff}!bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}}
+\subsubsection{\texorpdfstring{neff()}{neff()}}
+{\footnotesize\ttfamily float Resampling\+::neff (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{cor\+\_\+weights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 80 of file Resampling.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1ResamplingWithPrior_a79ed56028dc2f97f0fb400a481998010}\label{classbfl_1_1ResamplingWithPrior_a79ed56028dc2f97f0fb400a481998010}} 
+\index{bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}!operator=@{operator=}}
+\index{operator=@{operator=}!bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1ResamplingWithPrior}{Resampling\+With\+Prior}} \& Resampling\+With\+Prior\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1ResamplingWithPrior}{Resampling\+With\+Prior}} \&\&}]{resampling }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 40 of file Resampling\+With\+Prior.\+cpp.
+
+
+
+References bfl\+::\+Resampling\+::operator=().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbfl_1_1ResamplingWithPrior_a79ed56028dc2f97f0fb400a481998010_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbfl_1_1ResamplingWithPrior_a440090305ac024e1f5ad06fd36cccd34}\label{classbfl_1_1ResamplingWithPrior_a440090305ac024e1f5ad06fd36cccd34}} 
+\index{bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}!resample@{resample}}
+\index{resample@{resample}!bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}}
+\subsubsection{\texorpdfstring{resample()}{resample()}}
+{\footnotesize\ttfamily void Resampling\+With\+Prior\+::resample (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{pred\+\_\+particles,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{cor\+\_\+weights,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{res\+\_\+particles,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$}]{res\+\_\+weights,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$}]{res\+\_\+parents }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbfl_1_1Resampling_a6b5a246250f1d193b3316c10bdc689f6}{bfl\+::\+Resampling}}.
+
+
+
+Definition at line 53 of file Resampling\+With\+Prior.\+cpp.
+
+
+
+References bfl\+::\+Resampling\+::resample().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbfl_1_1ResamplingWithPrior_a440090305ac024e1f5ad06fd36cccd34_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbfl_1_1ResamplingWithPrior_a9b96b3b950fccbabc6964a0443bc1a1c}\label{classbfl_1_1ResamplingWithPrior_a9b96b3b950fccbabc6964a0443bc1a1c}} 
+\index{bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}!sort\+\_\+indices@{sort\+\_\+indices}}
+\index{sort\+\_\+indices@{sort\+\_\+indices}!bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}}
+\subsubsection{\texorpdfstring{sort\+\_\+indices()}{sort\_indices()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned int $>$ Resampling\+With\+Prior\+::sort\+\_\+indices (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 87 of file Resampling\+With\+Prior.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbfl_1_1ResamplingWithPrior_ae5902ab0af10d76ddb9c12a15db42947}\label{classbfl_1_1ResamplingWithPrior_ae5902ab0af10d76ddb9c12a15db42947}} 
+\index{bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}!init\+\_\+model\+\_\+@{init\+\_\+model\+\_\+}}
+\index{init\+\_\+model\+\_\+@{init\+\_\+model\+\_\+}!bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}}
+\subsubsection{\texorpdfstring{init\+\_\+model\+\_\+}{init\_model\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classbfl_1_1Initialization}{bfl\+::\+Initialization}}$>$ bfl\+::\+Resampling\+With\+Prior\+::init\+\_\+model\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 36 of file Resampling\+With\+Prior.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1ResamplingWithPrior_a5f2d0d6f948348428a992232de091c66}\label{classbfl_1_1ResamplingWithPrior_a5f2d0d6f948348428a992232de091c66}} 
+\index{bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}!prior\+\_\+ratio\+\_\+@{prior\+\_\+ratio\+\_\+}}
+\index{prior\+\_\+ratio\+\_\+@{prior\+\_\+ratio\+\_\+}!bfl\+::\+Resampling\+With\+Prior@{bfl\+::\+Resampling\+With\+Prior}}
+\subsubsection{\texorpdfstring{prior\+\_\+ratio\+\_\+}{prior\_ratio\_}}
+{\footnotesize\ttfamily double bfl\+::\+Resampling\+With\+Prior\+::prior\+\_\+ratio\+\_\+ = 0.\+5\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 38 of file Resampling\+With\+Prior.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{ResamplingWithPrior_8h}{Resampling\+With\+Prior.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/src/\mbox{\hyperlink{ResamplingWithPrior_8cpp}{Resampling\+With\+Prior.\+cpp}}\end{DoxyCompactItemize}

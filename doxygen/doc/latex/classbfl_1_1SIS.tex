@@ -1,0 +1,628 @@
+\hypertarget{classbfl_1_1SIS}{}\section{bfl\+:\+:S\+IS Class Reference}
+\label{classbfl_1_1SIS}\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+
+
+{\ttfamily \#include $<$S\+I\+S.\+h$>$}
+
+
+
+Inheritance diagram for bfl\+:\+:S\+IS\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classbfl_1_1SIS__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbfl_1_1SIS_a65cd523b660bd8f41e112841aaf45c0d}{S\+IS}} () noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1SIS_af66e323d22b28f497152f2e3a65290ff}{S\+IS}} (\mbox{\hyperlink{classbfl_1_1SIS}{S\+IS}} \&\&sir\+\_\+pf) noexcept
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1SIS_afe51d2eb915e0813ee4dc804a680566b}{$\sim$\+S\+IS}} () noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1SIS}{S\+IS}} \& \mbox{\hyperlink{classbfl_1_1SIS_a32458a24446df8126ace63f21de2bf02}{operator=}} (\mbox{\hyperlink{classbfl_1_1SIS}{S\+IS}} \&\&sir\+\_\+pf) noexcept
+\item 
+void \mbox{\hyperlink{classbfl_1_1SIS_aaf9f4a14d51804eddcd93aa8a5ccbba8}{initialization}} () override
+\item 
+void \mbox{\hyperlink{classbfl_1_1SIS_a582f06cc5456d2cc6ed8f90087cbbb4c}{filtering\+Step}} () override
+\item 
+void \mbox{\hyperlink{classbfl_1_1SIS_a059da4c932379643ff7005fe4d0fda89}{get\+Result}} () override
+\item 
+bool \mbox{\hyperlink{classbfl_1_1SIS_afb7cff1f7dae80e0e4ca84c925ca3ac3}{run\+Condition}} () override
+\item 
+void \mbox{\hyperlink{classbfl_1_1ParticleFilter_abfeb75fd575802f362039c26169eed8b}{set\+Initialization}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Initialization}{Initialization}} $>$ prediction)
+\item 
+void \mbox{\hyperlink{classbfl_1_1ParticleFilter_a213811368143c1f498c87be70cf02379}{set\+Prediction}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1PFPrediction}{P\+F\+Prediction}} $>$ prediction)
+\item 
+void \mbox{\hyperlink{classbfl_1_1ParticleFilter_a3d2935addf4481325a3fe8b99fe4d07a}{set\+Correction}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1PFCorrection}{P\+F\+Correction}} $>$ correction)
+\item 
+void \mbox{\hyperlink{classbfl_1_1ParticleFilter_ad1618ed06b6e6e143e309e2267b970ee}{set\+Resampling}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Resampling}{Resampling}} $>$ resampling)
+\item 
+virtual bool \mbox{\hyperlink{classbfl_1_1ParticleFilter_a2d7a5e7aaad179037273d35be229056d}{skip}} (const std\+::string \&what\+\_\+step, const bool status) override
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147}{boot}} ()
+\item 
+void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a009cbe5f4bbb16967f6c6ddcaed8fbb1}{run}} ()
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a40372c24fa050eb0274371172df0a244}{wait}} ()
+\item 
+void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a2403c62fbd7bd7f5cda56a84f5f30331}{reset}} ()
+\item 
+void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a6022859aa985474fb997343cc935b11e}{reboot}} ()
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a1dc912d89ee8f96d4f3e8209865c5308}{teardown}} ()
+\item 
+unsigned int \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a8c43b1f3dac30934c0a03de348d4a29d}{get\+Filtering\+Step}} ()
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a5cfecab2c778620e2557237472bb1721}{is\+Running}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classbfl_1_1SIS_a37062438b43e40eeaa631d17052e6c15}{simulation\+\_\+time\+\_\+}}
+\item 
+int \mbox{\hyperlink{classbfl_1_1SIS_a7daac4c6a2e6412d8498fda361074740}{num\+\_\+particle\+\_\+}}
+\item 
+int \mbox{\hyperlink{classbfl_1_1SIS_a162ac45707d6039272c1aa7b4827f274}{surv\+\_\+x\+\_\+}}
+\item 
+int \mbox{\hyperlink{classbfl_1_1SIS_af39569c2ba7035387556e8a31ca633e8}{surv\+\_\+y\+\_\+}}
+\item 
+Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1SIS_a05ad3f95a4402f875aa2cf98c20f0ac6}{object\+\_\+}}
+\item 
+Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1SIS_aed940f18871c4b12b70bf720bc671184}{measurement\+\_\+}}
+\item 
+Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1SIS_a489ce9127eff33afdecab341774662dd}{pred\+\_\+particle\+\_\+}}
+\item 
+Eigen\+::\+Vector\+Xf \mbox{\hyperlink{classbfl_1_1SIS_a736b0b1a524f96273201f82d153f55d2}{pred\+\_\+weight\+\_\+}}
+\item 
+Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1SIS_aa4d63e8986156c13cc721c9c94c983d6}{cor\+\_\+particle\+\_\+}}
+\item 
+Eigen\+::\+Vector\+Xf \mbox{\hyperlink{classbfl_1_1SIS_a3e39c33d92371409b992fb4b856d48c0}{cor\+\_\+weight\+\_\+}}
+\item 
+std\+::vector$<$ Eigen\+::\+Matrix\+Xf $>$ \mbox{\hyperlink{classbfl_1_1SIS_a153d27bbf73332c052085d286455e435}{result\+\_\+pred\+\_\+particle\+\_\+}}
+\item 
+std\+::vector$<$ Eigen\+::\+Vector\+Xf $>$ \mbox{\hyperlink{classbfl_1_1SIS_a9af5a5fc5ee16acb826093a1acc7330d}{result\+\_\+pred\+\_\+weight\+\_\+}}
+\item 
+std\+::vector$<$ Eigen\+::\+Matrix\+Xf $>$ \mbox{\hyperlink{classbfl_1_1SIS_ad1a6248ef476eac5f624780676e96a15}{result\+\_\+cor\+\_\+particle\+\_\+}}
+\item 
+std\+::vector$<$ Eigen\+::\+Vector\+Xf $>$ \mbox{\hyperlink{classbfl_1_1SIS_a41ae49a78766ccbb0356ff2cdc2fe7ee}{result\+\_\+cor\+\_\+weight\+\_\+}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Initialization}{Initialization}} $>$ \mbox{\hyperlink{classbfl_1_1ParticleFilter_a5aff690b4287811912a62548188a0dda}{initialization\+\_\+}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1PFPrediction}{P\+F\+Prediction}} $>$ \mbox{\hyperlink{classbfl_1_1ParticleFilter_ab86f707d29a823423fe35de37e8f9d8e}{prediction\+\_\+}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1PFCorrection}{P\+F\+Correction}} $>$ \mbox{\hyperlink{classbfl_1_1ParticleFilter_a691428357c812ba009e995175778c173}{correction\+\_\+}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Resampling}{Resampling}} $>$ \mbox{\hyperlink{classbfl_1_1ParticleFilter_a9b0b855942fa4fb847443b10fe26c589}{resampling\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file S\+I\+S.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1SIS_a65cd523b660bd8f41e112841aaf45c0d}\label{classbfl_1_1SIS_a65cd523b660bd8f41e112841aaf45c0d}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!S\+IS@{S\+IS}}
+\index{S\+IS@{S\+IS}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{S\+I\+S()}{SIS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+I\+S\+::\+S\+IS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 13 of file S\+I\+S.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_af66e323d22b28f497152f2e3a65290ff}\label{classbfl_1_1SIS_af66e323d22b28f497152f2e3a65290ff}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!S\+IS@{S\+IS}}
+\index{S\+IS@{S\+IS}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{S\+I\+S()}{SIS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+I\+S\+::\+S\+IS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1SIS}{S\+IS}} \&\&}]{sir\+\_\+pf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 19 of file S\+I\+S.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_afe51d2eb915e0813ee4dc804a680566b}\label{classbfl_1_1SIS_afe51d2eb915e0813ee4dc804a680566b}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!````~S\+IS@{$\sim$\+S\+IS}}
+\index{````~S\+IS@{$\sim$\+S\+IS}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{$\sim$\+S\+I\+S()}{~SIS()}}
+{\footnotesize\ttfamily S\+I\+S\+::$\sim$\+S\+IS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 16 of file S\+I\+S.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147}\label{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!boot@{boot}}
+\index{boot@{boot}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{boot()}{boot()}}
+{\footnotesize\ttfamily bool Filtering\+Algorithm\+::boot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 8 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::filtering\+\_\+thread\+\_\+, and bfl\+::\+Filtering\+Algorithm\+::filtering\+Recursion().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbfl_1_1SIS_a582f06cc5456d2cc6ed8f90087cbbb4c}\label{classbfl_1_1SIS_a582f06cc5456d2cc6ed8f90087cbbb4c}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!filtering\+Step@{filtering\+Step}}
+\index{filtering\+Step@{filtering\+Step}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{filtering\+Step()}{filteringStep()}}
+{\footnotesize\ttfamily void S\+I\+S\+::filtering\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_ab3bceb43b5810a4bf1da884b8a0b145a}{bfl\+::\+Filtering\+Algorithm}}.
+
+
+
+Definition at line 73 of file S\+I\+S.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a8c43b1f3dac30934c0a03de348d4a29d}\label{classbfl_1_1FilteringAlgorithm_a8c43b1f3dac30934c0a03de348d4a29d}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!get\+Filtering\+Step@{get\+Filtering\+Step}}
+\index{get\+Filtering\+Step@{get\+Filtering\+Step}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{get\+Filtering\+Step()}{getFilteringStep()}}
+{\footnotesize\ttfamily unsigned int Filtering\+Algorithm\+::get\+Filtering\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 86 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::filtering\+\_\+step\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_a059da4c932379643ff7005fe4d0fda89}\label{classbfl_1_1SIS_a059da4c932379643ff7005fe4d0fda89}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!get\+Result@{get\+Result}}
+\index{get\+Result@{get\+Result}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{get\+Result()}{getResult()}}
+{\footnotesize\ttfamily void S\+I\+S\+::get\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_acdfebf68405a427491e4dd9d020ae09b}{bfl\+::\+Filtering\+Algorithm}}.
+
+
+
+Definition at line 111 of file S\+I\+S.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_aaf9f4a14d51804eddcd93aa8a5ccbba8}\label{classbfl_1_1SIS_aaf9f4a14d51804eddcd93aa8a5ccbba8}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!initialization@{initialization}}
+\index{initialization@{initialization}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{initialization()}{initialization()}}
+{\footnotesize\ttfamily void S\+I\+S\+::initialization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_af2a072aa51407fe5544bdbb7ce466e2a}{bfl\+::\+Filtering\+Algorithm}}.
+
+
+
+Definition at line 31 of file S\+I\+S.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a5cfecab2c778620e2557237472bb1721}\label{classbfl_1_1FilteringAlgorithm_a5cfecab2c778620e2557237472bb1721}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!is\+Running@{is\+Running}}
+\index{is\+Running@{is\+Running}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{is\+Running()}{isRunning()}}
+{\footnotesize\ttfamily bool Filtering\+Algorithm\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 92 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::run\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_a32458a24446df8126ace63f21de2bf02}\label{classbfl_1_1SIS_a32458a24446df8126ace63f21de2bf02}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!operator=@{operator=}}
+\index{operator=@{operator=}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1SIS}{S\+IS}} \& S\+I\+S\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1SIS}{S\+IS}} \&\&}]{sir\+\_\+pf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 23 of file S\+I\+S.\+cpp.
+
+
+
+References bfl\+::\+Particle\+Filter\+::operator=().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classbfl_1_1SIS_a32458a24446df8126ace63f21de2bf02_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a6022859aa985474fb997343cc935b11e}\label{classbfl_1_1FilteringAlgorithm_a6022859aa985474fb997343cc935b11e}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!reboot@{reboot}}
+\index{reboot@{reboot}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{reboot()}{reboot()}}
+{\footnotesize\ttfamily void Filtering\+Algorithm\+::reboot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 66 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::cv\+\_\+run\+\_\+, bfl\+::\+Filtering\+Algorithm\+::mtx\+\_\+run\+\_\+, bfl\+::\+Filtering\+Algorithm\+::reset\+\_\+, and bfl\+::\+Filtering\+Algorithm\+::run\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a2403c62fbd7bd7f5cda56a84f5f30331}\label{classbfl_1_1FilteringAlgorithm_a2403c62fbd7bd7f5cda56a84f5f30331}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!reset@{reset}}
+\index{reset@{reset}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Filtering\+Algorithm\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 60 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::reset\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a009cbe5f4bbb16967f6c6ddcaed8fbb1}\label{classbfl_1_1FilteringAlgorithm_a009cbe5f4bbb16967f6c6ddcaed8fbb1}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!run@{run}}
+\index{run@{run}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Filtering\+Algorithm\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 26 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::cv\+\_\+run\+\_\+, bfl\+::\+Filtering\+Algorithm\+::mtx\+\_\+run\+\_\+, and bfl\+::\+Filtering\+Algorithm\+::run\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_afb7cff1f7dae80e0e4ca84c925ca3ac3}\label{classbfl_1_1SIS_afb7cff1f7dae80e0e4ca84c925ca3ac3}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!run\+Condition@{run\+Condition}}
+\index{run\+Condition@{run\+Condition}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{run\+Condition()}{runCondition()}}
+{\footnotesize\ttfamily bool bfl\+::\+S\+I\+S\+::run\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a5fc12882356f6906b102fbfff2bc4b7c}{bfl\+::\+Filtering\+Algorithm}}.
+
+
+
+Definition at line 35 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1ParticleFilter_a3d2935addf4481325a3fe8b99fe4d07a}\label{classbfl_1_1ParticleFilter_a3d2935addf4481325a3fe8b99fe4d07a}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!set\+Correction@{set\+Correction}}
+\index{set\+Correction@{set\+Correction}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{set\+Correction()}{setCorrection()}}
+{\footnotesize\ttfamily void Particle\+Filter\+::set\+Correction (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1PFCorrection}{P\+F\+Correction}} $>$}]{correction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 42 of file Particle\+Filter.\+cpp.
+
+
+
+References bfl\+::\+Particle\+Filter\+::correction\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1ParticleFilter_abfeb75fd575802f362039c26169eed8b}\label{classbfl_1_1ParticleFilter_abfeb75fd575802f362039c26169eed8b}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!set\+Initialization@{set\+Initialization}}
+\index{set\+Initialization@{set\+Initialization}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{set\+Initialization()}{setInitialization()}}
+{\footnotesize\ttfamily void Particle\+Filter\+::set\+Initialization (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Initialization}{Initialization}} $>$}]{prediction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 30 of file Particle\+Filter.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::initialization(), and bfl\+::\+Particle\+Filter\+::initialization\+\_\+.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classbfl_1_1ParticleFilter_abfeb75fd575802f362039c26169eed8b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbfl_1_1ParticleFilter_a213811368143c1f498c87be70cf02379}\label{classbfl_1_1ParticleFilter_a213811368143c1f498c87be70cf02379}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!set\+Prediction@{set\+Prediction}}
+\index{set\+Prediction@{set\+Prediction}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{set\+Prediction()}{setPrediction()}}
+{\footnotesize\ttfamily void Particle\+Filter\+::set\+Prediction (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1PFPrediction}{P\+F\+Prediction}} $>$}]{prediction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 36 of file Particle\+Filter.\+cpp.
+
+
+
+References bfl\+::\+Particle\+Filter\+::prediction\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1ParticleFilter_ad1618ed06b6e6e143e309e2267b970ee}\label{classbfl_1_1ParticleFilter_ad1618ed06b6e6e143e309e2267b970ee}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!set\+Resampling@{set\+Resampling}}
+\index{set\+Resampling@{set\+Resampling}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{set\+Resampling()}{setResampling()}}
+{\footnotesize\ttfamily void Particle\+Filter\+::set\+Resampling (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1Resampling}{Resampling}} $>$}]{resampling }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 48 of file Particle\+Filter.\+cpp.
+
+
+
+References bfl\+::\+Particle\+Filter\+::resampling\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1ParticleFilter_a2d7a5e7aaad179037273d35be229056d}\label{classbfl_1_1ParticleFilter_a2d7a5e7aaad179037273d35be229056d}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!skip@{skip}}
+\index{skip@{skip}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{skip()}{skip()}}
+{\footnotesize\ttfamily bool Particle\+Filter\+::skip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{what\+\_\+step,  }\item[{const bool}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_ac8a718a614905d89d6a43bbbc70d68b2}{bfl\+::\+Filtering\+Algorithm}}.
+
+
+
+Definition at line 54 of file Particle\+Filter.\+cpp.
+
+
+
+References bfl\+::\+Particle\+Filter\+::correction\+\_\+, and bfl\+::\+Particle\+Filter\+::prediction\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a1dc912d89ee8f96d4f3e8209865c5308}\label{classbfl_1_1FilteringAlgorithm_a1dc912d89ee8f96d4f3e8209865c5308}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!teardown@{teardown}}
+\index{teardown@{teardown}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{teardown()}{teardown()}}
+{\footnotesize\ttfamily bool Filtering\+Algorithm\+::teardown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 75 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::teardown\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a40372c24fa050eb0274371172df0a244}\label{classbfl_1_1FilteringAlgorithm_a40372c24fa050eb0274371172df0a244}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!wait@{wait}}
+\index{wait@{wait}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily bool Filtering\+Algorithm\+::wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 34 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::filtering\+\_\+thread\+\_\+.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbfl_1_1SIS_aa4d63e8986156c13cc721c9c94c983d6}\label{classbfl_1_1SIS_aa4d63e8986156c13cc721c9c94c983d6}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!cor\+\_\+particle\+\_\+@{cor\+\_\+particle\+\_\+}}
+\index{cor\+\_\+particle\+\_\+@{cor\+\_\+particle\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{cor\+\_\+particle\+\_\+}{cor\_particle\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xf bfl\+::\+S\+I\+S\+::cor\+\_\+particle\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_a3e39c33d92371409b992fb4b856d48c0}\label{classbfl_1_1SIS_a3e39c33d92371409b992fb4b856d48c0}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!cor\+\_\+weight\+\_\+@{cor\+\_\+weight\+\_\+}}
+\index{cor\+\_\+weight\+\_\+@{cor\+\_\+weight\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{cor\+\_\+weight\+\_\+}{cor\_weight\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf bfl\+::\+S\+I\+S\+::cor\+\_\+weight\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1ParticleFilter_a691428357c812ba009e995175778c173}\label{classbfl_1_1ParticleFilter_a691428357c812ba009e995175778c173}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!correction\+\_\+@{correction\+\_\+}}
+\index{correction\+\_\+@{correction\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{correction\+\_\+}{correction\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classbfl_1_1PFCorrection}{P\+F\+Correction}}$>$ bfl\+::\+Particle\+Filter\+::correction\+\_\+\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 41 of file Particle\+Filter.\+h.
+
+
+
+Referenced by bfl\+::\+Particle\+Filter\+::set\+Correction(), and bfl\+::\+Particle\+Filter\+::skip().
+
+\mbox{\Hypertarget{classbfl_1_1ParticleFilter_a5aff690b4287811912a62548188a0dda}\label{classbfl_1_1ParticleFilter_a5aff690b4287811912a62548188a0dda}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!initialization\+\_\+@{initialization\+\_\+}}
+\index{initialization\+\_\+@{initialization\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{initialization\+\_\+}{initialization\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classbfl_1_1Initialization}{Initialization}}$>$ bfl\+::\+Particle\+Filter\+::initialization\+\_\+\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 39 of file Particle\+Filter.\+h.
+
+
+
+Referenced by bfl\+::\+Particle\+Filter\+::set\+Initialization().
+
+\mbox{\Hypertarget{classbfl_1_1SIS_aed940f18871c4b12b70bf720bc671184}\label{classbfl_1_1SIS_aed940f18871c4b12b70bf720bc671184}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!measurement\+\_\+@{measurement\+\_\+}}
+\index{measurement\+\_\+@{measurement\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{measurement\+\_\+}{measurement\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xf bfl\+::\+S\+I\+S\+::measurement\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 44 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_a7daac4c6a2e6412d8498fda361074740}\label{classbfl_1_1SIS_a7daac4c6a2e6412d8498fda361074740}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!num\+\_\+particle\+\_\+@{num\+\_\+particle\+\_\+}}
+\index{num\+\_\+particle\+\_\+@{num\+\_\+particle\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{num\+\_\+particle\+\_\+}{num\_particle\_}}
+{\footnotesize\ttfamily int bfl\+::\+S\+I\+S\+::num\+\_\+particle\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 39 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_a05ad3f95a4402f875aa2cf98c20f0ac6}\label{classbfl_1_1SIS_a05ad3f95a4402f875aa2cf98c20f0ac6}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!object\+\_\+@{object\+\_\+}}
+\index{object\+\_\+@{object\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{object\+\_\+}{object\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xf bfl\+::\+S\+I\+S\+::object\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 43 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_a489ce9127eff33afdecab341774662dd}\label{classbfl_1_1SIS_a489ce9127eff33afdecab341774662dd}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!pred\+\_\+particle\+\_\+@{pred\+\_\+particle\+\_\+}}
+\index{pred\+\_\+particle\+\_\+@{pred\+\_\+particle\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{pred\+\_\+particle\+\_\+}{pred\_particle\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xf bfl\+::\+S\+I\+S\+::pred\+\_\+particle\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_a736b0b1a524f96273201f82d153f55d2}\label{classbfl_1_1SIS_a736b0b1a524f96273201f82d153f55d2}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!pred\+\_\+weight\+\_\+@{pred\+\_\+weight\+\_\+}}
+\index{pred\+\_\+weight\+\_\+@{pred\+\_\+weight\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{pred\+\_\+weight\+\_\+}{pred\_weight\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf bfl\+::\+S\+I\+S\+::pred\+\_\+weight\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1ParticleFilter_ab86f707d29a823423fe35de37e8f9d8e}\label{classbfl_1_1ParticleFilter_ab86f707d29a823423fe35de37e8f9d8e}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!prediction\+\_\+@{prediction\+\_\+}}
+\index{prediction\+\_\+@{prediction\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{prediction\+\_\+}{prediction\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classbfl_1_1PFPrediction}{P\+F\+Prediction}}$>$ bfl\+::\+Particle\+Filter\+::prediction\+\_\+\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 40 of file Particle\+Filter.\+h.
+
+
+
+Referenced by bfl\+::\+Particle\+Filter\+::set\+Prediction(), and bfl\+::\+Particle\+Filter\+::skip().
+
+\mbox{\Hypertarget{classbfl_1_1ParticleFilter_a9b0b855942fa4fb847443b10fe26c589}\label{classbfl_1_1ParticleFilter_a9b0b855942fa4fb847443b10fe26c589}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!resampling\+\_\+@{resampling\+\_\+}}
+\index{resampling\+\_\+@{resampling\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{resampling\+\_\+}{resampling\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classbfl_1_1Resampling}{Resampling}}$>$ bfl\+::\+Particle\+Filter\+::resampling\+\_\+\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 42 of file Particle\+Filter.\+h.
+
+
+
+Referenced by bfl\+::\+Particle\+Filter\+::set\+Resampling().
+
+\mbox{\Hypertarget{classbfl_1_1SIS_ad1a6248ef476eac5f624780676e96a15}\label{classbfl_1_1SIS_ad1a6248ef476eac5f624780676e96a15}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!result\+\_\+cor\+\_\+particle\+\_\+@{result\+\_\+cor\+\_\+particle\+\_\+}}
+\index{result\+\_\+cor\+\_\+particle\+\_\+@{result\+\_\+cor\+\_\+particle\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{result\+\_\+cor\+\_\+particle\+\_\+}{result\_cor\_particle\_}}
+{\footnotesize\ttfamily std\+::vector$<$Eigen\+::\+Matrix\+Xf$>$ bfl\+::\+S\+I\+S\+::result\+\_\+cor\+\_\+particle\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 55 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_a41ae49a78766ccbb0356ff2cdc2fe7ee}\label{classbfl_1_1SIS_a41ae49a78766ccbb0356ff2cdc2fe7ee}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!result\+\_\+cor\+\_\+weight\+\_\+@{result\+\_\+cor\+\_\+weight\+\_\+}}
+\index{result\+\_\+cor\+\_\+weight\+\_\+@{result\+\_\+cor\+\_\+weight\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{result\+\_\+cor\+\_\+weight\+\_\+}{result\_cor\_weight\_}}
+{\footnotesize\ttfamily std\+::vector$<$Eigen\+::\+Vector\+Xf$>$ bfl\+::\+S\+I\+S\+::result\+\_\+cor\+\_\+weight\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 56 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_a153d27bbf73332c052085d286455e435}\label{classbfl_1_1SIS_a153d27bbf73332c052085d286455e435}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!result\+\_\+pred\+\_\+particle\+\_\+@{result\+\_\+pred\+\_\+particle\+\_\+}}
+\index{result\+\_\+pred\+\_\+particle\+\_\+@{result\+\_\+pred\+\_\+particle\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{result\+\_\+pred\+\_\+particle\+\_\+}{result\_pred\_particle\_}}
+{\footnotesize\ttfamily std\+::vector$<$Eigen\+::\+Matrix\+Xf$>$ bfl\+::\+S\+I\+S\+::result\+\_\+pred\+\_\+particle\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 52 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_a9af5a5fc5ee16acb826093a1acc7330d}\label{classbfl_1_1SIS_a9af5a5fc5ee16acb826093a1acc7330d}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!result\+\_\+pred\+\_\+weight\+\_\+@{result\+\_\+pred\+\_\+weight\+\_\+}}
+\index{result\+\_\+pred\+\_\+weight\+\_\+@{result\+\_\+pred\+\_\+weight\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{result\+\_\+pred\+\_\+weight\+\_\+}{result\_pred\_weight\_}}
+{\footnotesize\ttfamily std\+::vector$<$Eigen\+::\+Vector\+Xf$>$ bfl\+::\+S\+I\+S\+::result\+\_\+pred\+\_\+weight\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 53 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_a37062438b43e40eeaa631d17052e6c15}\label{classbfl_1_1SIS_a37062438b43e40eeaa631d17052e6c15}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!simulation\+\_\+time\+\_\+@{simulation\+\_\+time\+\_\+}}
+\index{simulation\+\_\+time\+\_\+@{simulation\+\_\+time\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{simulation\+\_\+time\+\_\+}{simulation\_time\_}}
+{\footnotesize\ttfamily int bfl\+::\+S\+I\+S\+::simulation\+\_\+time\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 35 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_a162ac45707d6039272c1aa7b4827f274}\label{classbfl_1_1SIS_a162ac45707d6039272c1aa7b4827f274}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!surv\+\_\+x\+\_\+@{surv\+\_\+x\+\_\+}}
+\index{surv\+\_\+x\+\_\+@{surv\+\_\+x\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{surv\+\_\+x\+\_\+}{surv\_x\_}}
+{\footnotesize\ttfamily int bfl\+::\+S\+I\+S\+::surv\+\_\+x\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 40 of file S\+I\+S.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1SIS_af39569c2ba7035387556e8a31ca633e8}\label{classbfl_1_1SIS_af39569c2ba7035387556e8a31ca633e8}} 
+\index{bfl\+::\+S\+IS@{bfl\+::\+S\+IS}!surv\+\_\+y\+\_\+@{surv\+\_\+y\+\_\+}}
+\index{surv\+\_\+y\+\_\+@{surv\+\_\+y\+\_\+}!bfl\+::\+S\+IS@{bfl\+::\+S\+IS}}
+\subsubsection{\texorpdfstring{surv\+\_\+y\+\_\+}{surv\_y\_}}
+{\footnotesize\ttfamily int bfl\+::\+S\+I\+S\+::surv\+\_\+y\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 41 of file S\+I\+S.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{SIS_8h}{S\+I\+S.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/src/\mbox{\hyperlink{SIS_8cpp}{S\+I\+S.\+cpp}}\end{DoxyCompactItemize}

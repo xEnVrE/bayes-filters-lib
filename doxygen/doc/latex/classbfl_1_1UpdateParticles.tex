@@ -1,0 +1,199 @@
+\hypertarget{classbfl_1_1UpdateParticles}{}\section{bfl\+:\+:Update\+Particles Class Reference}
+\label{classbfl_1_1UpdateParticles}\index{bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}}
+
+
+{\ttfamily \#include $<$Update\+Particles.\+h$>$}
+
+
+
+Inheritance diagram for bfl\+:\+:Update\+Particles\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classbfl_1_1UpdateParticles__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbfl_1_1UpdateParticles_a7fdb4642d8a970b29f9fe70b6ece7152}{Update\+Particles}} () noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1UpdateParticles_ab905b2a4ac01d30c83e9092d524f0869}{Update\+Particles}} (\mbox{\hyperlink{classbfl_1_1UpdateParticles}{Update\+Particles}} \&\&pf\+\_\+correction) noexcept
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1UpdateParticles_acd80b6402832fb4f2b8375505e26fa31}{$\sim$\+Update\+Particles}} () noexcept
+\item 
+void \mbox{\hyperlink{classbfl_1_1UpdateParticles_a8eb8aa7a1cbcf1b285401bc2b0dbed3e}{innovation}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&pred\+\_\+states, const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&measurements, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ innovations) override
+\item 
+double \mbox{\hyperlink{classbfl_1_1UpdateParticles_a262b9de317562f0361f2db68312b8e27}{likelihood}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&\mbox{\hyperlink{classbfl_1_1UpdateParticles_a8eb8aa7a1cbcf1b285401bc2b0dbed3e}{innovation}}) override
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1ObservationModel}{Observation\+Model}} \& \mbox{\hyperlink{classbfl_1_1UpdateParticles_a673781f8cadbd148cb9a67a3f8532b37}{get\+Observation\+Model}} () override
+\item 
+virtual void \mbox{\hyperlink{classbfl_1_1UpdateParticles_a89e61d253d077f5c4ca0be6e3b56edd3}{set\+Observation\+Model}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1ObservationModel}{Observation\+Model}} $>$ observation\+\_\+model) override
+\item 
+void \mbox{\hyperlink{classbfl_1_1PFCorrection_a7d8e7f910fe5ebcb7d8ed678c6f38836}{correct}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&pred\+\_\+states, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&pred\+\_\+weights, const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&measurements, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ cor\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$ cor\+\_\+weights)
+\item 
+bool \mbox{\hyperlink{classbfl_1_1PFCorrection_ab25e625ea12fe257e0eb85d465835e62}{skip}} (const bool status)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbfl_1_1UpdateParticles_aa589f7fab7cd83f310c9dc17ee169dec}{correct\+Step}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&pred\+\_\+states, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&pred\+\_\+weights, const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&measurements, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ cor\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$ cor\+\_\+weights) override
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1ObservationModel}{Observation\+Model}} $>$ \mbox{\hyperlink{classbfl_1_1UpdateParticles_a6414b89b3c7bf79d04c996512d63ae6c}{observation\+\_\+model\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file Update\+Particles.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1UpdateParticles_a7fdb4642d8a970b29f9fe70b6ece7152}\label{classbfl_1_1UpdateParticles_a7fdb4642d8a970b29f9fe70b6ece7152}} 
+\index{bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}!Update\+Particles@{Update\+Particles}}
+\index{Update\+Particles@{Update\+Particles}!bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}}
+\subsubsection{\texorpdfstring{Update\+Particles()}{UpdateParticles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Update\+Particles\+::\+Update\+Particles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 10 of file Update\+Particles.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1UpdateParticles_ab905b2a4ac01d30c83e9092d524f0869}\label{classbfl_1_1UpdateParticles_ab905b2a4ac01d30c83e9092d524f0869}} 
+\index{bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}!Update\+Particles@{Update\+Particles}}
+\index{Update\+Particles@{Update\+Particles}!bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}}
+\subsubsection{\texorpdfstring{Update\+Particles()}{UpdateParticles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Update\+Particles\+::\+Update\+Particles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1UpdateParticles}{Update\+Particles}} \&\&}]{pf\+\_\+correction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 13 of file Update\+Particles.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1UpdateParticles_acd80b6402832fb4f2b8375505e26fa31}\label{classbfl_1_1UpdateParticles_acd80b6402832fb4f2b8375505e26fa31}} 
+\index{bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}!````~Update\+Particles@{$\sim$\+Update\+Particles}}
+\index{````~Update\+Particles@{$\sim$\+Update\+Particles}!bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}}
+\subsubsection{\texorpdfstring{$\sim$\+Update\+Particles()}{~UpdateParticles()}}
+{\footnotesize\ttfamily Update\+Particles\+::$\sim$\+Update\+Particles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 17 of file Update\+Particles.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1PFCorrection_a7d8e7f910fe5ebcb7d8ed678c6f38836}\label{classbfl_1_1PFCorrection_a7d8e7f910fe5ebcb7d8ed678c6f38836}} 
+\index{bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}!correct@{correct}}
+\index{correct@{correct}!bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}}
+\subsubsection{\texorpdfstring{correct()}{correct()}}
+{\footnotesize\ttfamily void P\+F\+Correction\+::correct (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{pred\+\_\+states,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{pred\+\_\+weights,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{measurements,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{cor\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$}]{cor\+\_\+weights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 17 of file P\+F\+Correction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1UpdateParticles_aa589f7fab7cd83f310c9dc17ee169dec}\label{classbfl_1_1UpdateParticles_aa589f7fab7cd83f310c9dc17ee169dec}} 
+\index{bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}!correct\+Step@{correct\+Step}}
+\index{correct\+Step@{correct\+Step}!bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}}
+\subsubsection{\texorpdfstring{correct\+Step()}{correctStep()}}
+{\footnotesize\ttfamily void Update\+Particles\+::correct\+Step (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{pred\+\_\+states,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{pred\+\_\+weights,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{measurements,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{cor\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$}]{cor\+\_\+weights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1PFCorrection_a3fb61b90d36bea3271c1c9e363c61229}{bfl\+::\+P\+F\+Correction}}.
+
+
+
+Definition at line 20 of file Update\+Particles.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1UpdateParticles_a673781f8cadbd148cb9a67a3f8532b37}\label{classbfl_1_1UpdateParticles_a673781f8cadbd148cb9a67a3f8532b37}} 
+\index{bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}!get\+Observation\+Model@{get\+Observation\+Model}}
+\index{get\+Observation\+Model@{get\+Observation\+Model}!bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}}
+\subsubsection{\texorpdfstring{get\+Observation\+Model()}{getObservationModel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1ObservationModel}{Observation\+Model}} \& Update\+Particles\+::get\+Observation\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1PFCorrection_a3bc4010f306825d69014bee53cd262ad}{bfl\+::\+P\+F\+Correction}}.
+
+
+
+Definition at line 48 of file Update\+Particles.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1UpdateParticles_a8eb8aa7a1cbcf1b285401bc2b0dbed3e}\label{classbfl_1_1UpdateParticles_a8eb8aa7a1cbcf1b285401bc2b0dbed3e}} 
+\index{bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}!innovation@{innovation}}
+\index{innovation@{innovation}!bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}}
+\subsubsection{\texorpdfstring{innovation()}{innovation()}}
+{\footnotesize\ttfamily void Update\+Particles\+::innovation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{pred\+\_\+states,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{measurements,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{innovations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1PFCorrection_a22e803c147f8fb45b7b98c854a947057}{bfl\+::\+P\+F\+Correction}}.
+
+
+
+Definition at line 33 of file Update\+Particles.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1UpdateParticles_a262b9de317562f0361f2db68312b8e27}\label{classbfl_1_1UpdateParticles_a262b9de317562f0361f2db68312b8e27}} 
+\index{bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}!likelihood@{likelihood}}
+\index{likelihood@{likelihood}!bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}}
+\subsubsection{\texorpdfstring{likelihood()}{likelihood()}}
+{\footnotesize\ttfamily double Update\+Particles\+::likelihood (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{innovation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1PFCorrection_a4310e630d4c269bd66557e44e5deecb0}{bfl\+::\+P\+F\+Correction}}.
+
+
+
+Definition at line 42 of file Update\+Particles.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1UpdateParticles_a89e61d253d077f5c4ca0be6e3b56edd3}\label{classbfl_1_1UpdateParticles_a89e61d253d077f5c4ca0be6e3b56edd3}} 
+\index{bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}!set\+Observation\+Model@{set\+Observation\+Model}}
+\index{set\+Observation\+Model@{set\+Observation\+Model}!bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}}
+\subsubsection{\texorpdfstring{set\+Observation\+Model()}{setObservationModel()}}
+{\footnotesize\ttfamily void Update\+Particles\+::set\+Observation\+Model (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1ObservationModel}{Observation\+Model}} $>$}]{observation\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1PFCorrection_a437fcf552a85f427d1369d8e43e56144}{bfl\+::\+P\+F\+Correction}}.
+
+
+
+Definition at line 54 of file Update\+Particles.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFCorrection_ab25e625ea12fe257e0eb85d465835e62}\label{classbfl_1_1PFCorrection_ab25e625ea12fe257e0eb85d465835e62}} 
+\index{bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}!skip@{skip}}
+\index{skip@{skip}!bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}}
+\subsubsection{\texorpdfstring{skip()}{skip()}}
+{\footnotesize\ttfamily bool P\+F\+Correction\+::skip (\begin{DoxyParamCaption}\item[{const bool}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 31 of file P\+F\+Correction.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbfl_1_1UpdateParticles_a6414b89b3c7bf79d04c996512d63ae6c}\label{classbfl_1_1UpdateParticles_a6414b89b3c7bf79d04c996512d63ae6c}} 
+\index{bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}!observation\+\_\+model\+\_\+@{observation\+\_\+model\+\_\+}}
+\index{observation\+\_\+model\+\_\+@{observation\+\_\+model\+\_\+}!bfl\+::\+Update\+Particles@{bfl\+::\+Update\+Particles}}
+\subsubsection{\texorpdfstring{observation\+\_\+model\+\_\+}{observation\_model\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classbfl_1_1ObservationModel}{Observation\+Model}}$>$ bfl\+::\+Update\+Particles\+::observation\+\_\+model\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 36 of file Update\+Particles.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{UpdateParticles_8h}{Update\+Particles.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/src/\mbox{\hyperlink{UpdateParticles_8cpp}{Update\+Particles.\+cpp}}\end{DoxyCompactItemize}

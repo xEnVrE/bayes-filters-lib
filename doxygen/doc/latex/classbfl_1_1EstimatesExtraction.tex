@@ -1,0 +1,354 @@
+\hypertarget{classbfl_1_1EstimatesExtraction}{}\section{bfl\+:\+:Estimates\+Extraction Class Reference}
+\label{classbfl_1_1EstimatesExtraction}\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+
+
+{\ttfamily \#include $<$Estimates\+Extraction.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0}{Extraction\+Method}} \{ \newline
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0ab93db188572fc4d76cce5660f3823b0a}{Extraction\+Method\+::mean}}, 
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0abbc9c90f98a268f78971d2e670dd527e}{Extraction\+Method\+::smean}}, 
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a1d2c4e9e69cf765aa9ff84e8a69501cd}{Extraction\+Method\+::wmean}}, 
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a1f31c7680951dbcb0768323cfd1e7726}{Extraction\+Method\+::emean}}, 
+\newline
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a15d61712450a686a7f365adf4fef581f}{Extraction\+Method\+::mode}}, 
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a2c3917a1bbad7f91dfa6d1d524e83888}{Extraction\+Method\+::smode}}, 
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0ac6e4db54fbd05bde785ef07a442b50f5}{Extraction\+Method\+::wmode}}, 
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a68aa9a30f26a7648656847fd30c44144}{Extraction\+Method\+::emode}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a49ab15a22c1766a16cd6ccc29447dd49}{Estimates\+Extraction}} () noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a3d16bdd9dbc8841eae07cfdc3aa52114}{Estimates\+Extraction}} (\mbox{\hyperlink{classbfl_1_1EstimatesExtraction}{Estimates\+Extraction}} \&\&estimate\+\_\+extraction) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction}{Estimates\+Extraction}} \& \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_ae473904953c7ad90408da2b4d3c14a1a}{operator=}} (\mbox{\hyperlink{classbfl_1_1EstimatesExtraction}{Estimates\+Extraction}} \&\&estimate\+\_\+extraction) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_af7a89d920cc8e4ebbef66c1dfce37ecb}{$\sim$\+Estimates\+Extraction}} () noexcept
+\item 
+bool \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a68bb4f3b41f578a38d9847b9c140c130}{set\+Method}} (const \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0}{Extraction\+Method}} \&extraction\+\_\+method)
+\item 
+bool \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a49babb0803c50d697b8d21014010f5bb}{set\+Mobile\+Average\+Window\+Size}} (const int window)
+\item 
+Eigen\+::\+Vector\+Xf \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a62d6fe7e504087183ab0b4bb62e214d4}{extract}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&particles, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&weights)
+\item 
+bool \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a26c432f43ff0849e54b2e9474c02d1a5}{clear}} ()
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a522ca7407979007a4199291a756486d6}{get\+Info}} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462}{Statistics}} \{ \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462ab93db188572fc4d76cce5660f3823b0a}{Statistics\+::mean}}, 
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462a15d61712450a686a7f365adf4fef581f}{Statistics\+::mode}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Vector\+Xf \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a2398b14fd25bcf319b71a2a4b3472da1}{mean}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&particles, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&weights) const
+\item 
+Eigen\+::\+Vector\+Xf \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a6026cb6d03eae12a3af66be4b935878b}{mode}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&particles, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&weights) const
+\item 
+Eigen\+::\+Vector\+Xf \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_ab35b532eeb7025105a74c2919c15f51f}{simple\+Average}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&particles, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&weights, const \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462}{Statistics}} \&base\+\_\+est\+\_\+ext)
+\item 
+Eigen\+::\+Vector\+Xf \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a9b5c02da5cdeabceae31a1f66e772854}{weighted\+Average}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&particles, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&weights, const \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462}{Statistics}} \&base\+\_\+est\+\_\+ext)
+\item 
+Eigen\+::\+Vector\+Xf \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_aef99ef75c04aa871ab9286442f2d7535}{exponential\+Average}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&particles, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&weights, const \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462}{Statistics}} \&base\+\_\+est\+\_\+ext)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0}{Extraction\+Method}} \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a2dcf07e017ecb16b63c882538f74c9bf}{extraction\+\_\+method\+\_\+}} = \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a68aa9a30f26a7648656847fd30c44144}{Extraction\+Method\+::emode}}
+\item 
+\mbox{\hyperlink{classbfl_1_1HistoryBuffer}{History\+Buffer}} \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a462d98248435b91eda5195560f598dbd}{hist\+\_\+buffer\+\_\+}}
+\item 
+Eigen\+::\+Vector\+Xf \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a4f5676c1de95bdced76d205997a01e2a}{sm\+\_\+weights\+\_\+}}
+\item 
+Eigen\+::\+Vector\+Xf \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_adf4378ec3f7223050e2616e86cfe69c8}{wm\+\_\+weights\+\_\+}}
+\item 
+Eigen\+::\+Vector\+Xf \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a1c56946582ef80ccade49e29fa91efad}{em\+\_\+weights\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file Estimates\+Extraction.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0}\label{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!Extraction\+Method@{Extraction\+Method}}
+\index{Extraction\+Method@{Extraction\+Method}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{Extraction\+Method}{ExtractionMethod}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0}{bfl\+::\+Estimates\+Extraction\+::\+Extraction\+Method}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mean@{mean}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!mean@{mean}}}\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0ab93db188572fc4d76cce5660f3823b0a}\label{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0ab93db188572fc4d76cce5660f3823b0a}} 
+mean&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{smean@{smean}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!smean@{smean}}}\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0abbc9c90f98a268f78971d2e670dd527e}\label{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0abbc9c90f98a268f78971d2e670dd527e}} 
+smean&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{wmean@{wmean}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!wmean@{wmean}}}\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a1d2c4e9e69cf765aa9ff84e8a69501cd}\label{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a1d2c4e9e69cf765aa9ff84e8a69501cd}} 
+wmean&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{emean@{emean}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!emean@{emean}}}\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a1f31c7680951dbcb0768323cfd1e7726}\label{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a1f31c7680951dbcb0768323cfd1e7726}} 
+emean&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mode@{mode}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!mode@{mode}}}\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a15d61712450a686a7f365adf4fef581f}\label{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a15d61712450a686a7f365adf4fef581f}} 
+mode&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{smode@{smode}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!smode@{smode}}}\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a2c3917a1bbad7f91dfa6d1d524e83888}\label{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a2c3917a1bbad7f91dfa6d1d524e83888}} 
+smode&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{wmode@{wmode}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!wmode@{wmode}}}\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0ac6e4db54fbd05bde785ef07a442b50f5}\label{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0ac6e4db54fbd05bde785ef07a442b50f5}} 
+wmode&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{emode@{emode}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!emode@{emode}}}\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a68aa9a30f26a7648656847fd30c44144}\label{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a68aa9a30f26a7648656847fd30c44144}} 
+emode&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 28 of file Estimates\+Extraction.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462}\label{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!Statistics@{Statistics}}
+\index{Statistics@{Statistics}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{Statistics}{Statistics}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462}{bfl\+::\+Estimates\+Extraction\+::\+Statistics}}\hspace{0.3cm}{\ttfamily [strong]}, {\ttfamily [protected]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mean@{mean}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!mean@{mean}}}\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462ab93db188572fc4d76cce5660f3823b0a}\label{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462ab93db188572fc4d76cce5660f3823b0a}} 
+mean&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mode@{mode}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!mode@{mode}}}\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462a15d61712450a686a7f365adf4fef581f}\label{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462a15d61712450a686a7f365adf4fef581f}} 
+mode&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 62 of file Estimates\+Extraction.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a49ab15a22c1766a16cd6ccc29447dd49}\label{classbfl_1_1EstimatesExtraction_a49ab15a22c1766a16cd6ccc29447dd49}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!Estimates\+Extraction@{Estimates\+Extraction}}
+\index{Estimates\+Extraction@{Estimates\+Extraction}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{Estimates\+Extraction()}{EstimatesExtraction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bfl\+::\+Estimates\+Extraction\+::\+Estimates\+Extraction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 19 of file Estimates\+Extraction.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a3d16bdd9dbc8841eae07cfdc3aa52114}\label{classbfl_1_1EstimatesExtraction_a3d16bdd9dbc8841eae07cfdc3aa52114}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!Estimates\+Extraction@{Estimates\+Extraction}}
+\index{Estimates\+Extraction@{Estimates\+Extraction}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{Estimates\+Extraction()}{EstimatesExtraction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Estimates\+Extraction\+::\+Estimates\+Extraction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1EstimatesExtraction}{Estimates\+Extraction}} \&\&}]{estimate\+\_\+extraction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 7 of file Estimates\+Extraction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_af7a89d920cc8e4ebbef66c1dfce37ecb}\label{classbfl_1_1EstimatesExtraction_af7a89d920cc8e4ebbef66c1dfce37ecb}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!````~Estimates\+Extraction@{$\sim$\+Estimates\+Extraction}}
+\index{````~Estimates\+Extraction@{$\sim$\+Estimates\+Extraction}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{$\sim$\+Estimates\+Extraction()}{~EstimatesExtraction()}}
+{\footnotesize\ttfamily bfl\+::\+Estimates\+Extraction\+::$\sim$\+Estimates\+Extraction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 25 of file Estimates\+Extraction.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a26c432f43ff0849e54b2e9474c02d1a5}\label{classbfl_1_1EstimatesExtraction_a26c432f43ff0849e54b2e9474c02d1a5}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!clear@{clear}}
+\index{clear@{clear}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily bool Estimates\+Extraction\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 95 of file Estimates\+Extraction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_aef99ef75c04aa871ab9286442f2d7535}\label{classbfl_1_1EstimatesExtraction_aef99ef75c04aa871ab9286442f2d7535}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!exponential\+Average@{exponential\+Average}}
+\index{exponential\+Average@{exponential\+Average}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{exponential\+Average()}{exponentialAverage()}}
+{\footnotesize\ttfamily Vector\+Xf Estimates\+Extraction\+::exponential\+Average (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{particles,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{weights,  }\item[{const \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462}{Statistics}} \&}]{base\+\_\+est\+\_\+ext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 205 of file Estimates\+Extraction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a62d6fe7e504087183ab0b4bb62e214d4}\label{classbfl_1_1EstimatesExtraction_a62d6fe7e504087183ab0b4bb62e214d4}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!extract@{extract}}
+\index{extract@{extract}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{extract()}{extract()}}
+{\footnotesize\ttfamily Vector\+Xf Estimates\+Extraction\+::extract (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{particles,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{weights }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file Estimates\+Extraction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a522ca7407979007a4199291a756486d6}\label{classbfl_1_1EstimatesExtraction_a522ca7407979007a4199291a756486d6}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!get\+Info@{get\+Info}}
+\index{get\+Info@{get\+Info}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{get\+Info()}{getInfo()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Estimates\+Extraction\+::get\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 101 of file Estimates\+Extraction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a2398b14fd25bcf319b71a2a4b3472da1}\label{classbfl_1_1EstimatesExtraction_a2398b14fd25bcf319b71a2a4b3472da1}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!mean@{mean}}
+\index{mean@{mean}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{mean()}{mean()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf bfl\+::\+Estimates\+Extraction\+::mean (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{particles,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{weights }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a6026cb6d03eae12a3af66be4b935878b}\label{classbfl_1_1EstimatesExtraction_a6026cb6d03eae12a3af66be4b935878b}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!mode@{mode}}
+\index{mode@{mode}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{mode()}{mode()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf bfl\+::\+Estimates\+Extraction\+::mode (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{particles,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{weights }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_ae473904953c7ad90408da2b4d3c14a1a}\label{classbfl_1_1EstimatesExtraction_ae473904953c7ad90408da2b4d3c14a1a}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!operator=@{operator=}}
+\index{operator=@{operator=}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1EstimatesExtraction}{Estimates\+Extraction}} \& Estimates\+Extraction\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1EstimatesExtraction}{Estimates\+Extraction}} \&\&}]{estimate\+\_\+extraction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 18 of file Estimates\+Extraction.\+cpp.
+
+
+
+References extraction\+\_\+method\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a68bb4f3b41f578a38d9847b9c140c130}\label{classbfl_1_1EstimatesExtraction_a68bb4f3b41f578a38d9847b9c140c130}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!set\+Method@{set\+Method}}
+\index{set\+Method@{set\+Method}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{set\+Method()}{setMethod()}}
+{\footnotesize\ttfamily bool Estimates\+Extraction\+::set\+Method (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0}{Extraction\+Method}} \&}]{extraction\+\_\+method }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file Estimates\+Extraction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a49babb0803c50d697b8d21014010f5bb}\label{classbfl_1_1EstimatesExtraction_a49babb0803c50d697b8d21014010f5bb}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!set\+Mobile\+Average\+Window\+Size@{set\+Mobile\+Average\+Window\+Size}}
+\index{set\+Mobile\+Average\+Window\+Size@{set\+Mobile\+Average\+Window\+Size}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{set\+Mobile\+Average\+Window\+Size()}{setMobileAverageWindowSize()}}
+{\footnotesize\ttfamily bool Estimates\+Extraction\+::set\+Mobile\+Average\+Window\+Size (\begin{DoxyParamCaption}\item[{const int}]{window }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file Estimates\+Extraction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_ab35b532eeb7025105a74c2919c15f51f}\label{classbfl_1_1EstimatesExtraction_ab35b532eeb7025105a74c2919c15f51f}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!simple\+Average@{simple\+Average}}
+\index{simple\+Average@{simple\+Average}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{simple\+Average()}{simpleAverage()}}
+{\footnotesize\ttfamily Vector\+Xf Estimates\+Extraction\+::simple\+Average (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{particles,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{weights,  }\item[{const \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462}{Statistics}} \&}]{base\+\_\+est\+\_\+ext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 157 of file Estimates\+Extraction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a9b5c02da5cdeabceae31a1f66e772854}\label{classbfl_1_1EstimatesExtraction_a9b5c02da5cdeabceae31a1f66e772854}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!weighted\+Average@{weighted\+Average}}
+\index{weighted\+Average@{weighted\+Average}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{weighted\+Average()}{weightedAverage()}}
+{\footnotesize\ttfamily Vector\+Xf Estimates\+Extraction\+::weighted\+Average (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{particles,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{weights,  }\item[{const \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8c0593a43166c569530947107c830462}{Statistics}} \&}]{base\+\_\+est\+\_\+ext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 178 of file Estimates\+Extraction.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a1c56946582ef80ccade49e29fa91efad}\label{classbfl_1_1EstimatesExtraction_a1c56946582ef80ccade49e29fa91efad}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!em\+\_\+weights\+\_\+@{em\+\_\+weights\+\_\+}}
+\index{em\+\_\+weights\+\_\+@{em\+\_\+weights\+\_\+}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{em\+\_\+weights\+\_\+}{em\_weights\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf bfl\+::\+Estimates\+Extraction\+::em\+\_\+weights\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 59 of file Estimates\+Extraction.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a2dcf07e017ecb16b63c882538f74c9bf}\label{classbfl_1_1EstimatesExtraction_a2dcf07e017ecb16b63c882538f74c9bf}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!extraction\+\_\+method\+\_\+@{extraction\+\_\+method\+\_\+}}
+\index{extraction\+\_\+method\+\_\+@{extraction\+\_\+method\+\_\+}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{extraction\+\_\+method\+\_\+}{extraction\_method\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0}{Extraction\+Method}} bfl\+::\+Estimates\+Extraction\+::extraction\+\_\+method\+\_\+ = \mbox{\hyperlink{classbfl_1_1EstimatesExtraction_a8489976af4025f0bbc3288ff7f17ffb0a68aa9a30f26a7648656847fd30c44144}{Extraction\+Method\+::emode}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 53 of file Estimates\+Extraction.\+h.
+
+
+
+Referenced by operator=().
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a462d98248435b91eda5195560f598dbd}\label{classbfl_1_1EstimatesExtraction_a462d98248435b91eda5195560f598dbd}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!hist\+\_\+buffer\+\_\+@{hist\+\_\+buffer\+\_\+}}
+\index{hist\+\_\+buffer\+\_\+@{hist\+\_\+buffer\+\_\+}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{hist\+\_\+buffer\+\_\+}{hist\_buffer\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1HistoryBuffer}{History\+Buffer}} bfl\+::\+Estimates\+Extraction\+::hist\+\_\+buffer\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 55 of file Estimates\+Extraction.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_a4f5676c1de95bdced76d205997a01e2a}\label{classbfl_1_1EstimatesExtraction_a4f5676c1de95bdced76d205997a01e2a}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!sm\+\_\+weights\+\_\+@{sm\+\_\+weights\+\_\+}}
+\index{sm\+\_\+weights\+\_\+@{sm\+\_\+weights\+\_\+}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{sm\+\_\+weights\+\_\+}{sm\_weights\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf bfl\+::\+Estimates\+Extraction\+::sm\+\_\+weights\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 57 of file Estimates\+Extraction.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1EstimatesExtraction_adf4378ec3f7223050e2616e86cfe69c8}\label{classbfl_1_1EstimatesExtraction_adf4378ec3f7223050e2616e86cfe69c8}} 
+\index{bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}!wm\+\_\+weights\+\_\+@{wm\+\_\+weights\+\_\+}}
+\index{wm\+\_\+weights\+\_\+@{wm\+\_\+weights\+\_\+}!bfl\+::\+Estimates\+Extraction@{bfl\+::\+Estimates\+Extraction}}
+\subsubsection{\texorpdfstring{wm\+\_\+weights\+\_\+}{wm\_weights\_}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xf bfl\+::\+Estimates\+Extraction\+::wm\+\_\+weights\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 58 of file Estimates\+Extraction.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{EstimatesExtraction_8h}{Estimates\+Extraction.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/src/\mbox{\hyperlink{EstimatesExtraction_8cpp}{Estimates\+Extraction.\+cpp}}\end{DoxyCompactItemize}

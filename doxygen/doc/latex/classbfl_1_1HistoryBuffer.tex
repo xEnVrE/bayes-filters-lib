@@ -1,0 +1,214 @@
+\hypertarget{classbfl_1_1HistoryBuffer}{}\section{bfl\+:\+:History\+Buffer Class Reference}
+\label{classbfl_1_1HistoryBuffer}\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+
+
+{\ttfamily \#include $<$History\+Buffer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbfl_1_1HistoryBuffer_a0b0c850ed4a50eeb7eb3d88e10937c1b}{History\+Buffer}} () noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1HistoryBuffer_ab88b9511d782060c1b3b0952f608cb08}{History\+Buffer}} (\mbox{\hyperlink{classbfl_1_1HistoryBuffer}{History\+Buffer}} \&\&history\+\_\+buffer) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1HistoryBuffer}{History\+Buffer}} \& \mbox{\hyperlink{classbfl_1_1HistoryBuffer_a77a0d57c5413a374bf21d51693a81715}{operator=}} (\mbox{\hyperlink{classbfl_1_1HistoryBuffer}{History\+Buffer}} \&\&history\+\_\+buffer) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1HistoryBuffer_af61bc43a22241a71223dbc1223480d90}{$\sim$\+History\+Buffer}} () noexcept
+\item 
+void \mbox{\hyperlink{classbfl_1_1HistoryBuffer_addc58ae2565d761c670e43eab39e0b46}{add\+Element}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&element)
+\item 
+Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1HistoryBuffer_a1cd85c51261b387cdb2247a19d6624e0}{get\+History\+Buffer}} () const
+\item 
+bool \mbox{\hyperlink{classbfl_1_1HistoryBuffer_a34bc31abe55f9d43575919a15a1f90c3}{set\+History\+Size}} (const unsigned int window)
+\item 
+unsigned int \mbox{\hyperlink{classbfl_1_1HistoryBuffer_a0fef292d6e577b8f2f7d2035927edddb}{get\+History\+Size}} () const
+\item 
+bool \mbox{\hyperlink{classbfl_1_1HistoryBuffer_a3113fb73683eb5001e7fef0c6d3806cb}{decrease\+History\+Size}} ()
+\item 
+bool \mbox{\hyperlink{classbfl_1_1HistoryBuffer_a495d4786a46ffe6da00179f412d44f93}{increase\+History\+Size}} ()
+\item 
+bool \mbox{\hyperlink{classbfl_1_1HistoryBuffer_ad9d3d44d796dccc5adb22be9594618c8}{clear}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classbfl_1_1HistoryBuffer_a135dd1829747ba2f414f12fd8282f75a}{window\+\_\+}} = 5
+\item 
+const unsigned int \mbox{\hyperlink{classbfl_1_1HistoryBuffer_aeb4d2b9c58f06177b0daaf640e2b6c9e}{max\+\_\+window\+\_\+}} = 30
+\item 
+std\+::deque$<$ Eigen\+::\+Vector\+Xf $>$ \mbox{\hyperlink{classbfl_1_1HistoryBuffer_a7f3992afff5140e0d3899b03bb26b9ac}{history\+\_\+buffer\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file History\+Buffer.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_a0b0c850ed4a50eeb7eb3d88e10937c1b}\label{classbfl_1_1HistoryBuffer_a0b0c850ed4a50eeb7eb3d88e10937c1b}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!History\+Buffer@{History\+Buffer}}
+\index{History\+Buffer@{History\+Buffer}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{History\+Buffer()}{HistoryBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bfl\+::\+History\+Buffer\+::\+History\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 16 of file History\+Buffer.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_ab88b9511d782060c1b3b0952f608cb08}\label{classbfl_1_1HistoryBuffer_ab88b9511d782060c1b3b0952f608cb08}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!History\+Buffer@{History\+Buffer}}
+\index{History\+Buffer@{History\+Buffer}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{History\+Buffer()}{HistoryBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily History\+Buffer\+::\+History\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1HistoryBuffer}{History\+Buffer}} \&\&}]{history\+\_\+buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 7 of file History\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_af61bc43a22241a71223dbc1223480d90}\label{classbfl_1_1HistoryBuffer_af61bc43a22241a71223dbc1223480d90}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!````~History\+Buffer@{$\sim$\+History\+Buffer}}
+\index{````~History\+Buffer@{$\sim$\+History\+Buffer}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{$\sim$\+History\+Buffer()}{~HistoryBuffer()}}
+{\footnotesize\ttfamily bfl\+::\+History\+Buffer\+::$\sim$\+History\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 22 of file History\+Buffer.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_addc58ae2565d761c670e43eab39e0b46}\label{classbfl_1_1HistoryBuffer_addc58ae2565d761c670e43eab39e0b46}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!add\+Element@{add\+Element}}
+\index{add\+Element@{add\+Element}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{add\+Element()}{addElement()}}
+{\footnotesize\ttfamily void History\+Buffer\+::add\+Element (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{element }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file History\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_ad9d3d44d796dccc5adb22be9594618c8}\label{classbfl_1_1HistoryBuffer_ad9d3d44d796dccc5adb22be9594618c8}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!clear@{clear}}
+\index{clear@{clear}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily bool History\+Buffer\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 82 of file History\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_a3113fb73683eb5001e7fef0c6d3806cb}\label{classbfl_1_1HistoryBuffer_a3113fb73683eb5001e7fef0c6d3806cb}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!decrease\+History\+Size@{decrease\+History\+Size}}
+\index{decrease\+History\+Size@{decrease\+History\+Size}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{decrease\+History\+Size()}{decreaseHistorySize()}}
+{\footnotesize\ttfamily bool History\+Buffer\+::decrease\+History\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file History\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_a1cd85c51261b387cdb2247a19d6624e0}\label{classbfl_1_1HistoryBuffer_a1cd85c51261b387cdb2247a19d6624e0}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!get\+History\+Buffer@{get\+History\+Buffer}}
+\index{get\+History\+Buffer@{get\+History\+Buffer}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{get\+History\+Buffer()}{getHistoryBuffer()}}
+{\footnotesize\ttfamily Matrix\+Xf History\+Buffer\+::get\+History\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 38 of file History\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_a0fef292d6e577b8f2f7d2035927edddb}\label{classbfl_1_1HistoryBuffer_a0fef292d6e577b8f2f7d2035927edddb}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!get\+History\+Size@{get\+History\+Size}}
+\index{get\+History\+Size@{get\+History\+Size}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{get\+History\+Size()}{getHistorySize()}}
+{\footnotesize\ttfamily unsigned int bfl\+::\+History\+Buffer\+::get\+History\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 30 of file History\+Buffer.\+h.
+
+
+
+References window\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_a495d4786a46ffe6da00179f412d44f93}\label{classbfl_1_1HistoryBuffer_a495d4786a46ffe6da00179f412d44f93}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!increase\+History\+Size@{increase\+History\+Size}}
+\index{increase\+History\+Size@{increase\+History\+Size}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{increase\+History\+Size()}{increaseHistorySize()}}
+{\footnotesize\ttfamily bool History\+Buffer\+::increase\+History\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 76 of file History\+Buffer.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_a77a0d57c5413a374bf21d51693a81715}\label{classbfl_1_1HistoryBuffer_a77a0d57c5413a374bf21d51693a81715}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!operator=@{operator=}}
+\index{operator=@{operator=}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1HistoryBuffer}{History\+Buffer}} \& History\+Buffer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1HistoryBuffer}{History\+Buffer}} \&\&}]{history\+\_\+buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 15 of file History\+Buffer.\+cpp.
+
+
+
+References window\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_a34bc31abe55f9d43575919a15a1f90c3}\label{classbfl_1_1HistoryBuffer_a34bc31abe55f9d43575919a15a1f90c3}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!set\+History\+Size@{set\+History\+Size}}
+\index{set\+History\+Size@{set\+History\+Size}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{set\+History\+Size()}{setHistorySize()}}
+{\footnotesize\ttfamily bool History\+Buffer\+::set\+History\+Size (\begin{DoxyParamCaption}\item[{const unsigned int}]{window }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file History\+Buffer.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_a7f3992afff5140e0d3899b03bb26b9ac}\label{classbfl_1_1HistoryBuffer_a7f3992afff5140e0d3899b03bb26b9ac}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!history\+\_\+buffer\+\_\+@{history\+\_\+buffer\+\_\+}}
+\index{history\+\_\+buffer\+\_\+@{history\+\_\+buffer\+\_\+}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{history\+\_\+buffer\+\_\+}{history\_buffer\_}}
+{\footnotesize\ttfamily std\+::deque$<$Eigen\+::\+Vector\+Xf$>$ bfl\+::\+History\+Buffer\+::history\+\_\+buffer\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 43 of file History\+Buffer.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_aeb4d2b9c58f06177b0daaf640e2b6c9e}\label{classbfl_1_1HistoryBuffer_aeb4d2b9c58f06177b0daaf640e2b6c9e}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!max\+\_\+window\+\_\+@{max\+\_\+window\+\_\+}}
+\index{max\+\_\+window\+\_\+@{max\+\_\+window\+\_\+}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{max\+\_\+window\+\_\+}{max\_window\_}}
+{\footnotesize\ttfamily const unsigned int bfl\+::\+History\+Buffer\+::max\+\_\+window\+\_\+ = 30\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file History\+Buffer.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1HistoryBuffer_a135dd1829747ba2f414f12fd8282f75a}\label{classbfl_1_1HistoryBuffer_a135dd1829747ba2f414f12fd8282f75a}} 
+\index{bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}!window\+\_\+@{window\+\_\+}}
+\index{window\+\_\+@{window\+\_\+}!bfl\+::\+History\+Buffer@{bfl\+::\+History\+Buffer}}
+\subsubsection{\texorpdfstring{window\+\_\+}{window\_}}
+{\footnotesize\ttfamily unsigned int bfl\+::\+History\+Buffer\+::window\+\_\+ = 5\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 39 of file History\+Buffer.\+h.
+
+
+
+Referenced by get\+History\+Size(), and operator=().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{HistoryBuffer_8h}{History\+Buffer.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/src/\mbox{\hyperlink{HistoryBuffer_8cpp}{History\+Buffer.\+cpp}}\end{DoxyCompactItemize}

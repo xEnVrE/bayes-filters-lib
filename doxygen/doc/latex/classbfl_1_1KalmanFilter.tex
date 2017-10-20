@@ -1,0 +1,277 @@
+\hypertarget{classbfl_1_1KalmanFilter}{}\section{bfl\+:\+:Kalman\+Filter Class Reference}
+\label{classbfl_1_1KalmanFilter}\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+
+
+{\ttfamily \#include $<$Kalman\+Filter.\+h$>$}
+
+
+
+Inheritance diagram for bfl\+:\+:Kalman\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classbfl_1_1KalmanFilter__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbfl_1_1KalmanFilter_aab2cc3677e9fcb19fff16b84c997f30a}{Kalman\+Filter}} ()
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1KalmanFilter_ae400948b72785980cef6fe0794e481fe}{$\sim$\+Kalman\+Filter}} () noexcept
+\item 
+void \mbox{\hyperlink{classbfl_1_1KalmanFilter_a34482fcfad20be0559cea9c060c5f949}{initialization}} () override
+\item 
+void \mbox{\hyperlink{classbfl_1_1KalmanFilter_aac6bd54422cba06e34cb93cb8a659950}{filtering\+Step}} () override
+\item 
+void \mbox{\hyperlink{classbfl_1_1KalmanFilter_a24484fb845495f43628db19062937548}{get\+Result}} () override
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147}{boot}} ()
+\item 
+void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a009cbe5f4bbb16967f6c6ddcaed8fbb1}{run}} ()
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a40372c24fa050eb0274371172df0a244}{wait}} ()
+\item 
+void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a2403c62fbd7bd7f5cda56a84f5f30331}{reset}} ()
+\item 
+void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a6022859aa985474fb997343cc935b11e}{reboot}} ()
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a1dc912d89ee8f96d4f3e8209865c5308}{teardown}} ()
+\item 
+unsigned int \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a8c43b1f3dac30934c0a03de348d4a29d}{get\+Filtering\+Step}} ()
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a5cfecab2c778620e2557237472bb1721}{is\+Running}} ()
+\item 
+virtual bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_ac8a718a614905d89d6a43bbbc70d68b2}{skip}} (const std\+::string \&what\+\_\+step, const bool status)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a5fc12882356f6906b102fbfff2bc4b7c}{run\+Condition}} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file Kalman\+Filter.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1KalmanFilter_aab2cc3677e9fcb19fff16b84c997f30a}\label{classbfl_1_1KalmanFilter_aab2cc3677e9fcb19fff16b84c997f30a}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!Kalman\+Filter@{Kalman\+Filter}}
+\index{Kalman\+Filter@{Kalman\+Filter}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{Kalman\+Filter()}{KalmanFilter()}}
+{\footnotesize\ttfamily Kalman\+Filter\+::\+Kalman\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file Kalman\+Filter.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1KalmanFilter_ae400948b72785980cef6fe0794e481fe}\label{classbfl_1_1KalmanFilter_ae400948b72785980cef6fe0794e481fe}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!````~Kalman\+Filter@{$\sim$\+Kalman\+Filter}}
+\index{````~Kalman\+Filter@{$\sim$\+Kalman\+Filter}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{$\sim$\+Kalman\+Filter()}{~KalmanFilter()}}
+{\footnotesize\ttfamily Kalman\+Filter\+::$\sim$\+Kalman\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 9 of file Kalman\+Filter.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147}\label{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!boot@{boot}}
+\index{boot@{boot}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{boot()}{boot()}}
+{\footnotesize\ttfamily bool Filtering\+Algorithm\+::boot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 8 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::filtering\+\_\+thread\+\_\+, and bfl\+::\+Filtering\+Algorithm\+::filtering\+Recursion().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbfl_1_1KalmanFilter_aac6bd54422cba06e34cb93cb8a659950}\label{classbfl_1_1KalmanFilter_aac6bd54422cba06e34cb93cb8a659950}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!filtering\+Step@{filtering\+Step}}
+\index{filtering\+Step@{filtering\+Step}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{filtering\+Step()}{filteringStep()}}
+{\footnotesize\ttfamily void Kalman\+Filter\+::filtering\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_ab3bceb43b5810a4bf1da884b8a0b145a}{bfl\+::\+Filtering\+Algorithm}}.
+
+
+
+Definition at line 15 of file Kalman\+Filter.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a8c43b1f3dac30934c0a03de348d4a29d}\label{classbfl_1_1FilteringAlgorithm_a8c43b1f3dac30934c0a03de348d4a29d}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!get\+Filtering\+Step@{get\+Filtering\+Step}}
+\index{get\+Filtering\+Step@{get\+Filtering\+Step}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{get\+Filtering\+Step()}{getFilteringStep()}}
+{\footnotesize\ttfamily unsigned int Filtering\+Algorithm\+::get\+Filtering\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 86 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::filtering\+\_\+step\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1KalmanFilter_a24484fb845495f43628db19062937548}\label{classbfl_1_1KalmanFilter_a24484fb845495f43628db19062937548}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!get\+Result@{get\+Result}}
+\index{get\+Result@{get\+Result}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{get\+Result()}{getResult()}}
+{\footnotesize\ttfamily void Kalman\+Filter\+::get\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_acdfebf68405a427491e4dd9d020ae09b}{bfl\+::\+Filtering\+Algorithm}}.
+
+
+
+Definition at line 18 of file Kalman\+Filter.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1KalmanFilter_a34482fcfad20be0559cea9c060c5f949}\label{classbfl_1_1KalmanFilter_a34482fcfad20be0559cea9c060c5f949}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!initialization@{initialization}}
+\index{initialization@{initialization}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{initialization()}{initialization()}}
+{\footnotesize\ttfamily void Kalman\+Filter\+::initialization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_af2a072aa51407fe5544bdbb7ce466e2a}{bfl\+::\+Filtering\+Algorithm}}.
+
+
+
+Definition at line 12 of file Kalman\+Filter.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a5cfecab2c778620e2557237472bb1721}\label{classbfl_1_1FilteringAlgorithm_a5cfecab2c778620e2557237472bb1721}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!is\+Running@{is\+Running}}
+\index{is\+Running@{is\+Running}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{is\+Running()}{isRunning()}}
+{\footnotesize\ttfamily bool Filtering\+Algorithm\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 92 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::run\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a6022859aa985474fb997343cc935b11e}\label{classbfl_1_1FilteringAlgorithm_a6022859aa985474fb997343cc935b11e}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!reboot@{reboot}}
+\index{reboot@{reboot}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{reboot()}{reboot()}}
+{\footnotesize\ttfamily void Filtering\+Algorithm\+::reboot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 66 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::cv\+\_\+run\+\_\+, bfl\+::\+Filtering\+Algorithm\+::mtx\+\_\+run\+\_\+, bfl\+::\+Filtering\+Algorithm\+::reset\+\_\+, and bfl\+::\+Filtering\+Algorithm\+::run\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a2403c62fbd7bd7f5cda56a84f5f30331}\label{classbfl_1_1FilteringAlgorithm_a2403c62fbd7bd7f5cda56a84f5f30331}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!reset@{reset}}
+\index{reset@{reset}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Filtering\+Algorithm\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 60 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::reset\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a009cbe5f4bbb16967f6c6ddcaed8fbb1}\label{classbfl_1_1FilteringAlgorithm_a009cbe5f4bbb16967f6c6ddcaed8fbb1}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!run@{run}}
+\index{run@{run}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Filtering\+Algorithm\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 26 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::cv\+\_\+run\+\_\+, bfl\+::\+Filtering\+Algorithm\+::mtx\+\_\+run\+\_\+, and bfl\+::\+Filtering\+Algorithm\+::run\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a5fc12882356f6906b102fbfff2bc4b7c}\label{classbfl_1_1FilteringAlgorithm_a5fc12882356f6906b102fbfff2bc4b7c}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!run\+Condition@{run\+Condition}}
+\index{run\+Condition@{run\+Condition}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{run\+Condition()}{runCondition()}}
+{\footnotesize\ttfamily virtual bool bfl\+::\+Filtering\+Algorithm\+::run\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1SIS_afb7cff1f7dae80e0e4ca84c925ca3ac3}{bfl\+::\+S\+IS}}.
+
+
+
+Referenced by bfl\+::\+Filtering\+Algorithm\+::filtering\+Recursion().
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_ac8a718a614905d89d6a43bbbc70d68b2}\label{classbfl_1_1FilteringAlgorithm_ac8a718a614905d89d6a43bbbc70d68b2}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!skip@{skip}}
+\index{skip@{skip}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{skip()}{skip()}}
+{\footnotesize\ttfamily virtual bool bfl\+::\+Filtering\+Algorithm\+::skip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{what\+\_\+step,  }\item[{const bool}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1ParticleFilter_a2d7a5e7aaad179037273d35be229056d}{bfl\+::\+Particle\+Filter}}, and \mbox{\hyperlink{classbfl_1_1VisualParticleFilter_aab68e455c645bc1b7b8c3c2b476c2f9c}{bfl\+::\+Visual\+Particle\+Filter}}.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a1dc912d89ee8f96d4f3e8209865c5308}\label{classbfl_1_1FilteringAlgorithm_a1dc912d89ee8f96d4f3e8209865c5308}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!teardown@{teardown}}
+\index{teardown@{teardown}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{teardown()}{teardown()}}
+{\footnotesize\ttfamily bool Filtering\+Algorithm\+::teardown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 75 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::teardown\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a40372c24fa050eb0274371172df0a244}\label{classbfl_1_1FilteringAlgorithm_a40372c24fa050eb0274371172df0a244}} 
+\index{bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}!wait@{wait}}
+\index{wait@{wait}!bfl\+::\+Kalman\+Filter@{bfl\+::\+Kalman\+Filter}}
+\subsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily bool Filtering\+Algorithm\+::wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 34 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References bfl\+::\+Filtering\+Algorithm\+::filtering\+\_\+thread\+\_\+.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{KalmanFilter_8h}{Kalman\+Filter.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/src/\mbox{\hyperlink{KalmanFilter_8cpp}{Kalman\+Filter.\+cpp}}\end{DoxyCompactItemize}

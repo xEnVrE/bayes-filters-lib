@@ -1,0 +1,63 @@
+\hypertarget{classbfl_1_1ExogenousModel}{}\section{bfl\+:\+:Exogenous\+Model Class Reference}
+\label{classbfl_1_1ExogenousModel}\index{bfl\+::\+Exogenous\+Model@{bfl\+::\+Exogenous\+Model}}
+
+
+{\ttfamily \#include $<$Exogenous\+Model.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1ExogenousModel_a5d49c4215e05363a149e794bd69e7f1a}{$\sim$\+Exogenous\+Model}} () noexcept
+\item 
+virtual void \mbox{\hyperlink{classbfl_1_1ExogenousModel_a68255da5e3cdde0c57effd3b8e68cadb}{propagate}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&cur\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ prop\+\_\+states)=0
+\item 
+virtual Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1ExogenousModel_a3b4ab9b6b19e7e8552101cc8f8bf06f2}{get\+Exogenous\+Matrix}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classbfl_1_1ExogenousModel_a240432e20121e83787c83de64360a58a}{set\+Property}} (const std\+::string \&property)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file Exogenous\+Model.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1ExogenousModel_a5d49c4215e05363a149e794bd69e7f1a}\label{classbfl_1_1ExogenousModel_a5d49c4215e05363a149e794bd69e7f1a}} 
+\index{bfl\+::\+Exogenous\+Model@{bfl\+::\+Exogenous\+Model}!````~Exogenous\+Model@{$\sim$\+Exogenous\+Model}}
+\index{````~Exogenous\+Model@{$\sim$\+Exogenous\+Model}!bfl\+::\+Exogenous\+Model@{bfl\+::\+Exogenous\+Model}}
+\subsubsection{\texorpdfstring{$\sim$\+Exogenous\+Model()}{~ExogenousModel()}}
+{\footnotesize\ttfamily virtual bfl\+::\+Exogenous\+Model\+::$\sim$\+Exogenous\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 14 of file Exogenous\+Model.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1ExogenousModel_a3b4ab9b6b19e7e8552101cc8f8bf06f2}\label{classbfl_1_1ExogenousModel_a3b4ab9b6b19e7e8552101cc8f8bf06f2}} 
+\index{bfl\+::\+Exogenous\+Model@{bfl\+::\+Exogenous\+Model}!get\+Exogenous\+Matrix@{get\+Exogenous\+Matrix}}
+\index{get\+Exogenous\+Matrix@{get\+Exogenous\+Matrix}!bfl\+::\+Exogenous\+Model@{bfl\+::\+Exogenous\+Model}}
+\subsubsection{\texorpdfstring{get\+Exogenous\+Matrix()}{getExogenousMatrix()}}
+{\footnotesize\ttfamily virtual Eigen\+::\+Matrix\+Xf bfl\+::\+Exogenous\+Model\+::get\+Exogenous\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classbfl_1_1ExogenousModel_a68255da5e3cdde0c57effd3b8e68cadb}\label{classbfl_1_1ExogenousModel_a68255da5e3cdde0c57effd3b8e68cadb}} 
+\index{bfl\+::\+Exogenous\+Model@{bfl\+::\+Exogenous\+Model}!propagate@{propagate}}
+\index{propagate@{propagate}!bfl\+::\+Exogenous\+Model@{bfl\+::\+Exogenous\+Model}}
+\subsubsection{\texorpdfstring{propagate()}{propagate()}}
+{\footnotesize\ttfamily virtual void bfl\+::\+Exogenous\+Model\+::propagate (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{cur\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{prop\+\_\+states }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classbfl_1_1ExogenousModel_a240432e20121e83787c83de64360a58a}\label{classbfl_1_1ExogenousModel_a240432e20121e83787c83de64360a58a}} 
+\index{bfl\+::\+Exogenous\+Model@{bfl\+::\+Exogenous\+Model}!set\+Property@{set\+Property}}
+\index{set\+Property@{set\+Property}!bfl\+::\+Exogenous\+Model@{bfl\+::\+Exogenous\+Model}}
+\subsubsection{\texorpdfstring{set\+Property()}{setProperty()}}
+{\footnotesize\ttfamily virtual bool bfl\+::\+Exogenous\+Model\+::set\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{ExogenousModel_8h}{Exogenous\+Model.\+h}}\end{DoxyCompactItemize}

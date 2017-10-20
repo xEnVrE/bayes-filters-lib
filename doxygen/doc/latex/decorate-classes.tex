@@ -1,0 +1,168 @@
+The \href{https://en.wikipedia.org/wiki/Decorator_pattern}{\tt {\itshape Decroator patter}} is extensively used within the library to dynamically add new functionality to other classes. This is particularly useful to design flexible and reusable object-\/oriented software providing an alternative to subclassing. In particular, when there are {\bfseries several independent ways of extending functionality} and it is difficult to predict, at design time, what combinations of such functionalities will be needed, subclassing would require to make every possible (or most of the) combination of such functionalities, while {\bfseries decorators provide much more flexibility combining functionalities on a per-\/use basis and foster code reuse}.~\newline
+
+
+The following snippet code shows how to decorate filtering classes like \mbox{\hyperlink{classbfl_1_1StateModel}{State\+Model}}, \mbox{\hyperlink{classbfl_1_1ObservationModel}{Observation\+Model}}, \mbox{\hyperlink{classbfl_1_1PFPrediction}{P\+F\+Prediction}} and \mbox{\hyperlink{classbfl_1_1PFCorrection}{P\+F\+Correction}}.
+
+
+\begin{DoxyCodeInclude}
+1 \textcolor{preprocessor}{#include <chrono>}
+2 \textcolor{preprocessor}{#include <iostream>}
+3 \textcolor{preprocessor}{#include <memory>}
+4 
+5 \textcolor{preprocessor}{#include <\mbox{\hyperlink{DrawParticles_8h}{BayesFilters/DrawParticles.h}}>}
+6 \textcolor{preprocessor}{#include <\mbox{\hyperlink{LinearSensor_8h}{BayesFilters/LinearSensor.h}}>}
+7 \textcolor{preprocessor}{#include <\mbox{\hyperlink{ObservationModelDecorator_8h}{BayesFilters/ObservationModelDecorator.h}}>}
+8 \textcolor{preprocessor}{#include <\mbox{\hyperlink{PFCorrectionDecorator_8h}{BayesFilters/PFCorrectionDecorator.h}}>}
+9 \textcolor{preprocessor}{#include <\mbox{\hyperlink{PFPredictionDecorator_8h}{BayesFilters/PFPredictionDecorator.h}}>}
+10 \textcolor{preprocessor}{#include <\mbox{\hyperlink{Resampling_8h}{BayesFilters/Resampling.h}}>}
+11 \textcolor{preprocessor}{#include <\mbox{\hyperlink{StateModelDecorator_8h}{BayesFilters/StateModelDecorator.h}}>}
+12 \textcolor{preprocessor}{#include <\mbox{\hyperlink{SIS_8h}{BayesFilters/SIS.h}}>}
+13 \textcolor{preprocessor}{#include <\mbox{\hyperlink{UpdateParticles_8h}{BayesFilters/UpdateParticles.h}}>}
+14 \textcolor{preprocessor}{#include <\mbox{\hyperlink{WhiteNoiseAcceleration_8h}{BayesFilters/WhiteNoiseAcceleration.h}}>}
+15 
+16 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacebfl}{bfl}};
+17 
+18 
+19 \textcolor{keyword}{class }DecoratedWNA : \textcolor{keyword}{public} \mbox{\hyperlink{classbfl_1_1StateModelDecorator}{StateModelDecorator}}
+20 \{
+21 \textcolor{keyword}{public}:
+22     DecoratedWNA(std::unique\_ptr<StateModel> state\_model) noexcept :
+23         \mbox{\hyperlink{classbfl_1_1StateModelDecorator}{StateModelDecorator}}(std::move(state\_model)) \{ \};
+24 
+25 
+26     \textcolor{keywordtype}{void} motion(\textcolor{keyword}{const} Eigen::Ref<const Eigen::MatrixXf>& cur\_states, Eigen::Ref<Eigen::MatrixXf> mot\_states
+      )\textcolor{keyword}{ override}
+27 \textcolor{keyword}{    }\{
+28         std::cout << \textcolor{stringliteral}{"Decorator: DecoratedWNA::motion()."} << std::endl;
+29 
+30         \mbox{\hyperlink{classbfl_1_1StateModelDecorator_a0a645d8be4085ec13d9715a41c84a9b3}{StateModelDecorator::motion}}(cur\_states, mot\_states);
+31     \}
+32 \};
+33 
+34 
+35 \textcolor{keyword}{class }DecoratedLinearSensor : \textcolor{keyword}{public} \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator}{ObservationModelDecorator}}
+36 \{
+37 \textcolor{keyword}{public}:
+38     DecoratedLinearSensor(std::unique\_ptr<ObservationModel> observation\_model) noexcept :
+39         \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator}{ObservationModelDecorator}}(std::move(observation\_model)) \{ \}
+40 
+41 
+42     \textcolor{keywordtype}{void} measure(\textcolor{keyword}{const} Eigen::Ref<const Eigen::MatrixXf>& cur\_states, Eigen::Ref<Eigen::MatrixXf> 
+      measurements)\textcolor{keyword}{ override}
+43 \textcolor{keyword}{    }\{
+44         std::cout << \textcolor{stringliteral}{"Decorator: DecoratedLinearSensor::measure()."} << std::endl;
+45 
+46         \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_a6b0da9bcfe0fd1beb119c79f83f8cc9a}{ObservationModelDecorator::measure}}(cur\_states, measurements);
+47     \}
+48 \};
+49 
+50 
+51 \textcolor{keyword}{class }DecoratedDrawParticles : \textcolor{keyword}{public} \mbox{\hyperlink{classbfl_1_1PFPredictionDecorator}{PFPredictionDecorator}}
+52 \{
+53 \textcolor{keyword}{public}:
+54     DecoratedDrawParticles(std::unique\_ptr<PFPrediction> prediction) noexcept :
+55         \mbox{\hyperlink{classbfl_1_1PFPredictionDecorator}{PFPredictionDecorator}}(std::move(prediction)) \{ \}
+56 
+57 \textcolor{keyword}{protected}:
+58     \textcolor{keywordtype}{void} predictStep(\textcolor{keyword}{const} Eigen::Ref<const Eigen::MatrixXf>& prev\_states, \textcolor{keyword}{const} Eigen::Ref<const
+       Eigen::VectorXf>& prev\_weights,
+59                      Eigen::Ref<Eigen::MatrixXf> pred\_states, Eigen::Ref<Eigen::VectorXf> pred\_weights)\textcolor{keyword}{
+       override}
+60 \textcolor{keyword}{    }\{
+61         std::cout << \textcolor{stringliteral}{"Decorator: DecoratedDrawParticles::predictStep()."} << std::endl;
+62 
+63         \mbox{\hyperlink{classbfl_1_1PFPredictionDecorator_af005f96b493e9ba72058613bbc7a8e43}{PFPredictionDecorator::predictStep}}(prev\_states, prev\_weights, 
+      pred\_states, pred\_weights);
+64     \}
+65 \};
+66 
+67 
+68 \textcolor{keyword}{class }DecoratedUpdateParticles : \textcolor{keyword}{public} \mbox{\hyperlink{classbfl_1_1PFCorrectionDecorator}{PFCorrectionDecorator}}
+69 \{
+70 \textcolor{keyword}{public}:
+71     DecoratedUpdateParticles(std::unique\_ptr<PFCorrection> correction) noexcept :
+72         \mbox{\hyperlink{classbfl_1_1PFCorrectionDecorator}{PFCorrectionDecorator}}(std::move(correction)) \{ \}
+73 
+74 \textcolor{keyword}{protected}:
+75     \textcolor{keywordtype}{void} correctStep(\textcolor{keyword}{const} Eigen::Ref<const Eigen::MatrixXf>& pred\_states, \textcolor{keyword}{const} Eigen::Ref<const
+       Eigen::VectorXf>& pred\_weights, \textcolor{keyword}{const} Eigen::Ref<const Eigen::MatrixXf>& measurements,
+76                      Eigen::Ref<Eigen::MatrixXf> cor\_states, Eigen::Ref<Eigen::VectorXf> cor\_weights)\textcolor{keyword}{
+       override}
+77 \textcolor{keyword}{    }\{
+78         std::cout << \textcolor{stringliteral}{"Decorator: DecoratedUpdateParticles::correctStep()."} << std::endl;
+79 
+80         \mbox{\hyperlink{classbfl_1_1PFCorrectionDecorator_abb5ab0ef4245b67be546360a54416498}{PFCorrectionDecorator::correctStep}}(pred\_states, pred\_weights, 
+      measurements, cor\_states, cor\_weights);
+81     \}
+82 \};
+83 
+84 
+85 \textcolor{keywordtype}{int} main()
+86 \{
+87     \textcolor{comment}{/* Initialize a white noise acceleration motion model */}
+88     std::unique\_ptr<WhiteNoiseAcceleration> wna(\textcolor{keyword}{new} \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{WhiteNoiseAcceleration}}());
+89 
+90     \textcolor{comment}{/* Initialize a white noise acceleration decorator */}
+91     std::unique\_ptr<DecoratedWNA> decorated\_wna(\textcolor{keyword}{new} DecoratedWNA(std::move(wna)));
+92 
+93 
+94     \textcolor{comment}{/* Pass ownership of the motion model to the prediction step */}
+95     std::unique\_ptr<DrawParticles> pf\_prediction(\textcolor{keyword}{new} \mbox{\hyperlink{classbfl_1_1DrawParticles}{DrawParticles}}());
+96     pf\_prediction->setStateModel(std::move(decorated\_wna));
+97 
+98     \textcolor{comment}{/* Initialize a draw particle decorator */}
+99     std::unique\_ptr<DecoratedDrawParticles> decorated\_prediction(\textcolor{keyword}{new} DecoratedDrawParticles(std::move(
+      pf\_prediction)));
+100 
+101 
+102     \textcolor{comment}{/* Initialize a linear sensor (provides direct observation of the state) */}
+103     std::unique\_ptr<LinearSensor> lin\_sense(\textcolor{keyword}{new} \mbox{\hyperlink{classbfl_1_1LinearSensor}{LinearSensor}}());
+104 
+105     \textcolor{comment}{/* Initialize a white noise acceleration decorator */}
+106     std::unique\_ptr<DecoratedLinearSensor> decorated\_linearsensor(\textcolor{keyword}{new} DecoratedLinearSensor(std::move(
+      lin\_sense)));
+107 
+108 
+109     \textcolor{comment}{/* Pass ownership of the observation model (the sensor) to the prediction step */}
+110     std::unique\_ptr<UpdateParticles> pf\_correction(\textcolor{keyword}{new} \mbox{\hyperlink{classbfl_1_1UpdateParticles}{UpdateParticles}}());
+111     pf\_correction->setObservationModel(std::move(decorated\_linearsensor));
+112 
+113     \textcolor{comment}{/* Initialize a update particle decorator */}
+114     std::unique\_ptr<DecoratedUpdateParticles> decorated\_correction(\textcolor{keyword}{new} DecoratedUpdateParticles(std::move(
+      pf\_correction)));
+115 
+116 
+117     \textcolor{comment}{/* Initialize a resampling algorithm */}
+118     std::unique\_ptr<Resampling> resampling(\textcolor{keyword}{new} \mbox{\hyperlink{classbfl_1_1Resampling}{Resampling}}());
+119 
+120 
+121     std::cout << \textcolor{stringliteral}{"Constructing SIS particle filter..."} << std::flush;
+122     \mbox{\hyperlink{classbfl_1_1SIS}{SIS}} sis\_pf;
+123     sis\_pf.\mbox{\hyperlink{classbfl_1_1ParticleFilter_a213811368143c1f498c87be70cf02379}{setPrediction}}(std::move(decorated\_prediction));
+124     sis\_pf.\mbox{\hyperlink{classbfl_1_1ParticleFilter_a3d2935addf4481325a3fe8b99fe4d07a}{setCorrection}}(std::move(decorated\_correction));
+125     sis\_pf.\mbox{\hyperlink{classbfl_1_1ParticleFilter_ad1618ed06b6e6e143e309e2267b970ee}{setResampling}}(std::move(resampling));
+126     std::cout << \textcolor{stringliteral}{"done!"} << std::endl;
+127 
+128 
+129     std::cout << \textcolor{stringliteral}{"Preparing SIS particle filter..."} << std::flush;
+130     sis\_pf.\mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147}{boot}}();
+131     std::cout << \textcolor{stringliteral}{"completed!"} << std::endl;
+132 
+133 
+134     std::cout << \textcolor{stringliteral}{"Running SIS particle filter..."} << std::flush;
+135     sis\_pf.\mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a009cbe5f4bbb16967f6c6ddcaed8fbb1}{run}}();
+136     std::cout << \textcolor{stringliteral}{"waiting..."} << std::flush;
+137     \textcolor{keywordflow}{if} (!sis\_pf.\mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a40372c24fa050eb0274371172df0a244}{wait}}())
+138         \textcolor{keywordflow}{return} EXIT\_FAILURE;
+139     std::cout << \textcolor{stringliteral}{"completed!"} << std::endl;
+140 
+141 
+142     std::cout << \textcolor{stringliteral}{"Storing filtering results..."} << std::flush;
+143     sis\_pf.\mbox{\hyperlink{classbfl_1_1SIS_a059da4c932379643ff7005fe4d0fda89}{getResult}}();
+144     std::cout << \textcolor{stringliteral}{"done!"} << std::endl;
+145 
+146 
+147     \textcolor{keywordflow}{return} EXIT\_SUCCESS;
+148 \}
+\end{DoxyCodeInclude}
+ 

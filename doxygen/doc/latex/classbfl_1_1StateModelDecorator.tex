@@ -1,0 +1,187 @@
+\hypertarget{classbfl_1_1StateModelDecorator}{}\section{bfl\+:\+:State\+Model\+Decorator Class Reference}
+\label{classbfl_1_1StateModelDecorator}\index{bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}}
+
+
+{\ttfamily \#include $<$State\+Model\+Decorator.\+h$>$}
+
+
+
+Inheritance diagram for bfl\+:\+:State\+Model\+Decorator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classbfl_1_1StateModelDecorator__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbfl_1_1StateModelDecorator_a3780afac5fc0e542cf4517c2057f9957}{propagate}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&cur\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ prop\+\_\+states) override
+\item 
+void \mbox{\hyperlink{classbfl_1_1StateModelDecorator_a0a645d8be4085ec13d9715a41c84a9b3}{motion}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&cur\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ mot\+\_\+states) override
+\item 
+Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1StateModelDecorator_a3e29bad844203ffc3fe0c2bc445377e5}{get\+Noise\+Sample}} (const int num) override
+\item 
+Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1StateModelDecorator_a1c64652f48c9463a2fa9b9e85d5ef0cf}{get\+Noise\+Covariance\+Matrix}} () override
+\item 
+bool \mbox{\hyperlink{classbfl_1_1StateModelDecorator_ad292f3b665c1adf20a1f32dc8a065fec}{set\+Property}} (const std\+::string \&property) override
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbfl_1_1StateModelDecorator_aeb562beb07afb133ca101245f7f16af8}{State\+Model\+Decorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1StateModel}{State\+Model}} $>$ state\+\_\+model) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1StateModelDecorator_a29a4fd2af9aa020b85cc73b672c87bfd}{State\+Model\+Decorator}} (\mbox{\hyperlink{classbfl_1_1StateModelDecorator}{State\+Model\+Decorator}} \&\&state\+\_\+model) noexcept
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1StateModelDecorator_a5bcacbbecd5354161dee32eaaec8bfae}{$\sim$\+State\+Model\+Decorator}} () noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1StateModelDecorator}{State\+Model\+Decorator}} \& \mbox{\hyperlink{classbfl_1_1StateModelDecorator_a5f7ab9c56ebbf7f653014933d688339b}{operator=}} (\mbox{\hyperlink{classbfl_1_1StateModelDecorator}{State\+Model\+Decorator}} \&\&state\+\_\+model) noexcept
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1StateModel}{State\+Model}} $>$ \mbox{\hyperlink{classbfl_1_1StateModelDecorator_acd7df6c203047dfa16ef78dd34c1b769}{state\+\_\+model\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file State\+Model\+Decorator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1StateModelDecorator_aeb562beb07afb133ca101245f7f16af8}\label{classbfl_1_1StateModelDecorator_aeb562beb07afb133ca101245f7f16af8}} 
+\index{bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}!State\+Model\+Decorator@{State\+Model\+Decorator}}
+\index{State\+Model\+Decorator@{State\+Model\+Decorator}!bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{State\+Model\+Decorator()}{StateModelDecorator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily State\+Model\+Decorator\+::\+State\+Model\+Decorator (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1StateModel}{State\+Model}} $>$}]{state\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 7 of file State\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1StateModelDecorator_a29a4fd2af9aa020b85cc73b672c87bfd}\label{classbfl_1_1StateModelDecorator_a29a4fd2af9aa020b85cc73b672c87bfd}} 
+\index{bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}!State\+Model\+Decorator@{State\+Model\+Decorator}}
+\index{State\+Model\+Decorator@{State\+Model\+Decorator}!bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{State\+Model\+Decorator()}{StateModelDecorator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily State\+Model\+Decorator\+::\+State\+Model\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1StateModelDecorator}{State\+Model\+Decorator}} \&\&}]{state\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 11 of file State\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1StateModelDecorator_a5bcacbbecd5354161dee32eaaec8bfae}\label{classbfl_1_1StateModelDecorator_a5bcacbbecd5354161dee32eaaec8bfae}} 
+\index{bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}!````~State\+Model\+Decorator@{$\sim$\+State\+Model\+Decorator}}
+\index{````~State\+Model\+Decorator@{$\sim$\+State\+Model\+Decorator}!bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{$\sim$\+State\+Model\+Decorator()}{~StateModelDecorator()}}
+{\footnotesize\ttfamily State\+Model\+Decorator\+::$\sim$\+State\+Model\+Decorator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 15 of file State\+Model\+Decorator.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1StateModelDecorator_a1c64652f48c9463a2fa9b9e85d5ef0cf}\label{classbfl_1_1StateModelDecorator_a1c64652f48c9463a2fa9b9e85d5ef0cf}} 
+\index{bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}!get\+Noise\+Covariance\+Matrix@{get\+Noise\+Covariance\+Matrix}}
+\index{get\+Noise\+Covariance\+Matrix@{get\+Noise\+Covariance\+Matrix}!bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{get\+Noise\+Covariance\+Matrix()}{getNoiseCovarianceMatrix()}}
+{\footnotesize\ttfamily Matrix\+Xf State\+Model\+Decorator\+::get\+Noise\+Covariance\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1StateModel_a606efee8bf37606833c1ac75f2fbb357}{bfl\+::\+State\+Model}}.
+
+
+
+Definition at line 44 of file State\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1StateModelDecorator_a3e29bad844203ffc3fe0c2bc445377e5}\label{classbfl_1_1StateModelDecorator_a3e29bad844203ffc3fe0c2bc445377e5}} 
+\index{bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}!get\+Noise\+Sample@{get\+Noise\+Sample}}
+\index{get\+Noise\+Sample@{get\+Noise\+Sample}!bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{get\+Noise\+Sample()}{getNoiseSample()}}
+{\footnotesize\ttfamily Matrix\+Xf State\+Model\+Decorator\+::get\+Noise\+Sample (\begin{DoxyParamCaption}\item[{const int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1StateModel_ab1f0aa4c804b7de86c68294de3df76ee}{bfl\+::\+State\+Model}}.
+
+
+
+Definition at line 38 of file State\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1StateModelDecorator_a0a645d8be4085ec13d9715a41c84a9b3}\label{classbfl_1_1StateModelDecorator_a0a645d8be4085ec13d9715a41c84a9b3}} 
+\index{bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}!motion@{motion}}
+\index{motion@{motion}!bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{motion()}{motion()}}
+{\footnotesize\ttfamily void State\+Model\+Decorator\+::motion (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{cur\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{mot\+\_\+states }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1StateModel_a3601485697ae3445ec7ca753dbeb035c}{bfl\+::\+State\+Model}}.
+
+
+
+Definition at line 32 of file State\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1StateModelDecorator_a5f7ab9c56ebbf7f653014933d688339b}\label{classbfl_1_1StateModelDecorator_a5f7ab9c56ebbf7f653014933d688339b}} 
+\index{bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}!operator=@{operator=}}
+\index{operator=@{operator=}!bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1StateModelDecorator}{State\+Model\+Decorator}} \& State\+Model\+Decorator\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1StateModelDecorator}{State\+Model\+Decorator}} \&\&}]{state\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 18 of file State\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1StateModelDecorator_a3780afac5fc0e542cf4517c2057f9957}\label{classbfl_1_1StateModelDecorator_a3780afac5fc0e542cf4517c2057f9957}} 
+\index{bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}!propagate@{propagate}}
+\index{propagate@{propagate}!bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{propagate()}{propagate()}}
+{\footnotesize\ttfamily void State\+Model\+Decorator\+::propagate (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{cur\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{prop\+\_\+states }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1StateModel_a47a625abb7df9b7afa689ccb9aa11aee}{bfl\+::\+State\+Model}}.
+
+
+
+Definition at line 26 of file State\+Model\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1StateModelDecorator_ad292f3b665c1adf20a1f32dc8a065fec}\label{classbfl_1_1StateModelDecorator_ad292f3b665c1adf20a1f32dc8a065fec}} 
+\index{bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}!set\+Property@{set\+Property}}
+\index{set\+Property@{set\+Property}!bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{set\+Property()}{setProperty()}}
+{\footnotesize\ttfamily bool State\+Model\+Decorator\+::set\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1StateModel_ac86dcdad8f0bbfab39a23e592779feaa}{bfl\+::\+State\+Model}}.
+
+
+
+Definition at line 50 of file State\+Model\+Decorator.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbfl_1_1StateModelDecorator_acd7df6c203047dfa16ef78dd34c1b769}\label{classbfl_1_1StateModelDecorator_acd7df6c203047dfa16ef78dd34c1b769}} 
+\index{bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}!state\+\_\+model\+\_\+@{state\+\_\+model\+\_\+}}
+\index{state\+\_\+model\+\_\+@{state\+\_\+model\+\_\+}!bfl\+::\+State\+Model\+Decorator@{bfl\+::\+State\+Model\+Decorator}}
+\subsubsection{\texorpdfstring{state\+\_\+model\+\_\+}{state\_model\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classbfl_1_1StateModel}{State\+Model}}$>$ bfl\+::\+State\+Model\+Decorator\+::state\+\_\+model\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file State\+Model\+Decorator.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{StateModelDecorator_8h}{State\+Model\+Decorator.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/src/\mbox{\hyperlink{StateModelDecorator_8cpp}{State\+Model\+Decorator.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,235 @@
+\hypertarget{classbfl_1_1PFPredictionDecorator}{}\section{bfl\+:\+:P\+F\+Prediction\+Decorator Class Reference}
+\label{classbfl_1_1PFPredictionDecorator}\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+
+
+{\ttfamily \#include $<$P\+F\+Prediction\+Decorator.\+h$>$}
+
+
+
+Inheritance diagram for bfl\+:\+:P\+F\+Prediction\+Decorator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classbfl_1_1PFPredictionDecorator__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbfl_1_1PFPrediction_a54986f12509d3d997232c4e926420c90}{predict}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&prev\+\_\+states, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&prev\+\_\+weights, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ pred\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$ pred\+\_\+weights)
+\item 
+bool \mbox{\hyperlink{classbfl_1_1PFPrediction_a364cc35a151e5298c4024d681f3e04d9}{skip}} (const std\+::string \&what\+\_\+step, const bool status)
+\item 
+bool \mbox{\hyperlink{classbfl_1_1PFPrediction_a323ca5612dd7ad924fd448a629359ad2}{get\+Skip\+State}} ()
+\item 
+bool \mbox{\hyperlink{classbfl_1_1PFPrediction_a432b8e84dbf00432158aa82312386d63}{get\+Skip\+Exogenous}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbfl_1_1PFPredictionDecorator_ab2b0e6cdba28a84750be81633a1a0d17}{P\+F\+Prediction\+Decorator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1PFPrediction}{P\+F\+Prediction}} $>$ prediction) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1PFPredictionDecorator_a1d89c07579cf675ad4850716445e165e}{P\+F\+Prediction\+Decorator}} (\mbox{\hyperlink{classbfl_1_1PFPredictionDecorator}{P\+F\+Prediction\+Decorator}} \&\&prediction) noexcept
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1PFPredictionDecorator_ae811b419d4ca5961f7e91528ffd44b3b}{$\sim$\+P\+F\+Prediction\+Decorator}} () noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1PFPredictionDecorator}{P\+F\+Prediction\+Decorator}} \& \mbox{\hyperlink{classbfl_1_1PFPredictionDecorator_ac5dcaf62987b0cd48f568373dcd71655}{operator=}} (\mbox{\hyperlink{classbfl_1_1PFPredictionDecorator}{P\+F\+Prediction\+Decorator}} \&\&prediction) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1StateModel}{State\+Model}} \& \mbox{\hyperlink{classbfl_1_1PFPredictionDecorator_afad4d92333c84f909c41bd589b839113}{get\+State\+Model}} () override
+\item 
+void \mbox{\hyperlink{classbfl_1_1PFPredictionDecorator_ad269dfbdecf19d67717a8bc44f0bd286}{set\+State\+Model}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1StateModel}{State\+Model}} $>$ state\+\_\+model) override
+\item 
+\mbox{\hyperlink{classbfl_1_1ExogenousModel}{Exogenous\+Model}} \& \mbox{\hyperlink{classbfl_1_1PFPredictionDecorator_a8d25d3765f642f7de1af897d088d8da9}{get\+Exogenous\+Model}} () override
+\item 
+void \mbox{\hyperlink{classbfl_1_1PFPredictionDecorator_a3c38ae386456ecd0fd1b609b381395ec}{set\+Exogenous\+Model}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1ExogenousModel}{Exogenous\+Model}} $>$ exogenous\+\_\+model) override
+\item 
+void \mbox{\hyperlink{classbfl_1_1PFPredictionDecorator_af005f96b493e9ba72058613bbc7a8e43}{predict\+Step}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&prev\+\_\+states, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&prev\+\_\+weights, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ pred\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$ pred\+\_\+weights) override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1PFPrediction}{P\+F\+Prediction}} $>$ \mbox{\hyperlink{classbfl_1_1PFPredictionDecorator_a95f122f6fb7e69c436ae221c40d1c515}{prediction\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file P\+F\+Prediction\+Decorator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1PFPredictionDecorator_ab2b0e6cdba28a84750be81633a1a0d17}\label{classbfl_1_1PFPredictionDecorator_ab2b0e6cdba28a84750be81633a1a0d17}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!P\+F\+Prediction\+Decorator@{P\+F\+Prediction\+Decorator}}
+\index{P\+F\+Prediction\+Decorator@{P\+F\+Prediction\+Decorator}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{P\+F\+Prediction\+Decorator()}{PFPredictionDecorator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily P\+F\+Prediction\+Decorator\+::\+P\+F\+Prediction\+Decorator (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1PFPrediction}{P\+F\+Prediction}} $>$}]{prediction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 9 of file P\+F\+Prediction\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFPredictionDecorator_a1d89c07579cf675ad4850716445e165e}\label{classbfl_1_1PFPredictionDecorator_a1d89c07579cf675ad4850716445e165e}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!P\+F\+Prediction\+Decorator@{P\+F\+Prediction\+Decorator}}
+\index{P\+F\+Prediction\+Decorator@{P\+F\+Prediction\+Decorator}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{P\+F\+Prediction\+Decorator()}{PFPredictionDecorator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily P\+F\+Prediction\+Decorator\+::\+P\+F\+Prediction\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1PFPredictionDecorator}{P\+F\+Prediction\+Decorator}} \&\&}]{prediction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 13 of file P\+F\+Prediction\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFPredictionDecorator_ae811b419d4ca5961f7e91528ffd44b3b}\label{classbfl_1_1PFPredictionDecorator_ae811b419d4ca5961f7e91528ffd44b3b}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!````~P\+F\+Prediction\+Decorator@{$\sim$\+P\+F\+Prediction\+Decorator}}
+\index{````~P\+F\+Prediction\+Decorator@{$\sim$\+P\+F\+Prediction\+Decorator}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{$\sim$\+P\+F\+Prediction\+Decorator()}{~PFPredictionDecorator()}}
+{\footnotesize\ttfamily P\+F\+Prediction\+Decorator\+::$\sim$\+P\+F\+Prediction\+Decorator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 17 of file P\+F\+Prediction\+Decorator.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1PFPredictionDecorator_a8d25d3765f642f7de1af897d088d8da9}\label{classbfl_1_1PFPredictionDecorator_a8d25d3765f642f7de1af897d088d8da9}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!get\+Exogenous\+Model@{get\+Exogenous\+Model}}
+\index{get\+Exogenous\+Model@{get\+Exogenous\+Model}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{get\+Exogenous\+Model()}{getExogenousModel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1ExogenousModel}{Exogenous\+Model}} \& P\+F\+Prediction\+Decorator\+::get\+Exogenous\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbfl_1_1PFPrediction_aefa127a440649447e8ac659ef65b7a2a}{bfl\+::\+P\+F\+Prediction}}.
+
+
+
+Definition at line 48 of file P\+F\+Prediction\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFPrediction_a432b8e84dbf00432158aa82312386d63}\label{classbfl_1_1PFPrediction_a432b8e84dbf00432158aa82312386d63}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!get\+Skip\+Exogenous@{get\+Skip\+Exogenous}}
+\index{get\+Skip\+Exogenous@{get\+Skip\+Exogenous}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{get\+Skip\+Exogenous()}{getSkipExogenous()}}
+{\footnotesize\ttfamily bool P\+F\+Prediction\+::get\+Skip\+Exogenous (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 59 of file P\+F\+Prediction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFPrediction_a323ca5612dd7ad924fd448a629359ad2}\label{classbfl_1_1PFPrediction_a323ca5612dd7ad924fd448a629359ad2}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!get\+Skip\+State@{get\+Skip\+State}}
+\index{get\+Skip\+State@{get\+Skip\+State}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{get\+Skip\+State()}{getSkipState()}}
+{\footnotesize\ttfamily bool P\+F\+Prediction\+::get\+Skip\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 53 of file P\+F\+Prediction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFPredictionDecorator_afad4d92333c84f909c41bd589b839113}\label{classbfl_1_1PFPredictionDecorator_afad4d92333c84f909c41bd589b839113}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!get\+State\+Model@{get\+State\+Model}}
+\index{get\+State\+Model@{get\+State\+Model}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{get\+State\+Model()}{getStateModel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1StateModel}{State\+Model}} \& P\+F\+Prediction\+Decorator\+::get\+State\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1PFPrediction_a1a0f7a1d66a6849c2de10459c6b8f8ac}{bfl\+::\+P\+F\+Prediction}}.
+
+
+
+Definition at line 36 of file P\+F\+Prediction\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFPredictionDecorator_ac5dcaf62987b0cd48f568373dcd71655}\label{classbfl_1_1PFPredictionDecorator_ac5dcaf62987b0cd48f568373dcd71655}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!operator=@{operator=}}
+\index{operator=@{operator=}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1PFPredictionDecorator}{P\+F\+Prediction\+Decorator}} \& P\+F\+Prediction\+Decorator\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1PFPredictionDecorator}{P\+F\+Prediction\+Decorator}} \&\&}]{prediction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 20 of file P\+F\+Prediction\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFPrediction_a54986f12509d3d997232c4e926420c90}\label{classbfl_1_1PFPrediction_a54986f12509d3d997232c4e926420c90}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!predict@{predict}}
+\index{predict@{predict}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily void P\+F\+Prediction\+::predict (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{prev\+\_\+states,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{prev\+\_\+weights,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{pred\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$}]{pred\+\_\+weights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 24 of file P\+F\+Prediction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFPredictionDecorator_af005f96b493e9ba72058613bbc7a8e43}\label{classbfl_1_1PFPredictionDecorator_af005f96b493e9ba72058613bbc7a8e43}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!predict\+Step@{predict\+Step}}
+\index{predict\+Step@{predict\+Step}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{predict\+Step()}{predictStep()}}
+{\footnotesize\ttfamily void P\+F\+Prediction\+Decorator\+::predict\+Step (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{prev\+\_\+states,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{prev\+\_\+weights,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{pred\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$}]{pred\+\_\+weights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1PFPrediction_a2488a3f3bf2345b4723d96cd7fda5491}{bfl\+::\+P\+F\+Prediction}}.
+
+
+
+Definition at line 28 of file P\+F\+Prediction\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFPredictionDecorator_a3c38ae386456ecd0fd1b609b381395ec}\label{classbfl_1_1PFPredictionDecorator_a3c38ae386456ecd0fd1b609b381395ec}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!set\+Exogenous\+Model@{set\+Exogenous\+Model}}
+\index{set\+Exogenous\+Model@{set\+Exogenous\+Model}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{set\+Exogenous\+Model()}{setExogenousModel()}}
+{\footnotesize\ttfamily void P\+F\+Prediction\+Decorator\+::set\+Exogenous\+Model (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1ExogenousModel}{Exogenous\+Model}} $>$}]{exogenous\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classbfl_1_1PFPrediction_ada843698204584e97d4ff6728c8e8264}{bfl\+::\+P\+F\+Prediction}}.
+
+
+
+Definition at line 54 of file P\+F\+Prediction\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFPredictionDecorator_ad269dfbdecf19d67717a8bc44f0bd286}\label{classbfl_1_1PFPredictionDecorator_ad269dfbdecf19d67717a8bc44f0bd286}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!set\+State\+Model@{set\+State\+Model}}
+\index{set\+State\+Model@{set\+State\+Model}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{set\+State\+Model()}{setStateModel()}}
+{\footnotesize\ttfamily void P\+F\+Prediction\+Decorator\+::set\+State\+Model (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbfl_1_1StateModel}{State\+Model}} $>$}]{state\+\_\+model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1PFPrediction_ac39683650d7f89c59f1426dd7743354e}{bfl\+::\+P\+F\+Prediction}}.
+
+
+
+Definition at line 42 of file P\+F\+Prediction\+Decorator.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFPrediction_a364cc35a151e5298c4024d681f3e04d9}\label{classbfl_1_1PFPrediction_a364cc35a151e5298c4024d681f3e04d9}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!skip@{skip}}
+\index{skip@{skip}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{skip()}{skip()}}
+{\footnotesize\ttfamily bool P\+F\+Prediction\+::skip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{what\+\_\+step,  }\item[{const bool}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 38 of file P\+F\+Prediction.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbfl_1_1PFPredictionDecorator_a95f122f6fb7e69c436ae221c40d1c515}\label{classbfl_1_1PFPredictionDecorator_a95f122f6fb7e69c436ae221c40d1c515}} 
+\index{bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}!prediction\+\_\+@{prediction\+\_\+}}
+\index{prediction\+\_\+@{prediction\+\_\+}!bfl\+::\+P\+F\+Prediction\+Decorator@{bfl\+::\+P\+F\+Prediction\+Decorator}}
+\subsubsection{\texorpdfstring{prediction\+\_\+}{prediction\_}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classbfl_1_1PFPrediction}{P\+F\+Prediction}}$>$ bfl\+::\+P\+F\+Prediction\+Decorator\+::prediction\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file P\+F\+Prediction\+Decorator.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{PFPredictionDecorator_8h}{P\+F\+Prediction\+Decorator.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/src/\mbox{\hyperlink{PFPredictionDecorator_8cpp}{P\+F\+Prediction\+Decorator.\+cpp}}\end{DoxyCompactItemize}

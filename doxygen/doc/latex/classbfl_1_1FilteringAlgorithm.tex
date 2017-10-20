@@ -1,0 +1,410 @@
+\hypertarget{classbfl_1_1FilteringAlgorithm}{}\section{bfl\+:\+:Filtering\+Algorithm Class Reference}
+\label{classbfl_1_1FilteringAlgorithm}\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+
+
+{\ttfamily \#include $<$Filtering\+Algorithm.\+h$>$}
+
+
+
+Inheritance diagram for bfl\+:\+:Filtering\+Algorithm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbfl_1_1FilteringAlgorithm__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_ab286cc00b054717679fb13a3b709b1c4}{$\sim$\+Filtering\+Algorithm}} () noexcept
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147}{boot}} ()
+\item 
+void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a009cbe5f4bbb16967f6c6ddcaed8fbb1}{run}} ()
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a40372c24fa050eb0274371172df0a244}{wait}} ()
+\item 
+void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a2403c62fbd7bd7f5cda56a84f5f30331}{reset}} ()
+\item 
+void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a6022859aa985474fb997343cc935b11e}{reboot}} ()
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a1dc912d89ee8f96d4f3e8209865c5308}{teardown}} ()
+\item 
+unsigned int \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a8c43b1f3dac30934c0a03de348d4a29d}{get\+Filtering\+Step}} ()
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a5cfecab2c778620e2557237472bb1721}{is\+Running}} ()
+\item 
+virtual bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_ac8a718a614905d89d6a43bbbc70d68b2}{skip}} (const std\+::string \&what\+\_\+step, const bool status)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_af2a072aa51407fe5544bdbb7ce466e2a}{initialization}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_ab3bceb43b5810a4bf1da884b8a0b145a}{filtering\+Step}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_acdfebf68405a427491e4dd9d020ae09b}{get\+Result}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a5fc12882356f6906b102fbfff2bc4b7c}{run\+Condition}} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a139fe290f73939e72c88cb43c8ef7544}{filtering\+Recursion}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a1d08a5db263e415138d88c9a01535767}{filtering\+\_\+step\+\_\+}} = 0
+\item 
+std\+::thread \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a2fa16711fd751628977afbbf9f7e9d6d}{filtering\+\_\+thread\+\_\+}}
+\item 
+std\+::mutex \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a8983a40e915d3dbbc306d8f281ac449b}{mtx\+\_\+run\+\_\+}}
+\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_ae92a6d82ce18c35516f42a7109c931af}{cv\+\_\+run\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a826eea2b551a2c2beab38394ed4c57c9}{run\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a4edf8ab29c4a1f8148ea276561299acb}{reset\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classbfl_1_1FilteringAlgorithm_a3bc20cde7fc24767328f8a1ebd3e8cc8}{teardown\+\_\+}} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file Filtering\+Algorithm.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_ab286cc00b054717679fb13a3b709b1c4}\label{classbfl_1_1FilteringAlgorithm_ab286cc00b054717679fb13a3b709b1c4}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!````~Filtering\+Algorithm@{$\sim$\+Filtering\+Algorithm}}
+\index{````~Filtering\+Algorithm@{$\sim$\+Filtering\+Algorithm}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{$\sim$\+Filtering\+Algorithm()}{~FilteringAlgorithm()}}
+{\footnotesize\ttfamily virtual bfl\+::\+Filtering\+Algorithm\+::$\sim$\+Filtering\+Algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 21 of file Filtering\+Algorithm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147}\label{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!boot@{boot}}
+\index{boot@{boot}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{boot()}{boot()}}
+{\footnotesize\ttfamily bool Filtering\+Algorithm\+::boot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References filtering\+\_\+thread\+\_\+, and filtering\+Recursion().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbfl_1_1FilteringAlgorithm_a96651f8464190c0a56d79219a1017147_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a139fe290f73939e72c88cb43c8ef7544}\label{classbfl_1_1FilteringAlgorithm_a139fe290f73939e72c88cb43c8ef7544}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!filtering\+Recursion@{filtering\+Recursion}}
+\index{filtering\+Recursion@{filtering\+Recursion}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{filtering\+Recursion()}{filteringRecursion()}}
+{\footnotesize\ttfamily void Filtering\+Algorithm\+::filtering\+Recursion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 98 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References cv\+\_\+run\+\_\+, filtering\+\_\+step\+\_\+, filtering\+Step(), initialization(), mtx\+\_\+run\+\_\+, reset\+\_\+, run\+\_\+, run\+Condition(), and teardown\+\_\+.
+
+
+
+Referenced by boot().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classbfl_1_1FilteringAlgorithm_a139fe290f73939e72c88cb43c8ef7544_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_ab3bceb43b5810a4bf1da884b8a0b145a}\label{classbfl_1_1FilteringAlgorithm_ab3bceb43b5810a4bf1da884b8a0b145a}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!filtering\+Step@{filtering\+Step}}
+\index{filtering\+Step@{filtering\+Step}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{filtering\+Step()}{filteringStep()}}
+{\footnotesize\ttfamily virtual void bfl\+::\+Filtering\+Algorithm\+::filtering\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1SIS_a582f06cc5456d2cc6ed8f90087cbbb4c}{bfl\+::\+S\+IS}}, \mbox{\hyperlink{classbfl_1_1UnscentedKalmanFilter_a169451bb711a03ad2dc28a40e3ad867f}{bfl\+::\+Unscented\+Kalman\+Filter}}, and \mbox{\hyperlink{classbfl_1_1KalmanFilter_aac6bd54422cba06e34cb93cb8a659950}{bfl\+::\+Kalman\+Filter}}.
+
+
+
+Referenced by filtering\+Recursion().
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a8c43b1f3dac30934c0a03de348d4a29d}\label{classbfl_1_1FilteringAlgorithm_a8c43b1f3dac30934c0a03de348d4a29d}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!get\+Filtering\+Step@{get\+Filtering\+Step}}
+\index{get\+Filtering\+Step@{get\+Filtering\+Step}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{get\+Filtering\+Step()}{getFilteringStep()}}
+{\footnotesize\ttfamily unsigned int Filtering\+Algorithm\+::get\+Filtering\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 86 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References filtering\+\_\+step\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_acdfebf68405a427491e4dd9d020ae09b}\label{classbfl_1_1FilteringAlgorithm_acdfebf68405a427491e4dd9d020ae09b}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!get\+Result@{get\+Result}}
+\index{get\+Result@{get\+Result}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{get\+Result()}{getResult()}}
+{\footnotesize\ttfamily virtual void bfl\+::\+Filtering\+Algorithm\+::get\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1SIS_a059da4c932379643ff7005fe4d0fda89}{bfl\+::\+S\+IS}}, \mbox{\hyperlink{classbfl_1_1UnscentedKalmanFilter_ad25c4f9143bbe834b3adfc81c78b6743}{bfl\+::\+Unscented\+Kalman\+Filter}}, and \mbox{\hyperlink{classbfl_1_1KalmanFilter_a24484fb845495f43628db19062937548}{bfl\+::\+Kalman\+Filter}}.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_af2a072aa51407fe5544bdbb7ce466e2a}\label{classbfl_1_1FilteringAlgorithm_af2a072aa51407fe5544bdbb7ce466e2a}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!initialization@{initialization}}
+\index{initialization@{initialization}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{initialization()}{initialization()}}
+{\footnotesize\ttfamily virtual void bfl\+::\+Filtering\+Algorithm\+::initialization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1SIS_aaf9f4a14d51804eddcd93aa8a5ccbba8}{bfl\+::\+S\+IS}}, \mbox{\hyperlink{classbfl_1_1UnscentedKalmanFilter_acd5cfc6344d9ce24fb980aa22ecf4895}{bfl\+::\+Unscented\+Kalman\+Filter}}, and \mbox{\hyperlink{classbfl_1_1KalmanFilter_a34482fcfad20be0559cea9c060c5f949}{bfl\+::\+Kalman\+Filter}}.
+
+
+
+Referenced by filtering\+Recursion(), bfl\+::\+Visual\+Particle\+Filter\+::set\+Initialization(), and bfl\+::\+Particle\+Filter\+::set\+Initialization().
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a5cfecab2c778620e2557237472bb1721}\label{classbfl_1_1FilteringAlgorithm_a5cfecab2c778620e2557237472bb1721}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!is\+Running@{is\+Running}}
+\index{is\+Running@{is\+Running}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{is\+Running()}{isRunning()}}
+{\footnotesize\ttfamily bool Filtering\+Algorithm\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 92 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References run\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a6022859aa985474fb997343cc935b11e}\label{classbfl_1_1FilteringAlgorithm_a6022859aa985474fb997343cc935b11e}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!reboot@{reboot}}
+\index{reboot@{reboot}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{reboot()}{reboot()}}
+{\footnotesize\ttfamily void Filtering\+Algorithm\+::reboot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 66 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References cv\+\_\+run\+\_\+, mtx\+\_\+run\+\_\+, reset\+\_\+, and run\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a2403c62fbd7bd7f5cda56a84f5f30331}\label{classbfl_1_1FilteringAlgorithm_a2403c62fbd7bd7f5cda56a84f5f30331}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!reset@{reset}}
+\index{reset@{reset}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Filtering\+Algorithm\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 60 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References reset\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a009cbe5f4bbb16967f6c6ddcaed8fbb1}\label{classbfl_1_1FilteringAlgorithm_a009cbe5f4bbb16967f6c6ddcaed8fbb1}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!run@{run}}
+\index{run@{run}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Filtering\+Algorithm\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References cv\+\_\+run\+\_\+, mtx\+\_\+run\+\_\+, and run\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a5fc12882356f6906b102fbfff2bc4b7c}\label{classbfl_1_1FilteringAlgorithm_a5fc12882356f6906b102fbfff2bc4b7c}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!run\+Condition@{run\+Condition}}
+\index{run\+Condition@{run\+Condition}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{run\+Condition()}{runCondition()}}
+{\footnotesize\ttfamily virtual bool bfl\+::\+Filtering\+Algorithm\+::run\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1SIS_afb7cff1f7dae80e0e4ca84c925ca3ac3}{bfl\+::\+S\+IS}}.
+
+
+
+Referenced by filtering\+Recursion().
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_ac8a718a614905d89d6a43bbbc70d68b2}\label{classbfl_1_1FilteringAlgorithm_ac8a718a614905d89d6a43bbbc70d68b2}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!skip@{skip}}
+\index{skip@{skip}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{skip()}{skip()}}
+{\footnotesize\ttfamily virtual bool bfl\+::\+Filtering\+Algorithm\+::skip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{what\+\_\+step,  }\item[{const bool}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1ParticleFilter_a2d7a5e7aaad179037273d35be229056d}{bfl\+::\+Particle\+Filter}}, and \mbox{\hyperlink{classbfl_1_1VisualParticleFilter_aab68e455c645bc1b7b8c3c2b476c2f9c}{bfl\+::\+Visual\+Particle\+Filter}}.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a1dc912d89ee8f96d4f3e8209865c5308}\label{classbfl_1_1FilteringAlgorithm_a1dc912d89ee8f96d4f3e8209865c5308}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!teardown@{teardown}}
+\index{teardown@{teardown}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{teardown()}{teardown()}}
+{\footnotesize\ttfamily bool Filtering\+Algorithm\+::teardown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 75 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References teardown\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a40372c24fa050eb0274371172df0a244}\label{classbfl_1_1FilteringAlgorithm_a40372c24fa050eb0274371172df0a244}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!wait@{wait}}
+\index{wait@{wait}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily bool Filtering\+Algorithm\+::wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file Filtering\+Algorithm.\+cpp.
+
+
+
+References filtering\+\_\+thread\+\_\+.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_ae92a6d82ce18c35516f42a7109c931af}\label{classbfl_1_1FilteringAlgorithm_ae92a6d82ce18c35516f42a7109c931af}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!cv\+\_\+run\+\_\+@{cv\+\_\+run\+\_\+}}
+\index{cv\+\_\+run\+\_\+@{cv\+\_\+run\+\_\+}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{cv\+\_\+run\+\_\+}{cv\_run\_}}
+{\footnotesize\ttfamily std\+::condition\+\_\+variable bfl\+::\+Filtering\+Algorithm\+::cv\+\_\+run\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file Filtering\+Algorithm.\+h.
+
+
+
+Referenced by filtering\+Recursion(), reboot(), and run().
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a1d08a5db263e415138d88c9a01535767}\label{classbfl_1_1FilteringAlgorithm_a1d08a5db263e415138d88c9a01535767}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!filtering\+\_\+step\+\_\+@{filtering\+\_\+step\+\_\+}}
+\index{filtering\+\_\+step\+\_\+@{filtering\+\_\+step\+\_\+}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{filtering\+\_\+step\+\_\+}{filtering\_step\_}}
+{\footnotesize\ttfamily unsigned int bfl\+::\+Filtering\+Algorithm\+::filtering\+\_\+step\+\_\+ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 51 of file Filtering\+Algorithm.\+h.
+
+
+
+Referenced by filtering\+Recursion(), and get\+Filtering\+Step().
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a2fa16711fd751628977afbbf9f7e9d6d}\label{classbfl_1_1FilteringAlgorithm_a2fa16711fd751628977afbbf9f7e9d6d}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!filtering\+\_\+thread\+\_\+@{filtering\+\_\+thread\+\_\+}}
+\index{filtering\+\_\+thread\+\_\+@{filtering\+\_\+thread\+\_\+}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{filtering\+\_\+thread\+\_\+}{filtering\_thread\_}}
+{\footnotesize\ttfamily std\+::thread bfl\+::\+Filtering\+Algorithm\+::filtering\+\_\+thread\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 53 of file Filtering\+Algorithm.\+h.
+
+
+
+Referenced by boot(), and wait().
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a8983a40e915d3dbbc306d8f281ac449b}\label{classbfl_1_1FilteringAlgorithm_a8983a40e915d3dbbc306d8f281ac449b}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!mtx\+\_\+run\+\_\+@{mtx\+\_\+run\+\_\+}}
+\index{mtx\+\_\+run\+\_\+@{mtx\+\_\+run\+\_\+}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{mtx\+\_\+run\+\_\+}{mtx\_run\_}}
+{\footnotesize\ttfamily std\+::mutex bfl\+::\+Filtering\+Algorithm\+::mtx\+\_\+run\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 58 of file Filtering\+Algorithm.\+h.
+
+
+
+Referenced by filtering\+Recursion(), reboot(), and run().
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a4edf8ab29c4a1f8148ea276561299acb}\label{classbfl_1_1FilteringAlgorithm_a4edf8ab29c4a1f8148ea276561299acb}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!reset\+\_\+@{reset\+\_\+}}
+\index{reset\+\_\+@{reset\+\_\+}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{reset\+\_\+}{reset\_}}
+{\footnotesize\ttfamily bool bfl\+::\+Filtering\+Algorithm\+::reset\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 63 of file Filtering\+Algorithm.\+h.
+
+
+
+Referenced by filtering\+Recursion(), reboot(), and reset().
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a826eea2b551a2c2beab38394ed4c57c9}\label{classbfl_1_1FilteringAlgorithm_a826eea2b551a2c2beab38394ed4c57c9}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!run\+\_\+@{run\+\_\+}}
+\index{run\+\_\+@{run\+\_\+}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{run\+\_\+}{run\_}}
+{\footnotesize\ttfamily bool bfl\+::\+Filtering\+Algorithm\+::run\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 61 of file Filtering\+Algorithm.\+h.
+
+
+
+Referenced by filtering\+Recursion(), is\+Running(), reboot(), and run().
+
+\mbox{\Hypertarget{classbfl_1_1FilteringAlgorithm_a3bc20cde7fc24767328f8a1ebd3e8cc8}\label{classbfl_1_1FilteringAlgorithm_a3bc20cde7fc24767328f8a1ebd3e8cc8}} 
+\index{bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}!teardown\+\_\+@{teardown\+\_\+}}
+\index{teardown\+\_\+@{teardown\+\_\+}!bfl\+::\+Filtering\+Algorithm@{bfl\+::\+Filtering\+Algorithm}}
+\subsubsection{\texorpdfstring{teardown\+\_\+}{teardown\_}}
+{\footnotesize\ttfamily bool bfl\+::\+Filtering\+Algorithm\+::teardown\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 65 of file Filtering\+Algorithm.\+h.
+
+
+
+Referenced by filtering\+Recursion(), and teardown().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{FilteringAlgorithm_8h}{Filtering\+Algorithm.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/src/\mbox{\hyperlink{FilteringAlgorithm_8cpp}{Filtering\+Algorithm.\+cpp}}\end{DoxyCompactItemize}

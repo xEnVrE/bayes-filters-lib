@@ -1,0 +1,109 @@
+\hypertarget{classbfl_1_1StateModel}{}\section{bfl\+:\+:State\+Model Class Reference}
+\label{classbfl_1_1StateModel}\index{bfl\+::\+State\+Model@{bfl\+::\+State\+Model}}
+
+
+{\ttfamily \#include $<$State\+Model.\+h$>$}
+
+
+
+Inheritance diagram for bfl\+:\+:State\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbfl_1_1StateModel__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1StateModel_ae07722f42306f297da2e55ce8cb0214a}{$\sim$\+State\+Model}} () noexcept
+\item 
+virtual void \mbox{\hyperlink{classbfl_1_1StateModel_a47a625abb7df9b7afa689ccb9aa11aee}{propagate}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&cur\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ prop\+\_\+states)=0
+\item 
+virtual void \mbox{\hyperlink{classbfl_1_1StateModel_a3601485697ae3445ec7ca753dbeb035c}{motion}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&cur\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ mot\+\_\+states)=0
+\item 
+virtual Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1StateModel_ab1f0aa4c804b7de86c68294de3df76ee}{get\+Noise\+Sample}} (const int num)=0
+\item 
+virtual Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1StateModel_a606efee8bf37606833c1ac75f2fbb357}{get\+Noise\+Covariance\+Matrix}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classbfl_1_1StateModel_ac86dcdad8f0bbfab39a23e592779feaa}{set\+Property}} (const std\+::string \&property)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file State\+Model.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1StateModel_ae07722f42306f297da2e55ce8cb0214a}\label{classbfl_1_1StateModel_ae07722f42306f297da2e55ce8cb0214a}} 
+\index{bfl\+::\+State\+Model@{bfl\+::\+State\+Model}!````~State\+Model@{$\sim$\+State\+Model}}
+\index{````~State\+Model@{$\sim$\+State\+Model}!bfl\+::\+State\+Model@{bfl\+::\+State\+Model}}
+\subsubsection{\texorpdfstring{$\sim$\+State\+Model()}{~StateModel()}}
+{\footnotesize\ttfamily virtual bfl\+::\+State\+Model\+::$\sim$\+State\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 14 of file State\+Model.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1StateModel_a606efee8bf37606833c1ac75f2fbb357}\label{classbfl_1_1StateModel_a606efee8bf37606833c1ac75f2fbb357}} 
+\index{bfl\+::\+State\+Model@{bfl\+::\+State\+Model}!get\+Noise\+Covariance\+Matrix@{get\+Noise\+Covariance\+Matrix}}
+\index{get\+Noise\+Covariance\+Matrix@{get\+Noise\+Covariance\+Matrix}!bfl\+::\+State\+Model@{bfl\+::\+State\+Model}}
+\subsubsection{\texorpdfstring{get\+Noise\+Covariance\+Matrix()}{getNoiseCovarianceMatrix()}}
+{\footnotesize\ttfamily virtual Eigen\+::\+Matrix\+Xf bfl\+::\+State\+Model\+::get\+Noise\+Covariance\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a09c79104b153e6fb610bb2f1c6405636}{bfl\+::\+White\+Noise\+Acceleration}}, and \mbox{\hyperlink{classbfl_1_1StateModelDecorator_a1c64652f48c9463a2fa9b9e85d5ef0cf}{bfl\+::\+State\+Model\+Decorator}}.
+
+\mbox{\Hypertarget{classbfl_1_1StateModel_ab1f0aa4c804b7de86c68294de3df76ee}\label{classbfl_1_1StateModel_ab1f0aa4c804b7de86c68294de3df76ee}} 
+\index{bfl\+::\+State\+Model@{bfl\+::\+State\+Model}!get\+Noise\+Sample@{get\+Noise\+Sample}}
+\index{get\+Noise\+Sample@{get\+Noise\+Sample}!bfl\+::\+State\+Model@{bfl\+::\+State\+Model}}
+\subsubsection{\texorpdfstring{get\+Noise\+Sample()}{getNoiseSample()}}
+{\footnotesize\ttfamily virtual Eigen\+::\+Matrix\+Xf bfl\+::\+State\+Model\+::get\+Noise\+Sample (\begin{DoxyParamCaption}\item[{const int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_ac4bf4116d3a88435b9d070cbc8736656}{bfl\+::\+White\+Noise\+Acceleration}}, and \mbox{\hyperlink{classbfl_1_1StateModelDecorator_a3e29bad844203ffc3fe0c2bc445377e5}{bfl\+::\+State\+Model\+Decorator}}.
+
+\mbox{\Hypertarget{classbfl_1_1StateModel_a3601485697ae3445ec7ca753dbeb035c}\label{classbfl_1_1StateModel_a3601485697ae3445ec7ca753dbeb035c}} 
+\index{bfl\+::\+State\+Model@{bfl\+::\+State\+Model}!motion@{motion}}
+\index{motion@{motion}!bfl\+::\+State\+Model@{bfl\+::\+State\+Model}}
+\subsubsection{\texorpdfstring{motion()}{motion()}}
+{\footnotesize\ttfamily virtual void bfl\+::\+State\+Model\+::motion (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{cur\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{mot\+\_\+states }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_addb79c08bdf08b89629bdcd24e46d1b8}{bfl\+::\+White\+Noise\+Acceleration}}, and \mbox{\hyperlink{classbfl_1_1StateModelDecorator_a0a645d8be4085ec13d9715a41c84a9b3}{bfl\+::\+State\+Model\+Decorator}}.
+
+\mbox{\Hypertarget{classbfl_1_1StateModel_a47a625abb7df9b7afa689ccb9aa11aee}\label{classbfl_1_1StateModel_a47a625abb7df9b7afa689ccb9aa11aee}} 
+\index{bfl\+::\+State\+Model@{bfl\+::\+State\+Model}!propagate@{propagate}}
+\index{propagate@{propagate}!bfl\+::\+State\+Model@{bfl\+::\+State\+Model}}
+\subsubsection{\texorpdfstring{propagate()}{propagate()}}
+{\footnotesize\ttfamily virtual void bfl\+::\+State\+Model\+::propagate (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{cur\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{prop\+\_\+states }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a1c2f938f535c20c78447a69c76c6896b}{bfl\+::\+White\+Noise\+Acceleration}}, and \mbox{\hyperlink{classbfl_1_1StateModelDecorator_a3780afac5fc0e542cf4517c2057f9957}{bfl\+::\+State\+Model\+Decorator}}.
+
+\mbox{\Hypertarget{classbfl_1_1StateModel_ac86dcdad8f0bbfab39a23e592779feaa}\label{classbfl_1_1StateModel_ac86dcdad8f0bbfab39a23e592779feaa}} 
+\index{bfl\+::\+State\+Model@{bfl\+::\+State\+Model}!set\+Property@{set\+Property}}
+\index{set\+Property@{set\+Property}!bfl\+::\+State\+Model@{bfl\+::\+State\+Model}}
+\subsubsection{\texorpdfstring{set\+Property()}{setProperty()}}
+{\footnotesize\ttfamily virtual bool bfl\+::\+State\+Model\+::set\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a0203b47074e0680852f53dcba8a7a627}{bfl\+::\+White\+Noise\+Acceleration}}, and \mbox{\hyperlink{classbfl_1_1StateModelDecorator_ad292f3b665c1adf20a1f32dc8a065fec}{bfl\+::\+State\+Model\+Decorator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{StateModel_8h}{State\+Model.\+h}}\end{DoxyCompactItemize}

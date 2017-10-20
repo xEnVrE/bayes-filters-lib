@@ -1,0 +1,109 @@
+\hypertarget{classbfl_1_1ObservationModel}{}\section{bfl\+:\+:Observation\+Model Class Reference}
+\label{classbfl_1_1ObservationModel}\index{bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}}
+
+
+{\ttfamily \#include $<$Observation\+Model.\+h$>$}
+
+
+
+Inheritance diagram for bfl\+:\+:Observation\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classbfl_1_1ObservationModel__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1ObservationModel_ab4033bc78992bb350c9102f5e9d2fbc9}{$\sim$\+Observation\+Model}} () noexcept
+\item 
+virtual void \mbox{\hyperlink{classbfl_1_1ObservationModel_a2dd06fa6df453e491e1ab73e46f33d18}{observe}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&cur\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ observations)=0
+\item 
+virtual void \mbox{\hyperlink{classbfl_1_1ObservationModel_a0cde643e52b6c24d80d1b49e1b58f4c0}{measure}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&cur\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ measurements)=0
+\item 
+virtual Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1ObservationModel_a45e8cec2a18ef49bf586c8895c13a31b}{get\+Noise\+Sample}} (const int num)=0
+\item 
+virtual Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1ObservationModel_a63357b1456a4a5387e55d31ddb0b9b50}{get\+Noise\+Covariance\+Matrix}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classbfl_1_1ObservationModel_a05991496674f63b6ea6c8a34da34194d}{set\+Property}} (const std\+::string property)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file Observation\+Model.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1ObservationModel_ab4033bc78992bb350c9102f5e9d2fbc9}\label{classbfl_1_1ObservationModel_ab4033bc78992bb350c9102f5e9d2fbc9}} 
+\index{bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}!````~Observation\+Model@{$\sim$\+Observation\+Model}}
+\index{````~Observation\+Model@{$\sim$\+Observation\+Model}!bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}}
+\subsubsection{\texorpdfstring{$\sim$\+Observation\+Model()}{~ObservationModel()}}
+{\footnotesize\ttfamily virtual bfl\+::\+Observation\+Model\+::$\sim$\+Observation\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 15 of file Observation\+Model.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1ObservationModel_a63357b1456a4a5387e55d31ddb0b9b50}\label{classbfl_1_1ObservationModel_a63357b1456a4a5387e55d31ddb0b9b50}} 
+\index{bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}!get\+Noise\+Covariance\+Matrix@{get\+Noise\+Covariance\+Matrix}}
+\index{get\+Noise\+Covariance\+Matrix@{get\+Noise\+Covariance\+Matrix}!bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}}
+\subsubsection{\texorpdfstring{get\+Noise\+Covariance\+Matrix()}{getNoiseCovarianceMatrix()}}
+{\footnotesize\ttfamily virtual Eigen\+::\+Matrix\+Xf bfl\+::\+Observation\+Model\+::get\+Noise\+Covariance\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1LinearSensor_a7773e8de7eb58b07b1ca781b20d8537e}{bfl\+::\+Linear\+Sensor}}, and \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_a60faf028d6c83e02cf0a88c58064abf2}{bfl\+::\+Observation\+Model\+Decorator}}.
+
+\mbox{\Hypertarget{classbfl_1_1ObservationModel_a45e8cec2a18ef49bf586c8895c13a31b}\label{classbfl_1_1ObservationModel_a45e8cec2a18ef49bf586c8895c13a31b}} 
+\index{bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}!get\+Noise\+Sample@{get\+Noise\+Sample}}
+\index{get\+Noise\+Sample@{get\+Noise\+Sample}!bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}}
+\subsubsection{\texorpdfstring{get\+Noise\+Sample()}{getNoiseSample()}}
+{\footnotesize\ttfamily virtual Eigen\+::\+Matrix\+Xf bfl\+::\+Observation\+Model\+::get\+Noise\+Sample (\begin{DoxyParamCaption}\item[{const int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1LinearSensor_a5079f70d2a2995cff4ad3210dd1795f7}{bfl\+::\+Linear\+Sensor}}, and \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_a3e8cecfbd2402944d1f9e4682d5fd9a0}{bfl\+::\+Observation\+Model\+Decorator}}.
+
+\mbox{\Hypertarget{classbfl_1_1ObservationModel_a0cde643e52b6c24d80d1b49e1b58f4c0}\label{classbfl_1_1ObservationModel_a0cde643e52b6c24d80d1b49e1b58f4c0}} 
+\index{bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}!measure@{measure}}
+\index{measure@{measure}!bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}}
+\subsubsection{\texorpdfstring{measure()}{measure()}}
+{\footnotesize\ttfamily virtual void bfl\+::\+Observation\+Model\+::measure (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{cur\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{measurements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1LinearSensor_a36f36ae6b935a8c535b553ff6a265f6a}{bfl\+::\+Linear\+Sensor}}, and \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_a6b0da9bcfe0fd1beb119c79f83f8cc9a}{bfl\+::\+Observation\+Model\+Decorator}}.
+
+\mbox{\Hypertarget{classbfl_1_1ObservationModel_a2dd06fa6df453e491e1ab73e46f33d18}\label{classbfl_1_1ObservationModel_a2dd06fa6df453e491e1ab73e46f33d18}} 
+\index{bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}!observe@{observe}}
+\index{observe@{observe}!bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}}
+\subsubsection{\texorpdfstring{observe()}{observe()}}
+{\footnotesize\ttfamily virtual void bfl\+::\+Observation\+Model\+::observe (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{cur\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{observations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1LinearSensor_ae53acb6051164c0bcd32d5a6f88e5962}{bfl\+::\+Linear\+Sensor}}, and \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_aa2b83722ba591ab268def7a39e4e16b0}{bfl\+::\+Observation\+Model\+Decorator}}.
+
+\mbox{\Hypertarget{classbfl_1_1ObservationModel_a05991496674f63b6ea6c8a34da34194d}\label{classbfl_1_1ObservationModel_a05991496674f63b6ea6c8a34da34194d}} 
+\index{bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}!set\+Property@{set\+Property}}
+\index{set\+Property@{set\+Property}!bfl\+::\+Observation\+Model@{bfl\+::\+Observation\+Model}}
+\subsubsection{\texorpdfstring{set\+Property()}{setProperty()}}
+{\footnotesize\ttfamily virtual bool bfl\+::\+Observation\+Model\+::set\+Property (\begin{DoxyParamCaption}\item[{const std\+::string}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1LinearSensor_a3d20baf95d4ea62c536c87e68238852f}{bfl\+::\+Linear\+Sensor}}, and \mbox{\hyperlink{classbfl_1_1ObservationModelDecorator_a0d6ab787754a56159e3d1bc6d56a961c}{bfl\+::\+Observation\+Model\+Decorator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{ObservationModel_8h}{Observation\+Model.\+h}}\end{DoxyCompactItemize}

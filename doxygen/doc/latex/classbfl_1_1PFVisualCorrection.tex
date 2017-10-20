@@ -1,0 +1,173 @@
+\hypertarget{classbfl_1_1PFVisualCorrection}{}\section{bfl\+:\+:P\+F\+Visual\+Correction Class Reference}
+\label{classbfl_1_1PFVisualCorrection}\index{bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}}
+
+
+{\ttfamily \#include $<$P\+F\+Visual\+Correction.\+h$>$}
+
+
+
+Inheritance diagram for bfl\+:\+:P\+F\+Visual\+Correction\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classbfl_1_1PFVisualCorrection__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1PFVisualCorrection_aa22ef40790e5d6b65d2cec4691c1d12b}{$\sim$\+P\+F\+Visual\+Correction}} () noexcept
+\item 
+void \mbox{\hyperlink{classbfl_1_1PFVisualCorrection_a85b68264ccaf46d5e68f8ea9c93d82cd}{correct}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&pred\+\_\+states, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&pred\+\_\+weights, cv\+::\+Input\+Array measurements, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ cor\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$ cor\+\_\+weights)
+\item 
+virtual void \mbox{\hyperlink{classbfl_1_1PFVisualCorrection_acbc20b602ce5277407bf6afe8d7b4b29}{innovation}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&pred\+\_\+states, cv\+::\+Input\+Array measurements, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ innovations)=0
+\item 
+virtual double \mbox{\hyperlink{classbfl_1_1PFVisualCorrection_a57527f43323af18321bd9654a4bb00d5}{likelihood}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&innovations)=0
+\item 
+bool \mbox{\hyperlink{classbfl_1_1PFVisualCorrection_afbe70e2ab0be5459c79fe4eabd27cf9f}{skip}} (const bool status)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbfl_1_1PFVisualCorrection_ae345f5daf39cbae54f4c6890c681d0b5}{P\+F\+Visual\+Correction}} () noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1PFVisualCorrection_ab20c769ebe03ff70324df73cb194e2db}{P\+F\+Visual\+Correction}} (\mbox{\hyperlink{classbfl_1_1PFVisualCorrection}{P\+F\+Visual\+Correction}} \&\&pf\+\_\+correction) noexcept
+\item 
+virtual void \mbox{\hyperlink{classbfl_1_1PFVisualCorrection_a44a0ad575d02b89d5571b15ce585cf8f}{correct\+Step}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&pred\+\_\+states, const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&pred\+\_\+weights, cv\+::\+Input\+Array measurements, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ cor\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$ cor\+\_\+weights)=0
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classbfl_1_1PFVisualCorrection_ad0b76bc0a2506bf02f56d393ab09b2a4}{skip\+\_\+}} = false
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classbfl_1_1PFVisualCorrection_a4d2412d32e038a7e3df6ffe3aca5896e}{P\+F\+Visual\+Correction\+Decorator}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file P\+F\+Visual\+Correction.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1PFVisualCorrection_aa22ef40790e5d6b65d2cec4691c1d12b}\label{classbfl_1_1PFVisualCorrection_aa22ef40790e5d6b65d2cec4691c1d12b}} 
+\index{bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}!````~P\+F\+Visual\+Correction@{$\sim$\+P\+F\+Visual\+Correction}}
+\index{````~P\+F\+Visual\+Correction@{$\sim$\+P\+F\+Visual\+Correction}!bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}}
+\subsubsection{\texorpdfstring{$\sim$\+P\+F\+Visual\+Correction()}{~PFVisualCorrection()}}
+{\footnotesize\ttfamily P\+F\+Visual\+Correction\+::$\sim$\+P\+F\+Visual\+Correction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 11 of file P\+F\+Visual\+Correction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFVisualCorrection_ae345f5daf39cbae54f4c6890c681d0b5}\label{classbfl_1_1PFVisualCorrection_ae345f5daf39cbae54f4c6890c681d0b5}} 
+\index{bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}!P\+F\+Visual\+Correction@{P\+F\+Visual\+Correction}}
+\index{P\+F\+Visual\+Correction@{P\+F\+Visual\+Correction}!bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}}
+\subsubsection{\texorpdfstring{P\+F\+Visual\+Correction()}{PFVisualCorrection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily P\+F\+Visual\+Correction\+::\+P\+F\+Visual\+Correction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 8 of file P\+F\+Visual\+Correction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFVisualCorrection_ab20c769ebe03ff70324df73cb194e2db}\label{classbfl_1_1PFVisualCorrection_ab20c769ebe03ff70324df73cb194e2db}} 
+\index{bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}!P\+F\+Visual\+Correction@{P\+F\+Visual\+Correction}}
+\index{P\+F\+Visual\+Correction@{P\+F\+Visual\+Correction}!bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}}
+\subsubsection{\texorpdfstring{P\+F\+Visual\+Correction()}{PFVisualCorrection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily P\+F\+Visual\+Correction\+::\+P\+F\+Visual\+Correction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1PFVisualCorrection}{P\+F\+Visual\+Correction}} \&\&}]{pf\+\_\+correction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 14 of file P\+F\+Visual\+Correction.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1PFVisualCorrection_a85b68264ccaf46d5e68f8ea9c93d82cd}\label{classbfl_1_1PFVisualCorrection_a85b68264ccaf46d5e68f8ea9c93d82cd}} 
+\index{bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}!correct@{correct}}
+\index{correct@{correct}!bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}}
+\subsubsection{\texorpdfstring{correct()}{correct()}}
+{\footnotesize\ttfamily void P\+F\+Visual\+Correction\+::correct (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{pred\+\_\+states,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{pred\+\_\+weights,  }\item[{cv\+::\+Input\+Array}]{measurements,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{cor\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$}]{cor\+\_\+weights }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file P\+F\+Visual\+Correction.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1PFVisualCorrection_a44a0ad575d02b89d5571b15ce585cf8f}\label{classbfl_1_1PFVisualCorrection_a44a0ad575d02b89d5571b15ce585cf8f}} 
+\index{bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}!correct\+Step@{correct\+Step}}
+\index{correct\+Step@{correct\+Step}!bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}}
+\subsubsection{\texorpdfstring{correct\+Step()}{correctStep()}}
+{\footnotesize\ttfamily virtual void bfl\+::\+P\+F\+Visual\+Correction\+::correct\+Step (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{pred\+\_\+states,  }\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Vector\+Xf $>$ \&}]{pred\+\_\+weights,  }\item[{cv\+::\+Input\+Array}]{measurements,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{cor\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xf $>$}]{cor\+\_\+weights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1PFVisualCorrectionDecorator_a0e02eb41e938fc083c18bff3ddf9b6d3}{bfl\+::\+P\+F\+Visual\+Correction\+Decorator}}.
+
+\mbox{\Hypertarget{classbfl_1_1PFVisualCorrection_acbc20b602ce5277407bf6afe8d7b4b29}\label{classbfl_1_1PFVisualCorrection_acbc20b602ce5277407bf6afe8d7b4b29}} 
+\index{bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}!innovation@{innovation}}
+\index{innovation@{innovation}!bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}}
+\subsubsection{\texorpdfstring{innovation()}{innovation()}}
+{\footnotesize\ttfamily virtual void bfl\+::\+P\+F\+Visual\+Correction\+::innovation (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{pred\+\_\+states,  }\item[{cv\+::\+Input\+Array}]{measurements,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{innovations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1PFVisualCorrectionDecorator_abf6fcd12be618e8eda474b4c9638760e}{bfl\+::\+P\+F\+Visual\+Correction\+Decorator}}.
+
+\mbox{\Hypertarget{classbfl_1_1PFVisualCorrection_a57527f43323af18321bd9654a4bb00d5}\label{classbfl_1_1PFVisualCorrection_a57527f43323af18321bd9654a4bb00d5}} 
+\index{bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}!likelihood@{likelihood}}
+\index{likelihood@{likelihood}!bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}}
+\subsubsection{\texorpdfstring{likelihood()}{likelihood()}}
+{\footnotesize\ttfamily virtual double bfl\+::\+P\+F\+Visual\+Correction\+::likelihood (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{innovations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classbfl_1_1PFVisualCorrectionDecorator_a6e1f993c57e8bdbb03ad6996aa122c6c}{bfl\+::\+P\+F\+Visual\+Correction\+Decorator}}.
+
+\mbox{\Hypertarget{classbfl_1_1PFVisualCorrection_afbe70e2ab0be5459c79fe4eabd27cf9f}\label{classbfl_1_1PFVisualCorrection_afbe70e2ab0be5459c79fe4eabd27cf9f}} 
+\index{bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}!skip@{skip}}
+\index{skip@{skip}!bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}}
+\subsubsection{\texorpdfstring{skip()}{skip()}}
+{\footnotesize\ttfamily bool P\+F\+Visual\+Correction\+::skip (\begin{DoxyParamCaption}\item[{const bool}]{status }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file P\+F\+Visual\+Correction.\+cpp.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1PFVisualCorrection_a4d2412d32e038a7e3df6ffe3aca5896e}\label{classbfl_1_1PFVisualCorrection_a4d2412d32e038a7e3df6ffe3aca5896e}} 
+\index{bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}!P\+F\+Visual\+Correction\+Decorator@{P\+F\+Visual\+Correction\+Decorator}}
+\index{P\+F\+Visual\+Correction\+Decorator@{P\+F\+Visual\+Correction\+Decorator}!bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}}
+\subsubsection{\texorpdfstring{P\+F\+Visual\+Correction\+Decorator}{PFVisualCorrectionDecorator}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classbfl_1_1PFVisualCorrectionDecorator}{P\+F\+Visual\+Correction\+Decorator}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 42 of file P\+F\+Visual\+Correction.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbfl_1_1PFVisualCorrection_ad0b76bc0a2506bf02f56d393ab09b2a4}\label{classbfl_1_1PFVisualCorrection_ad0b76bc0a2506bf02f56d393ab09b2a4}} 
+\index{bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}!skip\+\_\+@{skip\+\_\+}}
+\index{skip\+\_\+@{skip\+\_\+}!bfl\+::\+P\+F\+Visual\+Correction@{bfl\+::\+P\+F\+Visual\+Correction}}
+\subsubsection{\texorpdfstring{skip\+\_\+}{skip\_}}
+{\footnotesize\ttfamily bool bfl\+::\+P\+F\+Visual\+Correction\+::skip\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 40 of file P\+F\+Visual\+Correction.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{PFVisualCorrection_8h}{P\+F\+Visual\+Correction.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/src/\mbox{\hyperlink{PFVisualCorrection_8cpp}{P\+F\+Visual\+Correction.\+cpp}}\end{DoxyCompactItemize}

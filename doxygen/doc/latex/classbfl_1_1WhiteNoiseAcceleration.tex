@@ -1,0 +1,372 @@
+\hypertarget{classbfl_1_1WhiteNoiseAcceleration}{}\section{bfl\+:\+:White\+Noise\+Acceleration Class Reference}
+\label{classbfl_1_1WhiteNoiseAcceleration}\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+
+
+{\ttfamily \#include $<$White\+Noise\+Acceleration.\+h$>$}
+
+
+
+Inheritance diagram for bfl\+:\+:White\+Noise\+Acceleration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classbfl_1_1WhiteNoiseAcceleration__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a5eb5d6b767ad37ecc93e0ce1dd944e8a}{White\+Noise\+Acceleration}} (float T, float tilde\+\_\+q, unsigned int seed) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a689e238bdbd0ccaf488e8a1c9e897825}{White\+Noise\+Acceleration}} (float T, float tilde\+\_\+q) noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_aae68b94c0d82a6fa594e0e1feba7e272}{White\+Noise\+Acceleration}} () noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_ac01e4702a8fbce92a7fd0adf74472e5a}{White\+Noise\+Acceleration}} (const \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{White\+Noise\+Acceleration}} \&wna)
+\item 
+\mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a74f0f6d44c76e10627765d405de96af6}{White\+Noise\+Acceleration}} (\mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{White\+Noise\+Acceleration}} \&\&wna) noexcept
+\item 
+virtual \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a17d13fe4ece8cb6db9f2423ff48f817d}{$\sim$\+White\+Noise\+Acceleration}} () noexcept
+\item 
+\mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{White\+Noise\+Acceleration}} \& \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a6f69d09499e7a4746bd823db5fc5ceec}{operator=}} (const \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{White\+Noise\+Acceleration}} \&wna)
+\item 
+\mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{White\+Noise\+Acceleration}} \& \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a4562a1dfc45dd143f7d05fea98e38f42}{operator=}} (\mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{White\+Noise\+Acceleration}} \&\&wna) noexcept
+\item 
+void \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a1c2f938f535c20c78447a69c76c6896b}{propagate}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&cur\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ prop\+\_\+states) override
+\item 
+void \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_addb79c08bdf08b89629bdcd24e46d1b8}{motion}} (const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&cur\+\_\+states, Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$ prop\+\_\+states) override
+\item 
+Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_ac4bf4116d3a88435b9d070cbc8736656}{get\+Noise\+Sample}} (const int num) override
+\item 
+Eigen\+::\+Matrix\+Xf \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a09c79104b153e6fb610bb2f1c6405636}{get\+Noise\+Covariance\+Matrix}} () override
+\item 
+bool \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a0203b47074e0680852f53dcba8a7a627}{set\+Property}} (const std\+::string \&property) override
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a7d1674033e2b6b1b8f245e910163aa0a}{T\+\_\+}}
+\item 
+Eigen\+::\+Matrix4f \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a02c209c5ca35170a096fc4ebe6754193}{F\+\_\+}}
+\item 
+Eigen\+::\+Matrix4f \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_ad65c6f3766d7dd6d4b01bd84c3f0862d}{Q\+\_\+}}
+\item 
+float \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a5025cf01732a8ed99f4057fa6726f03e}{tilde\+\_\+q\+\_\+}}
+\item 
+Eigen\+::\+Matrix4f \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a209890197d296e25b22f0a04eec9bb0b}{sqrt\+\_\+\+Q\+\_\+}}
+\item 
+std\+::mt19937\+\_\+64 \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a53532f567190af8a0baa579e3bd4e362}{generator\+\_\+}}
+\item 
+std\+::normal\+\_\+distribution$<$ float $>$ \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_ad6d1649c319820d8f7cc9eb65666542f}{distribution\+\_\+}}
+\item 
+std\+::function$<$ float()$>$ \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration_a18feb2398836b38928e8e9fe367d5ab6}{gauss\+\_\+rnd\+\_\+sample\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file White\+Noise\+Acceleration.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a5eb5d6b767ad37ecc93e0ce1dd944e8a}\label{classbfl_1_1WhiteNoiseAcceleration_a5eb5d6b767ad37ecc93e0ce1dd944e8a}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!White\+Noise\+Acceleration@{White\+Noise\+Acceleration}}
+\index{White\+Noise\+Acceleration@{White\+Noise\+Acceleration}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{White\+Noise\+Acceleration()}{WhiteNoiseAcceleration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily White\+Noise\+Acceleration\+::\+White\+Noise\+Acceleration (\begin{DoxyParamCaption}\item[{float}]{T,  }\item[{float}]{tilde\+\_\+q,  }\item[{unsigned int}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 12 of file White\+Noise\+Acceleration.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a689e238bdbd0ccaf488e8a1c9e897825}\label{classbfl_1_1WhiteNoiseAcceleration_a689e238bdbd0ccaf488e8a1c9e897825}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!White\+Noise\+Acceleration@{White\+Noise\+Acceleration}}
+\index{White\+Noise\+Acceleration@{White\+Noise\+Acceleration}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{White\+Noise\+Acceleration()}{WhiteNoiseAcceleration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily White\+Noise\+Acceleration\+::\+White\+Noise\+Acceleration (\begin{DoxyParamCaption}\item[{float}]{T,  }\item[{float}]{tilde\+\_\+q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 34 of file White\+Noise\+Acceleration.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_aae68b94c0d82a6fa594e0e1feba7e272}\label{classbfl_1_1WhiteNoiseAcceleration_aae68b94c0d82a6fa594e0e1feba7e272}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!White\+Noise\+Acceleration@{White\+Noise\+Acceleration}}
+\index{White\+Noise\+Acceleration@{White\+Noise\+Acceleration}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{White\+Noise\+Acceleration()}{WhiteNoiseAcceleration()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily White\+Noise\+Acceleration\+::\+White\+Noise\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 38 of file White\+Noise\+Acceleration.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_ac01e4702a8fbce92a7fd0adf74472e5a}\label{classbfl_1_1WhiteNoiseAcceleration_ac01e4702a8fbce92a7fd0adf74472e5a}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!White\+Noise\+Acceleration@{White\+Noise\+Acceleration}}
+\index{White\+Noise\+Acceleration@{White\+Noise\+Acceleration}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{White\+Noise\+Acceleration()}{WhiteNoiseAcceleration()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily White\+Noise\+Acceleration\+::\+White\+Noise\+Acceleration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{White\+Noise\+Acceleration}} \&}]{wna }\end{DoxyParamCaption})}
+
+
+
+Definition at line 45 of file White\+Noise\+Acceleration.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a74f0f6d44c76e10627765d405de96af6}\label{classbfl_1_1WhiteNoiseAcceleration_a74f0f6d44c76e10627765d405de96af6}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!White\+Noise\+Acceleration@{White\+Noise\+Acceleration}}
+\index{White\+Noise\+Acceleration@{White\+Noise\+Acceleration}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{White\+Noise\+Acceleration()}{WhiteNoiseAcceleration()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily White\+Noise\+Acceleration\+::\+White\+Noise\+Acceleration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{White\+Noise\+Acceleration}} \&\&}]{wna }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 50 of file White\+Noise\+Acceleration.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a17d13fe4ece8cb6db9f2423ff48f817d}\label{classbfl_1_1WhiteNoiseAcceleration_a17d13fe4ece8cb6db9f2423ff48f817d}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!````~White\+Noise\+Acceleration@{$\sim$\+White\+Noise\+Acceleration}}
+\index{````~White\+Noise\+Acceleration@{$\sim$\+White\+Noise\+Acceleration}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{$\sim$\+White\+Noise\+Acceleration()}{~WhiteNoiseAcceleration()}}
+{\footnotesize\ttfamily White\+Noise\+Acceleration\+::$\sim$\+White\+Noise\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 42 of file White\+Noise\+Acceleration.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a09c79104b153e6fb610bb2f1c6405636}\label{classbfl_1_1WhiteNoiseAcceleration_a09c79104b153e6fb610bb2f1c6405636}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!get\+Noise\+Covariance\+Matrix@{get\+Noise\+Covariance\+Matrix}}
+\index{get\+Noise\+Covariance\+Matrix@{get\+Noise\+Covariance\+Matrix}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{get\+Noise\+Covariance\+Matrix()}{getNoiseCovarianceMatrix()}}
+{\footnotesize\ttfamily Matrix\+Xf White\+Noise\+Acceleration\+::get\+Noise\+Covariance\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1StateModel_a606efee8bf37606833c1ac75f2fbb357}{bfl\+::\+State\+Model}}.
+
+
+
+Definition at line 111 of file White\+Noise\+Acceleration.\+cpp.
+
+
+
+References Q\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_ac4bf4116d3a88435b9d070cbc8736656}\label{classbfl_1_1WhiteNoiseAcceleration_ac4bf4116d3a88435b9d070cbc8736656}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!get\+Noise\+Sample@{get\+Noise\+Sample}}
+\index{get\+Noise\+Sample@{get\+Noise\+Sample}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{get\+Noise\+Sample()}{getNoiseSample()}}
+{\footnotesize\ttfamily Matrix\+Xf White\+Noise\+Acceleration\+::get\+Noise\+Sample (\begin{DoxyParamCaption}\item[{const int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1StateModel_ab1f0aa4c804b7de86c68294de3df76ee}{bfl\+::\+State\+Model}}.
+
+
+
+Definition at line 101 of file White\+Noise\+Acceleration.\+cpp.
+
+
+
+References gauss\+\_\+rnd\+\_\+sample\+\_\+, and sqrt\+\_\+\+Q\+\_\+.
+
+
+
+Referenced by motion().
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_addb79c08bdf08b89629bdcd24e46d1b8}\label{classbfl_1_1WhiteNoiseAcceleration_addb79c08bdf08b89629bdcd24e46d1b8}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!motion@{motion}}
+\index{motion@{motion}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{motion()}{motion()}}
+{\footnotesize\ttfamily void White\+Noise\+Acceleration\+::motion (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{cur\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{prop\+\_\+states }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1StateModel_a3601485697ae3445ec7ca753dbeb035c}{bfl\+::\+State\+Model}}.
+
+
+
+Definition at line 93 of file White\+Noise\+Acceleration.\+cpp.
+
+
+
+References get\+Noise\+Sample(), and propagate().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classbfl_1_1WhiteNoiseAcceleration_addb79c08bdf08b89629bdcd24e46d1b8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a6f69d09499e7a4746bd823db5fc5ceec}\label{classbfl_1_1WhiteNoiseAcceleration_a6f69d09499e7a4746bd823db5fc5ceec}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!operator=@{operator=}}
+\index{operator=@{operator=}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{White\+Noise\+Acceleration}} \& White\+Noise\+Acceleration\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{White\+Noise\+Acceleration}} \&}]{wna }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file White\+Noise\+Acceleration.\+cpp.
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a4562a1dfc45dd143f7d05fea98e38f42}\label{classbfl_1_1WhiteNoiseAcceleration_a4562a1dfc45dd143f7d05fea98e38f42}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!operator=@{operator=}}
+\index{operator=@{operator=}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{White\+Noise\+Acceleration}} \& White\+Noise\+Acceleration\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbfl_1_1WhiteNoiseAcceleration}{White\+Noise\+Acceleration}} \&\&}]{wna }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line 68 of file White\+Noise\+Acceleration.\+cpp.
+
+
+
+References T\+\_\+.
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a1c2f938f535c20c78447a69c76c6896b}\label{classbfl_1_1WhiteNoiseAcceleration_a1c2f938f535c20c78447a69c76c6896b}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!propagate@{propagate}}
+\index{propagate@{propagate}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{propagate()}{propagate()}}
+{\footnotesize\ttfamily void White\+Noise\+Acceleration\+::propagate (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Ref$<$ const Eigen\+::\+Matrix\+Xf $>$ \&}]{cur\+\_\+states,  }\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xf $>$}]{prop\+\_\+states }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1StateModel_a47a625abb7df9b7afa689ccb9aa11aee}{bfl\+::\+State\+Model}}.
+
+
+
+Definition at line 87 of file White\+Noise\+Acceleration.\+cpp.
+
+
+
+References F\+\_\+.
+
+
+
+Referenced by motion().
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a0203b47074e0680852f53dcba8a7a627}\label{classbfl_1_1WhiteNoiseAcceleration_a0203b47074e0680852f53dcba8a7a627}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!set\+Property@{set\+Property}}
+\index{set\+Property@{set\+Property}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{set\+Property()}{setProperty()}}
+{\footnotesize\ttfamily bool bfl\+::\+White\+Noise\+Acceleration\+::set\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classbfl_1_1StateModel_ac86dcdad8f0bbfab39a23e592779feaa}{bfl\+::\+State\+Model}}.
+
+
+
+Definition at line 41 of file White\+Noise\+Acceleration.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_ad6d1649c319820d8f7cc9eb65666542f}\label{classbfl_1_1WhiteNoiseAcceleration_ad6d1649c319820d8f7cc9eb65666542f}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!distribution\+\_\+@{distribution\+\_\+}}
+\index{distribution\+\_\+@{distribution\+\_\+}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{distribution\+\_\+}{distribution\_}}
+{\footnotesize\ttfamily std\+::normal\+\_\+distribution$<$float$>$ bfl\+::\+White\+Noise\+Acceleration\+::distribution\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 51 of file White\+Noise\+Acceleration.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a02c209c5ca35170a096fc4ebe6754193}\label{classbfl_1_1WhiteNoiseAcceleration_a02c209c5ca35170a096fc4ebe6754193}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!F\+\_\+@{F\+\_\+}}
+\index{F\+\_\+@{F\+\_\+}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{F\+\_\+}{F\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix4f bfl\+::\+White\+Noise\+Acceleration\+::\+F\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 45 of file White\+Noise\+Acceleration.\+h.
+
+
+
+Referenced by propagate().
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a18feb2398836b38928e8e9fe367d5ab6}\label{classbfl_1_1WhiteNoiseAcceleration_a18feb2398836b38928e8e9fe367d5ab6}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!gauss\+\_\+rnd\+\_\+sample\+\_\+@{gauss\+\_\+rnd\+\_\+sample\+\_\+}}
+\index{gauss\+\_\+rnd\+\_\+sample\+\_\+@{gauss\+\_\+rnd\+\_\+sample\+\_\+}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{gauss\+\_\+rnd\+\_\+sample\+\_\+}{gauss\_rnd\_sample\_}}
+{\footnotesize\ttfamily std\+::function$<$float()$>$ bfl\+::\+White\+Noise\+Acceleration\+::gauss\+\_\+rnd\+\_\+sample\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 52 of file White\+Noise\+Acceleration.\+h.
+
+
+
+Referenced by get\+Noise\+Sample().
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a53532f567190af8a0baa579e3bd4e362}\label{classbfl_1_1WhiteNoiseAcceleration_a53532f567190af8a0baa579e3bd4e362}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!generator\+\_\+@{generator\+\_\+}}
+\index{generator\+\_\+@{generator\+\_\+}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{generator\+\_\+}{generator\_}}
+{\footnotesize\ttfamily std\+::mt19937\+\_\+64 bfl\+::\+White\+Noise\+Acceleration\+::generator\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file White\+Noise\+Acceleration.\+h.
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_ad65c6f3766d7dd6d4b01bd84c3f0862d}\label{classbfl_1_1WhiteNoiseAcceleration_ad65c6f3766d7dd6d4b01bd84c3f0862d}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!Q\+\_\+@{Q\+\_\+}}
+\index{Q\+\_\+@{Q\+\_\+}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{Q\+\_\+}{Q\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix4f bfl\+::\+White\+Noise\+Acceleration\+::\+Q\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file White\+Noise\+Acceleration.\+h.
+
+
+
+Referenced by get\+Noise\+Covariance\+Matrix().
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a209890197d296e25b22f0a04eec9bb0b}\label{classbfl_1_1WhiteNoiseAcceleration_a209890197d296e25b22f0a04eec9bb0b}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!sqrt\+\_\+\+Q\+\_\+@{sqrt\+\_\+\+Q\+\_\+}}
+\index{sqrt\+\_\+\+Q\+\_\+@{sqrt\+\_\+\+Q\+\_\+}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{sqrt\+\_\+\+Q\+\_\+}{sqrt\_Q\_}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix4f bfl\+::\+White\+Noise\+Acceleration\+::sqrt\+\_\+\+Q\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file White\+Noise\+Acceleration.\+h.
+
+
+
+Referenced by get\+Noise\+Sample().
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a7d1674033e2b6b1b8f245e910163aa0a}\label{classbfl_1_1WhiteNoiseAcceleration_a7d1674033e2b6b1b8f245e910163aa0a}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!T\+\_\+@{T\+\_\+}}
+\index{T\+\_\+@{T\+\_\+}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{T\+\_\+}{T\_}}
+{\footnotesize\ttfamily float bfl\+::\+White\+Noise\+Acceleration\+::\+T\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 41 of file White\+Noise\+Acceleration.\+h.
+
+
+
+Referenced by operator=().
+
+\mbox{\Hypertarget{classbfl_1_1WhiteNoiseAcceleration_a5025cf01732a8ed99f4057fa6726f03e}\label{classbfl_1_1WhiteNoiseAcceleration_a5025cf01732a8ed99f4057fa6726f03e}} 
+\index{bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}!tilde\+\_\+q\+\_\+@{tilde\+\_\+q\+\_\+}}
+\index{tilde\+\_\+q\+\_\+@{tilde\+\_\+q\+\_\+}!bfl\+::\+White\+Noise\+Acceleration@{bfl\+::\+White\+Noise\+Acceleration}}
+\subsubsection{\texorpdfstring{tilde\+\_\+q\+\_\+}{tilde\_q\_}}
+{\footnotesize\ttfamily float bfl\+::\+White\+Noise\+Acceleration\+::tilde\+\_\+q\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file White\+Noise\+Acceleration.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/include/\+Bayes\+Filters/\mbox{\hyperlink{WhiteNoiseAcceleration_8h}{White\+Noise\+Acceleration.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/bayes-\/filters-\/lib/src/\+Bayes\+Filters/src/\mbox{\hyperlink{WhiteNoiseAcceleration_8cpp}{White\+Noise\+Acceleration.\+cpp}}\end{DoxyCompactItemize}
