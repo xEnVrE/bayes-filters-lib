@@ -47,6 +47,7 @@ set(${LIBRARY_TARGET_NAME}_FF_HDR
         include/BayesFilters/LTIStateModel.h
         include/BayesFilters/MeasurementModel.h
         include/BayesFilters/MeasurementModelDecorator.h
+        include/BayesFilters/NonLinearScalarModel.h
         include/BayesFilters/ParticleSetInitialization.h
         include/BayesFilters/PFCorrection.h
         include/BayesFilters/PFCorrectionDecorator.h
@@ -120,6 +121,7 @@ set(${LIBRARY_TARGET_NAME}_FF_SRC
         src/LTIStateModel.cpp
         src/MeasurementModel.cpp
         src/MeasurementModelDecorator.cpp
+        src/NonLinearScalarModel.cpp
         src/PFCorrection.cpp
         src/PFCorrectionDecorator.cpp
         src/PFPrediction.cpp

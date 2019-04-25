@@ -5,6 +5,13 @@
  * BSD 3-Clause license. See the accompanying LICENSE file for details.
  */
 
+/*
+StateModel represents a generic x_k = f(x_{k-1}, u_{k-1}, w_{k-1})
+Implemented AdditiveStateModel representing x_k = f(x_{k-1}, u_{k-1}) + w_{k-1} with w white Gaussian noise
+Implemented LinearStateModel inheriting from AdditiveStateModel, representing x_k = F_{k-1} x_{k-1} + w_{k-1}
+Implemented LTIStateModel inheriting from LinearStateModel, representing x_k = F x_{k-1} + w_{k-1}
+*/
+
 #ifndef STATEMODEL_H
 #define STATEMODEL_H
 

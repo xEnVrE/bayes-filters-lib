@@ -28,6 +28,7 @@ WhiteNoiseAcceleration::WhiteNoiseAcceleration
     tilde_q_(tilde_q),
     gauss_rnd_sample_([&] { return (distribution_)(generator_); })
 {
+    // F represents x = x + vx * t, y = y + vy * t
     F_ << 1.0,  T_, 0.0, 0.0,
           0.0, 1.0, 0.0, 0.0,
           0.0, 0.0, 1.0,  T_,

@@ -8,7 +8,8 @@ import os
 WORKING_DIR = 'build'
 
 TEST_CONFIG = { 'KF' : ['test_KF', 'testKF_target.txt', 'testKF_cor_mean.txt'], # [folder name, log files]
-    'SIS' : ['test_SIS', 'testSIS_target.txt', 'testSIS_cor_particles.txt', 'testSIS_cor_weights.txt'] }
+    'UKF' : ['test_UKF_nonlinear', 'testUKF_target.txt', 'testUKF_cor_mean.txt'],
+    'SIS' : ['test_SIS_nonlinear', 'testSIS_target.txt', 'testSIS_cor_particles.txt', 'testSIS_cor_weights.txt'] }
 
 def read_log(filename):
     data = []
@@ -29,16 +30,23 @@ def best_particle_data(corrected_data, weights_data):
     return best_data
 
 def plot_target(target_data, ax):
+    x = []
+    #y = []
     for data in target_data:
-        ax.scatter(data[0], data[2],color='k',marker='o')
+        x.append(data[0])
+        #y.append(data[2])
+        #ax.scatter(data[0], data[2],color='k',marker='o')
+    
+    ax.plot(x,color='k',marker='o')
 
 def plot_corrected(corrected_data, ax, color):
     x = []
-    y = []
+    #y = []
     for data in corrected_data:
         x.append(data[0])
-        y.append(data[2])
-    ax.plot(x, y,color=color,marker='x',linestyle='-')
+        #y.append(data[2])
+    #ax.plot(x, y,color=color,marker='x',linestyle='-')
+    ax.plot(x, color=color,marker='x',linestyle='-')
 
 def read_data(conf_name):
     target_data = read_log(os.path.join(WORKING_DIR, TEST_CONFIG[conf_name][0], TEST_CONFIG[conf_name][1]))
@@ -77,12 +85,12 @@ def compare_data(a, b):
 # create a figure and axis
 fig, ax = plt.subplots()
 
-target_data0, corrected_data = read_data('KF')
+target_data0, corrected_data = read_data('UKF')
 plot_target(target_data0, ax)
 plot_corrected(corrected_data, ax, [0.7,0.7,0.7])
 
 target_data, corrected_data = read_data('SIS')
-assert compare_data(target_data0, target_data)
+assert compare_data(target_data0, target_data) #same target
 plot_corrected(corrected_data, ax, [0.5,0.5,0.5])
 
 # set a title and labels
