@@ -55,6 +55,7 @@ dbg*/
 build*/
 xcodeenvvar.txt
 .vs/
+.vscode/
 CMakeSettings.json
 html/
 latex/
