@@ -49,6 +49,11 @@ private:
 
 protected:
     /**
+     * Iteration index.
+     */
+    std::size_t k_ = 0;
+
+    /**
      * Noise covariance matrix.
      */
     Eigen::MatrixXd Q_;

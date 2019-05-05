@@ -77,7 +77,16 @@ NonLinearScalarModel& NonLinearScalarModel::operator=(NonLinearScalarModel&& mod
 void NonLinearScalarModel::propagate(const Eigen::Ref<const Eigen::MatrixXd>& cur_states, Eigen::Ref<Eigen::MatrixXd> pred_states)
 {
     // see example 15.1 in book Optimal State Estimation Kalman, H-infinity, and Nonlinear Approaches
-    pred_states = (0.5 * cur_states.array() + 25 * cur_states.array() * (1 + cur_states.array().pow(2)).inverse()).matrix();
+
+    // Evalute the input argument of the cosine term
+    // Suppose that, in example 15.1, k = f1 in the first iteration, i.e. k - 1 = 0 in the first iteration
+    ArrayXd cos_input(1, cur_states.cols());
+    cos_input = 1.2 * k_;
+
+    pred_states = (0.5 * cur_states.array() + 25 * cur_states.array() * (1 + cur_states.array().pow(2)).inverse() + 8 * cos_input.cos()).matrix();
+
+    // Increment iteration index
+    k_++;
 }
 
 MatrixXd NonLinearScalarModel::getNoiseSample(const std::size_t num)
