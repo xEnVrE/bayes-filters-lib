@@ -88,27 +88,22 @@ int main()
     std::size_t state_size = 1;
 
     /* A set of parameters needed to run a SIS particle filter in a simulated environment. */
-    double surv_x = 1000.0;
-    double surv_y = 1000.0;
-    unsigned int num_particle_x = 100;
-    unsigned int num_particle_y = 100;
-    unsigned int num_particle = num_particle_x * num_particle_y;
+    unsigned int num_particle = 50;
     VectorXd initial_state(state_size, state_size);
-    initial_state << 10.0f;
+    initial_state << 0.1;
     unsigned int simulation_time = 100;
-    
+
     /* Step 1 - Initialization */
     /* Initialize initialization class. */
-    std::unique_ptr<ParticleSetInitialization> grid_initialization = utils::make_unique<InitSurveillanceAreaGrid>(surv_x, surv_y, num_particle_x, num_particle_y);
+    std::unique_ptr<ParticleSetInitialization> particles_initialization = utils::make_unique<ParticlesInitialization>(initial_state(0));
 
 
     /* Step 2 - Prediction */
     /* Step 2.1 - Define the state model */
-    /* Initialize a white noise acceleration state model. */
-    double T = 1.0f;
-    double tilde_q = 10.0f;
+    /* Initialize model taken from example 15.1 in book Optimal State Estimation Kalman, H-infinity, and Nonlinear Approaches. */
+    double process_variance = 1.0;
 
-    std::unique_ptr<StateModel> wna = utils::make_unique<NonLinearScalarModel>(T, tilde_q);
+    std::unique_ptr<StateModel> wna = utils::make_unique<NonLinearScalarModel>(process_variance);
 
     /* Step 2.2 - Define the prediction step */
     /* Initialize the particle filter prediction step and pass the ownership of the state model. */
@@ -119,12 +114,13 @@ int main()
     /* Step 3 - Correction */
     /* Step 3.1 - Define where the measurement are originated from (either simulated or from a real process) */
     /* Initialize simulaterd target model with a white noise acceleration. */
-    std::unique_ptr<StateModel> target_model = utils::make_unique<NonLinearScalarModel>(T, tilde_q);
+    std::unique_ptr<StateModel> target_model = utils::make_unique<NonLinearScalarModel>(process_variance);
     std::unique_ptr<SimulatedStateModel> simulated_state_model = utils::make_unique<SimulatedStateModel>(std::move(target_model), initial_state, simulation_time);
     simulated_state_model->enable_log(".", "testSIS");
 
-    /* Initialize a measurement model (a linear sensor reading x and y coordinates). */
-    std::unique_ptr<MeasurementModel> simulated_linear_sensor = utils::make_unique<SimulatedLinearSensor>(std::move(simulated_state_model));
+    /* Step 3.2 - Initialize a measurement model (a linear sensor reading the scalar state x). */
+    double meas_sigma = 1.0;
+    std::unique_ptr<MeasurementModel> simulated_linear_sensor = utils::make_unique<SimulatedLinearSensor>(std::move(simulated_state_model), meas_sigma, 0.0);
     simulated_linear_sensor->enable_log(".", "testSIS");
 
 
@@ -146,7 +142,7 @@ int main()
 
     /* Step 5 - Assemble the particle filter */
     std::cout << "Constructing SIS particle filter..." << std::flush;
-    SISSimulation sis_pf(num_particle, state_size, simulation_time, std::move(grid_initialization), std::move(pf_prediction), std::move(pf_correction), std::move(resampling));
+    SISSimulation sis_pf(num_particle, state_size, simulation_time, std::move(particles_initialization), std::move(pf_prediction), std::move(pf_correction), std::move(resampling));
     sis_pf.enable_log(".", "testSIS");
     std::cout << "done!" << std::endl;
 
