@@ -7,9 +7,8 @@ import os
 
 WORKING_DIR = 'build'
 
-TEST_CONFIG = { 'KF' : ['test_KF', 'testKF_target.txt', 'testKF_cor_mean.txt'], # [folder name, log files]
-    'UKF' : ['test_UKF_nonlinear', 'testUKF_target.txt', 'testUKF_cor_mean.txt'],
-    'SIS' : ['test_SIS_nonlinear', 'testSIS_target.txt', 'testSIS_cor_particles.txt', 'testSIS_cor_weights.txt'] }
+TEST_CONFIG = {'UKF' : ['test_UKF_nonlinear', 'testUKF_target.txt', 'testUKF_cor_mean.txt'],
+               'SIS' : ['test_SIS_nonlinear', 'testSIS_target.txt', 'testSIS_cor_particles.txt', 'testSIS_cor_weights.txt'] }
 
 def read_log(filename):
     data = []
@@ -87,11 +86,11 @@ fig, ax = plt.subplots()
 
 target_data0, corrected_data = read_data('UKF')
 plot_target(target_data0, ax)
-plot_corrected(corrected_data, ax, [0.7,0.7,0.7])
+plot_corrected(corrected_data, ax, 'red')
 
 target_data, corrected_data = read_data('SIS')
 assert compare_data(target_data0, target_data) #same target
-plot_corrected(corrected_data, ax, [0.5,0.5,0.5])
+plot_corrected(corrected_data, ax, 'green')
 
 # set a title and labels
 ax.set_title('Dataset')
