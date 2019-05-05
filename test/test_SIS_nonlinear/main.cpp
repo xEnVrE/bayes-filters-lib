@@ -11,7 +11,6 @@
 #include <BayesFilters/BootstrapCorrection.h>
 #include <BayesFilters/DrawParticles.h>
 #include <BayesFilters/GaussianLikelihood.h>
-#include <BayesFilters/InitSurveillanceAreaGrid.h>
 #include <BayesFilters/SimulatedLinearSensor.h>
 #include <BayesFilters/SimulatedStateModel.h>
 #include <BayesFilters/Resampling.h>
@@ -52,6 +51,32 @@ protected:
 
 private:
     unsigned int simulation_steps_;
+};
+
+
+class ParticlesInitialization : public ParticleSetInitialization
+{
+public:
+    ParticlesInitialization(const double& initial_state)
+    {
+        initial_state_.resize(1);
+        initial_state_(0) = initial_state;
+    }
+
+    ~ParticlesInitialization()
+    { };
+
+protected:
+    bool initialize(ParticleSet& particles) override
+    {
+        // ParticleSet.components contains the number of particles
+        for (std::size_t i = 0; i < particles.components; i++)
+            particles.state() = initial_state_;
+
+        return true;
+    }
+
+    VectorXd initial_state_;
 };
 
 
