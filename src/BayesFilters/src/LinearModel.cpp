@@ -23,19 +23,13 @@ LinearModel::LinearModel
 ) noexcept :
     generator_(std::mt19937_64(seed)),
     distribution_(std::normal_distribution<double>(0.0, 1.0)),
-    sigma_x_(sigma_x),
-    sigma_y_(sigma_y),
     gauss_rnd_sample_([&] { return (distribution_)(generator_); })
 {
-    H_.resize(2, 4);
-    H_ << 1.0, 0.0, 0.0, 0.0,
-          0.0, 0.0, 1.0, 0.0;
+    H_.resize(1, 1);
+    H_(0, 0) = 1.0;
 
-    R_ << std::pow(sigma_x_, 2.0),                     0.0,
-                              0.0, std::pow(sigma_y_, 2.0);
-
-    sqrt_R_ << sigma_x_,      0.0,
-                    0.0, sigma_y_;
+    R_.resize(1, 1);
+    R_(0, 0) = std::pow(sigma_x, 2.0);
 }
 
 
@@ -52,11 +46,8 @@ LinearModel::~LinearModel() noexcept
 
 
 LinearModel::LinearModel(const LinearModel& lin_sense) :
-    sigma_x_(lin_sense.sigma_x_),
-    sigma_y_(lin_sense.sigma_y_),
     H_(lin_sense.H_),
     R_(lin_sense.R_),
-    sqrt_R_(lin_sense.sqrt_R_),
     gauss_rnd_sample_(lin_sense.gauss_rnd_sample_)
 {
     if (lin_sense.log_enabled_)
@@ -70,16 +61,10 @@ LinearModel::LinearModel(const LinearModel& lin_sense) :
 LinearModel::LinearModel(LinearModel&& lin_sense) noexcept :
     generator_(std::move(lin_sense.generator_)),
     distribution_(std::move(lin_sense.distribution_)),
-    sigma_x_(lin_sense.sigma_x_),
-    sigma_y_(lin_sense.sigma_y_),
     H_(std::move(lin_sense.H_)),
     R_(std::move(lin_sense.R_)),
-    sqrt_R_(std::move(lin_sense.sqrt_R_)),
     gauss_rnd_sample_(std::move(lin_sense.gauss_rnd_sample_))
 {
-    lin_sense.sigma_x_ = 0.0;
-    lin_sense.sigma_y_ = 0.0;
-
     if (lin_sense.log_enabled_)
     {
         lin_sense.disable_log();
@@ -91,11 +76,8 @@ LinearModel::LinearModel(LinearModel&& lin_sense) noexcept :
 
 LinearModel& LinearModel::operator=(const LinearModel& lin_sense) noexcept
 {
-    sigma_x_ = lin_sense.sigma_x_;
-    sigma_y_ = lin_sense.sigma_y_;
     H_ = lin_sense.H_;
     R_ = lin_sense.R_;
-    sqrt_R_ = lin_sense.sqrt_R_;
 
     generator_ = lin_sense.generator_;
     distribution_ = lin_sense.distribution_;
@@ -113,18 +95,12 @@ LinearModel& LinearModel::operator=(const LinearModel& lin_sense) noexcept
 
 LinearModel& LinearModel::operator=(LinearModel&& lin_sense) noexcept
 {
-    sigma_x_ = lin_sense.sigma_x_;
-    sigma_y_ = lin_sense.sigma_y_;
     H_       = std::move(lin_sense.H_);
     R_       = std::move(lin_sense.R_);
-    sqrt_R_  = std::move(lin_sense.sqrt_R_);
 
     generator_        = std::move(lin_sense.generator_);
     distribution_     = std::move(lin_sense.distribution_);
     gauss_rnd_sample_ = std::move(lin_sense.gauss_rnd_sample_);
-
-    lin_sense.sigma_x_ = 0.0;
-    lin_sense.sigma_y_ = 0.0;
 
     if (lin_sense.log_enabled_)
     {
@@ -143,7 +119,7 @@ std::pair<bool, MatrixXd> LinearModel::getNoiseSample(const int num) const
     for (int i = 0; i < rand_vectors.size(); i++)
         *(rand_vectors.data() + i) = gauss_rnd_sample_();
 
-    MatrixXd noise_sample = sqrt_R_ * rand_vectors;
+    MatrixXd noise_sample = std::sqrt(R_(0, 0)) * rand_vectors;
 
     return std::make_pair(true, std::move(noise_sample));
 }
