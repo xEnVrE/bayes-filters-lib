@@ -14,21 +14,21 @@ namespace bfl {
 class bfl::NonLinearScalarModel : public AdditiveStateModel
 {
 public:
-    NonLinearScalarModel(double T, double tilde_q, unsigned int seed) noexcept;
+    NonLinearScalarModel(double tilde_q, unsigned int seed) noexcept;
 
-    NonLinearScalarModel(double T, double tilde_q) noexcept;
+    NonLinearScalarModel(double tilde_q) noexcept;
 
     NonLinearScalarModel() noexcept;
 
-    NonLinearScalarModel(const NonLinearScalarModel& wna);
+    NonLinearScalarModel(const NonLinearScalarModel& model);
 
-    NonLinearScalarModel(NonLinearScalarModel&& wna) noexcept;
+    NonLinearScalarModel(NonLinearScalarModel&& model) noexcept;
 
     virtual ~NonLinearScalarModel() noexcept;
 
-    NonLinearScalarModel& operator=(const NonLinearScalarModel& wna);
+    NonLinearScalarModel& operator=(const NonLinearScalarModel& model);
 
-    NonLinearScalarModel& operator=(NonLinearScalarModel&& wna) noexcept;
+    NonLinearScalarModel& operator=(NonLinearScalarModel&& model) noexcept;
 
     void propagate(const Eigen::Ref<const Eigen::MatrixXd>& cur_states, Eigen::Ref<Eigen::MatrixXd> prop_states) override;
 
@@ -49,24 +49,9 @@ private:
 
 protected:
     /**
-     * Sampling interval in [time].
-     */
-    double T_;
-
-    /**
-     * Convariance matrix of the additive white noise of the state model.
+     * Noise covariance matrix.
      */
     Eigen::MatrixXd Q_;
-
-    /**
-     * Power spectral density [length]^2/[time]^3.
-     */
-    double tilde_q_;
-
-    /**
-     * Square root matrix of R_.
-     */
-    Eigen::MatrixXd sqrt_Q_;
 
     /**
      * Random number generator function from a Normal distribution.

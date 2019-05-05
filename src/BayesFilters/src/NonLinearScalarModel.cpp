@@ -13,36 +13,25 @@ constexpr int STATE_SIZE = 1;
 
 NonLinearScalarModel::NonLinearScalarModel
 (
-    double T,
-    double tilde_q,
+    double variance,
     unsigned int seed
 ) noexcept :
     generator_(std::mt19937_64(seed)),
     distribution_(std::normal_distribution<double>(0.0, 1.0)),
-    T_(T),
     Q_(STATE_SIZE, STATE_SIZE),
-    tilde_q_(tilde_q),
-    sqrt_Q_(STATE_SIZE, STATE_SIZE),
     gauss_rnd_sample_([&] { return (distribution_)(generator_); })
 {
-    double q11 = 1.0/3.0 * std::pow(T_, 3.0);
-    Q_ << q11;
-    Q_ *= tilde_q;
-
-    LDLT<MatrixXd> chol_ldlt(Q_);
-    MatrixXd tmpIdentity(STATE_SIZE, STATE_SIZE);
-    tmpIdentity.setIdentity();
-    sqrt_Q_ = (chol_ldlt.transpositionsP() * tmpIdentity).transpose() * chol_ldlt.matrixL() * chol_ldlt.vectorD().real().cwiseSqrt().asDiagonal();
+    Q_(0, 0) = variance;
 }
 
 
-NonLinearScalarModel::NonLinearScalarModel(double T, double tilde_q) noexcept :
-    NonLinearScalarModel(T, tilde_q, 1)
+NonLinearScalarModel::NonLinearScalarModel(double variance) noexcept :
+    NonLinearScalarModel(variance, 1)
 { }
 
 
 NonLinearScalarModel::NonLinearScalarModel() noexcept :
-    NonLinearScalarModel(1.0, 1.0, 1)
+    NonLinearScalarModel(1.0, 1)
 { }
 
 
@@ -50,53 +39,37 @@ NonLinearScalarModel::~NonLinearScalarModel() noexcept
 { }
 
 
-NonLinearScalarModel::NonLinearScalarModel(const NonLinearScalarModel& wna) :
-    generator_(wna.generator_),
-    distribution_(wna.distribution_),
-    T_(wna.T_),
-    Q_(wna.Q_),
-    tilde_q_(wna.tilde_q_),
-    sqrt_Q_(wna.sqrt_Q_),
-    gauss_rnd_sample_(wna.gauss_rnd_sample_)
+NonLinearScalarModel::NonLinearScalarModel(const NonLinearScalarModel& model) :
+    generator_(model.generator_),
+    distribution_(model.distribution_),
+    Q_(model.Q_),
+    gauss_rnd_sample_(model.gauss_rnd_sample_)
 { }
 
 
-NonLinearScalarModel::NonLinearScalarModel(NonLinearScalarModel&& wna) noexcept :
-    generator_(std::move(wna.generator_)),
-    distribution_(std::move(wna.distribution_)),
-    T_(wna.T_),
-    Q_(std::move(wna.Q_)),
-    tilde_q_(wna.tilde_q_),
-    sqrt_Q_(std::move(wna.sqrt_Q_)),
-    gauss_rnd_sample_(std::move(wna.gauss_rnd_sample_))
-{
-    wna.T_       = 0.0;
-    wna.tilde_q_ = 0.0;
-}
+NonLinearScalarModel::NonLinearScalarModel(NonLinearScalarModel&& model) noexcept :
+    generator_(std::move(model.generator_)),
+    distribution_(std::move(model.distribution_)),
+    gauss_rnd_sample_(std::move(model.gauss_rnd_sample_))
+{ }
 
 
-NonLinearScalarModel& NonLinearScalarModel::operator=(const NonLinearScalarModel& wna)
+NonLinearScalarModel& NonLinearScalarModel::operator=(const NonLinearScalarModel& model)
 {
-    NonLinearScalarModel tmp(wna);
+    NonLinearScalarModel tmp(model);
     *this = std::move(tmp);
 
     return *this;
 }
 
 
-NonLinearScalarModel& NonLinearScalarModel::operator=(NonLinearScalarModel&& wna) noexcept
+NonLinearScalarModel& NonLinearScalarModel::operator=(NonLinearScalarModel&& model) noexcept
 {
-    T_       = wna.T_;
-    Q_       = std::move(wna.Q_);
-    tilde_q_ = wna.tilde_q_;
+    Q_ = std::move(model.Q_);
 
-    sqrt_Q_           = std::move(wna.sqrt_Q_);
-    generator_        = std::move(wna.generator_);
-    distribution_     = std::move(wna.distribution_);
-    gauss_rnd_sample_ = std::move(wna.gauss_rnd_sample_);
-
-    wna.T_       = 0.0;
-    wna.tilde_q_ = 0.0;
+    generator_        = std::move(model.generator_);
+    distribution_     = std::move(model.distribution_);
+    gauss_rnd_sample_ = std::move(model.gauss_rnd_sample_);
 
     return *this;
 }
@@ -113,7 +86,7 @@ MatrixXd NonLinearScalarModel::getNoiseSample(const std::size_t num)
     for (int i = 0; i < rand_vectors.size(); i++)
         *(rand_vectors.data() + i) = gauss_rnd_sample_();
 
-    return sqrt_Q_ * rand_vectors;
+    return std::sqrt(Q_(0, 0)) * rand_vectors;
 }
 
 
