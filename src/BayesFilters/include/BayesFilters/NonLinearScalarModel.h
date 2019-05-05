@@ -3,6 +3,9 @@
 
 #include <BayesFilters/AdditiveStateModel.h>
 
+#include <random>
+
+
 namespace bfl {
     class NonLinearScalarModel;
 }
