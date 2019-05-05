@@ -71,8 +71,8 @@ int main()
     
     /* A set of parameters needed to run an unscented Kalman filter in a simulated environment. */
     VectorXd initial_simulated_state(state_size,state_size);
-    initial_simulated_state << 10.0f;
-    std::size_t simulation_time = 100;
+    initial_simulated_state << 0.1;
+    std::size_t simulation_time = 100.0;
     /* Initialize unscented transform parameters. */
     double alpha = 1.0;
     double beta = 2.0;
@@ -85,7 +85,7 @@ int main()
     VectorXd initial_mean(state_size,state_size);
     initial_mean << 4.0f;
     MatrixXd initial_covariance(state_size,state_size);
-    initial_covariance << pow(0.05, 2);
+    initial_covariance << pow(2.0, 2);
     initial_state.mean() = initial_mean;
     initial_state.covariance() = initial_covariance;
 
@@ -94,16 +94,14 @@ int main()
 
     /* Step 2.1 - Define the state model. */
 
-    /* Initialize a white noise acceleration state model. */
-    double T = 1.0f;
-    double tilde_q = 10.0f;
-
-    std::unique_ptr<AdditiveStateModel> wna = utils::make_unique<NonLinearScalarModel>(T, tilde_q);
+    /* Initialize model taken from example 15.1 in book Optimal State Estimation Kalman, H-infinity, and Nonlinear Approaches. */
+    double process_variance = 1.0;
+    std::unique_ptr<AdditiveStateModel> model = utils::make_unique<NonLinearScalarModel>(process_variance);
 
     /* Step 2.2 - Define the prediction step. */
 
     /* Initialize the unscented Kalman filter prediction step and pass the ownership of the state model */
-    std::unique_ptr<UKFPrediction> ukf_prediction = utils::make_unique<UKFPrediction>(std::move(wna), state_size, alpha, beta, kappa);
+    std::unique_ptr<UKFPrediction> ukf_prediction = utils::make_unique<UKFPrediction>(std::move(model), state_size, alpha, beta, kappa);
 
 
     /* Step 3 - Correction */
@@ -111,12 +109,13 @@ int main()
     /* Step 3.1 - Define where the measurement are originated from (simulated in this case). */
 
     /* Initialize simulated target model with a white noise acceleration. */
-    std::unique_ptr<AdditiveStateModel> target_model = utils::make_unique<NonLinearScalarModel>(T, tilde_q);
+    std::unique_ptr<AdditiveStateModel> target_model = utils::make_unique<NonLinearScalarModel>(process_variance);
     std::unique_ptr<SimulatedStateModel> simulated_state_model = utils::make_unique<SimulatedStateModel>(std::move(target_model), initial_simulated_state, simulation_time);
     simulated_state_model->enable_log(".", "testUKF");
 
-    /* Step 3.2 - Initialize a measurement model (a linear sensor reading x and y coordinates). */
-    std::unique_ptr<AdditiveMeasurementModel> simulated_linear_sensor = utils::make_unique<SimulatedLinearSensor>(std::move(simulated_state_model));
+    /* Step 3.2 - Initialize a measurement model (a linear sensor reading the scalar state x). */
+    double meas_sigma = 1.0;
+    std::unique_ptr<AdditiveMeasurementModel> simulated_linear_sensor = utils::make_unique<SimulatedLinearSensor>(std::move(simulated_state_model), meas_sigma, 0.0);
     simulated_linear_sensor->enable_log(".", "testUKF");
 
     /* Step 3.3 - Initialize the unscented Kalman filter correction step and pass the ownership of the measurement model. */
