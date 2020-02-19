@@ -34,6 +34,8 @@ public:
 
     bool setProperty(const std::string& property) override;
 
+    VectorDescription getInputDescription() const override;
+
     VectorDescription getStateDescription() const override;
 
 

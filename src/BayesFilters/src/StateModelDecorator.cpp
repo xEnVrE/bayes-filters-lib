@@ -75,6 +75,12 @@ bool StateModelDecorator::setProperty(const std::string& property)
 }
 
 
+VectorDescription StateModelDecorator::getInputDescription() const
+{
+    return state_model_->getInputDescription();
+}
+
+
 VectorDescription StateModelDecorator::getStateDescription() const
 {
     return state_model_->getStateDescription();
