@@ -36,6 +36,8 @@ public:
 
     virtual bool setProperty(const std::string& property) = 0;
 
+    virtual VectorDescription getInputDescription() const;
+
     virtual VectorDescription getStateDescription() const = 0;
 };
 

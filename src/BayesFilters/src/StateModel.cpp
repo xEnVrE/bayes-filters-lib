@@ -33,3 +33,11 @@ Eigen::MatrixXd StateModel::getNoiseSample(const std::size_t num)
 {
     throw std::runtime_error("ERROR::STATEMODEL::GETNOISESAMPLE\nERROR:\n\tMethod not implemented.");
 }
+
+
+VectorDescription StateModel::getInputDescription() const
+{
+    /* By default, we assume that the input to the discrete time state model is the state at the previous time step.
+       Hence, the description of the input is the same as the state description. */
+    return getStateDescription();
+}
