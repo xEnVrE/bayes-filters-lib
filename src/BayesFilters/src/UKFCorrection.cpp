@@ -6,10 +6,13 @@
  */
 
 #include <BayesFilters/UKFCorrection.h>
+#include <BayesFilters/directional_statistics.h>
 #include <BayesFilters/utils.h>
 
 using namespace bfl;
+using namespace bfl::directional_statistics;
 using namespace bfl::sigma_point;
+using namespace bfl::utils;
 using namespace Eigen;
 
 
@@ -91,12 +94,6 @@ void UKFCorrection::correctStep(const GaussianMixture& pred_state, GaussianMixtu
         return;
     }
 
-    /* Initialize predicted measurement GaussianMixture. */
-    std::pair<std::size_t, std::size_t> meas_sizes = model.getOutputSize();
-    std::size_t meas_size = meas_sizes.first + meas_sizes.second;
-    /* GaussianMixture will effectively resize only if it needs to. */
-    predicted_meas_.resize(pred_state.components, meas_size);
-
     /* Evaluate the joint state-measurement statistics, if possible. */
     bool valid = false;
     MatrixXd Pxy;
@@ -141,16 +138,39 @@ void UKFCorrection::correctStep(const GaussianMixture& pred_state, GaussianMixtu
     /* Cast innovations once for all. */
     innovations_ = any::any_cast<MatrixXd&&>(std::move(innovation));
 
+    /* Extract measurement size. */
+    std::size_t meas_size = model.getMeasurementDescription().total_size;
+
     /* Process all the components in the mixture. */
-    for (size_t i=0; i < pred_state.components; i++)
+    for (size_t i = 0; i < pred_state.components; i++)
     {
         /* Evaluate the Kalman Gain
            K = Pxy * (Py)^{-1} */
         MatrixXd K = Pxy.middleCols(meas_size * i, meas_size) * predicted_meas_.covariance(i).inverse();
 
+        /* If there are measurements with circular components, the innovations have to be handled accordingly.
+           However, it is the user duty to take care of this in the provided measurement model. */
+        MatrixXd K_innovations = K * innovations_.col(i);
+
         /* Evaluate the filtered mean.
-           x_{k}+ = x{k}- + K * innovation */
-        corr_state.mean(i) = pred_state.mean(i) + K * innovations_.col(i);
+           x_{k}+ = x{k}- + K * innovation
+
+           If there are circular components in the state, the "sum" between x{k}- and K * innovation have to be handled accordingly. */
+        corr_state.mean(i).topRows(corr_state.dim_linear) = pred_state.mean(i).topRows(corr_state.dim_linear) + K_innovations.topRows(corr_state.dim_linear);
+        if (corr_state.dim_circular > 0)
+        {
+            if (corr_state.use_quaternion)
+            {
+                /*  */
+                for (std::size_t j = 0; j < corr_state.dim_circular; j++)
+                    corr_state.mean(i).middleRows(corr_state.dim_linear + j * 4, 4) = sum_quaternion_rotation_vector(pred_state.mean(i).middleRows(corr_state.dim_linear + j * 4, 4), K_innovations.middleRows(corr_state.dim_linear + j * 4, 4));
+            }
+            else
+            {
+                /* Ensures that angular components after the correction step are bounded. */
+                corr_state.mean(i).bottomRows(corr_state.dim_circular) = directional_add(pred_state.mean(i).bottomRows(corr_state.dim_circular), K_innovations.bottomRows(corr_state.dim_circular));
+            }
+        }
 
         /* Evaluate the filtered covariance
            P_{k}+ = P_{k}- - K * Py * K' */
