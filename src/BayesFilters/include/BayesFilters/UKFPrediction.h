@@ -25,13 +25,13 @@ namespace bfl {
 class bfl::UKFPrediction : public GaussianPrediction
 {
 public:
-    UKFPrediction(std::unique_ptr<StateModel> state_model, const size_t n, const double alpha, const double beta, const double kappa) noexcept;
+    UKFPrediction(std::unique_ptr<StateModel> state_model, const double alpha, const double beta, const double kappa) noexcept;
 
-    UKFPrediction(std::unique_ptr<StateModel> state_model, std::unique_ptr<ExogenousModel> exogenous_model, const size_t n, const double alpha, const double beta, const double kappa) noexcept;
+    UKFPrediction(std::unique_ptr<StateModel> state_model, std::unique_ptr<ExogenousModel> exogenous_model, const double alpha, const double beta, const double kappa) noexcept;
 
-    UKFPrediction(std::unique_ptr<AdditiveStateModel> state_model, const size_t n, const double alpha, const double beta, const double kappa) noexcept;
+    UKFPrediction(std::unique_ptr<AdditiveStateModel> state_model, const double alpha, const double beta, const double kappa) noexcept;
 
-    UKFPrediction(std::unique_ptr<AdditiveStateModel> state_model, std::unique_ptr<ExogenousModel> exogenous_model, const size_t n, const double alpha, const double beta, const double kappa) noexcept;
+    UKFPrediction(std::unique_ptr<AdditiveStateModel> state_model, std::unique_ptr<ExogenousModel> exogenous_model, const double alpha, const double beta, const double kappa) noexcept;
 
     UKFPrediction(UKFPrediction&& ukf_prediction) noexcept;
 

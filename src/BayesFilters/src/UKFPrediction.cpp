@@ -15,14 +15,13 @@ using namespace Eigen;
 UKFPrediction::UKFPrediction
 (
     std::unique_ptr<StateModel> state_model,
-    const size_t n,
     const double alpha,
     const double beta,
     const double kappa
 ) noexcept :
     state_model_(std::move(state_model)),
     type_(UKFPredictionType::Generic),
-    ut_weight_(n, alpha, beta, kappa)
+    ut_weight_(state_model_->getStateDescription(), alpha, beta, kappa)
 { }
 
 
@@ -30,7 +29,6 @@ UKFPrediction::UKFPrediction
 (
     std::unique_ptr<StateModel> state_model,
     std::unique_ptr<ExogenousModel> exogenous_model,
-    const size_t n,
     const double alpha,
     const double beta,
     const double kappa
@@ -38,21 +36,20 @@ UKFPrediction::UKFPrediction
     state_model_(std::move(state_model)),
     exogenous_model_(std::move(exogenous_model)),
     type_(UKFPredictionType::Generic),
-    ut_weight_(n, alpha, beta, kappa)
+    ut_weight_(state_model_->getStateDescription(), alpha, beta, kappa)
 { }
 
 
 UKFPrediction::UKFPrediction
 (
     std::unique_ptr<AdditiveStateModel> state_model,
-    const size_t n,
     const double alpha,
     const double beta,
     const double kappa
 ) noexcept :
     add_state_model_(std::move(state_model)),
     type_(UKFPredictionType::Additive),
-    ut_weight_(n, alpha, beta, kappa)
+    ut_weight_(add_state_model_->getStateDescription(), alpha, beta, kappa)
 { }
 
 
@@ -60,7 +57,6 @@ UKFPrediction::UKFPrediction
 (
     std::unique_ptr<AdditiveStateModel> state_model,
     std::unique_ptr<ExogenousModel> exogenous_model,
-    const size_t n,
     const double alpha,
     const double beta,
     const double kappa
@@ -68,7 +64,7 @@ UKFPrediction::UKFPrediction
     add_state_model_(std::move(state_model)),
     exogenous_model_(std::move(exogenous_model)),
     type_(UKFPredictionType::Additive),
-    ut_weight_(n, alpha, beta, kappa)
+    ut_weight_(add_state_model_->getStateDescription(), alpha, beta, kappa)
 { }
 
 
