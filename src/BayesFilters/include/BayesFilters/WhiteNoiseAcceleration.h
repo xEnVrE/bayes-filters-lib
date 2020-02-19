@@ -47,7 +47,7 @@ public:
 
     bool setProperty(const std::string& property) override { return false; };
 
-    std::pair<std::size_t, std::size_t> getOutputSize() const override;
+    VectorDescription getStateDescription() const override;
 
 private:
     std::mt19937_64 generator_;
@@ -79,6 +79,11 @@ protected:
      * Square root matrix of R_.
      */
     Eigen::Matrix4d sqrt_Q_;
+
+    /**
+     * State description.
+     */
+    const VectorDescription state_description_ = VectorDescription(4, 0);
 
     /**
      * Random number generator function from a Normal distribution.

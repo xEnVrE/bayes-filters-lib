@@ -144,7 +144,7 @@ VectorXd WhiteNoiseAcceleration::getTransitionProbability(const Ref<const Matrix
 }
 
 
-std::pair<std::size_t, std::size_t> WhiteNoiseAcceleration::getOutputSize() const
+VectorDescription WhiteNoiseAcceleration::getStateDescription() const
 {
-    return std::make_pair(4, 0);
+    return state_description_;
 }
