@@ -10,6 +10,7 @@
 
 #include <BayesFilters/Data.h>
 #include <BayesFilters/Logger.h>
+#include <BayesFilters/VectorDescription.h>
 
 #include <memory>
 #include <string>
@@ -39,8 +40,9 @@ public:
 
     virtual bool setProperty(const std::string& property);
 
-    /* Returns the linear and circular size of the output of the measurement equation. */
-    virtual std::pair<std::size_t, std::size_t> getOutputSize() const = 0;
+    virtual VectorDescription getInputStateDescription() const;
+
+    virtual VectorDescription getMeasurementDescription() const;
 };
 
 #endif /* MEASUREMENTMODEL_H */
