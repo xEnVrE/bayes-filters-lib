@@ -22,9 +22,7 @@ public:
 
     VectorDescription() = default;
 
-    VectorDescription(const std::size_t linear_components, const std::size_t circular_components);
-
-    VectorDescription(const std::size_t linear_components, const std::size_t circular_components, const CircularType& circular_type);
+    VectorDescription(const std::size_t linear_components, const std::size_t circular_components = 0, const std::size_t noise_components = 0, const CircularType& circular_type = CircularType::Euler);
 
     ~VectorDescription() = default;
 
@@ -34,9 +32,13 @@ public:
 
     std::size_t circular_size = 0;
 
+    std::size_t noise_size = 0;
+
     std::size_t linear_components = 0;
 
     std::size_t circular_components = 0;
+
+    std::size_t noise_components = 0;
 
     CircularType circular_type = CircularType::Euler;
 };
