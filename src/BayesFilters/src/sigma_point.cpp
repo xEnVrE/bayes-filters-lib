@@ -183,7 +183,7 @@ std::pair<GaussianMixture, MatrixXd> bfl::sigma_point::unscented_transform
 
                                state_model.motion(state, tmp);
 
-                               return std::make_tuple(true, std::move(tmp), state_model.getOutputSize());
+                               return std::make_tuple(true, std::move(tmp), state_model.getStateDescription());
                            };
     MatrixXd cross_covariance;
     GaussianMixture output;
@@ -209,9 +209,9 @@ std::pair<GaussianMixture, MatrixXd> bfl::sigma_point::unscented_transform
                                MatrixXd tmp_exog(tmp_state.rows(), tmp_state.cols());
                                exogenous_model.propagate(tmp_state, tmp_exog);
 
-                               /* Making the assumption that
-                                  state_model.getOutputSize() == exogenous_model.getOutputSize(). */
-                               return std::make_tuple(true, std::move(tmp_exog), state_model.getOutputSize());
+                               /* Making the assumption that fields in state_model.getStateDescription()
+                                  and exogenous_model.getStateDescription() are the same. */
+                               return std::make_tuple(true, std::move(tmp_exog), state_model.getStateDescription());
                            };
     MatrixXd cross_covariance;
     GaussianMixture output;
@@ -234,7 +234,7 @@ std::pair<GaussianMixture, MatrixXd> bfl::sigma_point::unscented_transform
 
                                state_model.propagate(state, tmp);
 
-                               return std::make_tuple(true, std::move(tmp), state_model.getOutputSize());
+                               return std::make_tuple(true, std::move(tmp), state_model.getStateDescription());
                            };
 
     MatrixXd cross_covariance;
@@ -266,9 +266,9 @@ std::pair<GaussianMixture, MatrixXd> bfl::sigma_point::unscented_transform
                                MatrixXd tmp_exog(tmp_state.rows(), tmp_state.cols());
                                exogenous_model.propagate(tmp_state, tmp_exog);
 
-                               /* Making the assumption that
-                                  state_model.getOutputSize() == exogenous_model.getOutputSize(). */
-                               return std::make_tuple(true, std::move(tmp_exog), state_model.getOutputSize());
+                               /* Making the assumption that fields in state_model.getStateDescription()
+                                  and exogenous_model.getStateDescription() are the same. */
+                               return std::make_tuple(true, std::move(tmp_exog), state_model.getStateDescription());
                            };
 
     bool valid;
@@ -298,7 +298,7 @@ std::pair<GaussianMixture, MatrixXd> bfl::sigma_point::unscented_transform
 
                                exogenous_model.propagate(state, tmp);
 
-                               return std::make_tuple(true, std::move(tmp), exogenous_model.getOutputSize());
+                               return std::make_tuple(true, std::move(tmp), exogenous_model.getStateDescription());
                            };
 
     bool valid;
@@ -324,7 +324,7 @@ std::tuple<bool, GaussianMixture, MatrixXd> bfl::sigma_point::unscented_transfor
 
                                std::tie(valid_prediction, prediction) = meas_model.predictedMeasure(state);
 
-                               return std::make_tuple(valid_prediction, std::move(prediction), meas_model.getOutputSize());
+                               return std::make_tuple(valid_prediction, std::move(prediction), meas_model.getMeasurementDescription());
                            };
 
     bool valid;
@@ -350,7 +350,7 @@ std::tuple<bool, GaussianMixture, MatrixXd> bfl::sigma_point::unscented_transfor
 
                                std::tie(valid_prediction, prediction) = meas_model.predictedMeasure(state);
 
-                               return std::make_tuple(valid_prediction, std::move(prediction), meas_model.getOutputSize());
+                               return std::make_tuple(valid_prediction, std::move(prediction), meas_model.getMeasurementDescription());
                            };
 
     bool valid;
