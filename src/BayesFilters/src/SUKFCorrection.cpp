@@ -25,7 +25,7 @@ SUKFCorrection::SUKFCorrection
     const bool use_reduced_noise_covariance_matrix
 ) :
     measurement_model_(std::move(measurement_model)),
-    ut_weight_(measurement_model_->getInputStateDescription(), alpha, beta, kappa),
+    ut_weight_(measurement_model_->getInputDescription().get_noiseless_description(), alpha, beta, kappa),
     measurement_sub_size_(measurement_sub_size),
     use_reduced_noise_covariance_matrix_(use_reduced_noise_covariance_matrix)
 {
