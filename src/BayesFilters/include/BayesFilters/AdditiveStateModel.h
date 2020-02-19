@@ -23,6 +23,8 @@ public:
     virtual ~AdditiveStateModel() noexcept { };
 
     virtual void motion(const Eigen::Ref<const Eigen::MatrixXd>& cur_states, Eigen::Ref<Eigen::MatrixXd> mot_states) override;
+
+    virtual VectorDescription getInputDescription() const override;
 };
 
 #endif /* ADDITIVESTATEMODEL_H */

@@ -12,9 +12,21 @@
 using namespace bfl;
 using namespace Eigen;
 
+
 void AdditiveStateModel::motion(const Eigen::Ref<const Eigen::MatrixXd>& cur_states, Eigen::Ref<Eigen::MatrixXd> mot_states)
 {
     propagate(cur_states, mot_states);
 
     mot_states += getNoiseSample(mot_states.cols());
+}
+
+
+VectorDescription AdditiveStateModel::getInputDescription() const
+{
+    VectorDescription input_description = getStateDescription();
+    input_description.noise_components = getNoiseCovarianceMatrix().rows();
+    input_description.noise_size = input_description.noise_components;
+    input_description.total_size += input_description.noise_size;
+
+    return input_description;
 }
