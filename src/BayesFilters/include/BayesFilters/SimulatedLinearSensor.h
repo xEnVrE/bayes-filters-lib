@@ -33,16 +33,18 @@ public:
 
     std::pair<bool, bfl::Data> measure(const Data& data = Data()) const override;
 
-    std::pair<std::size_t, std::size_t> getOutputSize() const override;
+    VectorDescription getInputStateDescription() const override;
+
+    VectorDescription getMeasurementDescription() const override;
 
 protected:
     std::unique_ptr<bfl::SimulatedStateModel> simulated_state_model_;
 
     Eigen::MatrixXd measurement_;
 
-    std::size_t dim_linear_;
+    VectorDescription input_state_description_;
 
-    std::size_t dim_circular_;
+    VectorDescription measurement_description_;
 
     void log() override;
 };

@@ -24,23 +24,26 @@ SimulatedLinearSensor::SimulatedLinearSensor
     /* Since a LinearSensor is intended as a sensor that measure
        the state directly (i.e. no linear combination of the states),
        then it is possible to extract the output size from the
-       output size of the simulated state model. */
-    std::size_t dim_linear_state;
-    std::size_t dim_circular_state;
-    std::tie(dim_linear_state, dim_circular_state) = simulated_state_model_->getStateModel().getOutputSize();
+       state description of the simulated state model. */
+    VectorDescription state_description = simulated_state_model_->getStateModel().getStateDescription();
+    std::size_t state_linear_size = state_description.linear_size;
+    std::size_t state_circular_size = state_description.circular_size;
 
-    dim_linear_ = 0;
-    dim_circular_ = 0;
+    std::size_t linear_size = 0;
+    std::size_t circular_size = 0;
 
     for (std::size_t i = 0; i < H_.rows(); i++)
     {
         Eigen::MatrixXf::Index state_index;
         H_.row(i).array().abs().maxCoeff(&state_index);
-        if (state_index < dim_linear_state)
-            dim_linear_++;
+        if (state_index < state_linear_size)
+            linear_size++;
         else
-            dim_circular_++;
+            circular_size++;
     }
+
+    input_state_description_ = simulated_state_model_->getStateModel().getStateDescription();
+    measurement_description_ = VectorDescription(linear_size, circular_size);
 }
 
 
@@ -87,9 +90,15 @@ std::pair<bool, Data> SimulatedLinearSensor::measure(const Data& data) const
 }
 
 
-std::pair<std::size_t, std::size_t> SimulatedLinearSensor::getOutputSize() const
+VectorDescription SimulatedLinearSensor::getInputStateDescription() const
 {
-    return std::make_pair(dim_linear_, dim_circular_);
+    return input_state_description_;
+}
+
+
+VectorDescription SimulatedLinearSensor::getMeasurementDescription() const
+{
+    return measurement_description_;
 }
 
 
