@@ -32,7 +32,9 @@ public:
 
     bool freeze(const Data& data = Data()) override;
 
-    std::pair<std::size_t, std::size_t> getOutputSize() const override;
+    VectorDescription getInputStateDescription() const override;
+
+    VectorDescription getMeasurementDescription() const override;
 
 protected:
     MeasurementModelDecorator(std::unique_ptr<MeasurementModel> measurement_model) noexcept;

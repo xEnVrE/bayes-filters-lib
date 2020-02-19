@@ -66,7 +66,13 @@ bool MeasurementModelDecorator::freeze(const Data& data)
 }
 
 
-std::pair<std::size_t, std::size_t> MeasurementModelDecorator::getOutputSize() const
+VectorDescription MeasurementModelDecorator::getInputStateDescription() const
 {
-    return measurement_model->getOutputSize();
+    return measurement_model->getInputStateDescription();
+}
+
+
+VectorDescription MeasurementModelDecorator::getMeasurementDescription() const
+{
+    return measurement_model->getMeasurementDescription();
 }
