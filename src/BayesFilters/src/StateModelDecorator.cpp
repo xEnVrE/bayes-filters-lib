@@ -57,7 +57,7 @@ VectorXd StateModelDecorator::getTransitionProbability(const Ref<const MatrixXd>
 }
 
 
-MatrixXd StateModelDecorator::getNoiseCovarianceMatrix()
+MatrixXd StateModelDecorator::getNoiseCovarianceMatrix() const
 {
     return state_model_->getNoiseCovarianceMatrix();
 }

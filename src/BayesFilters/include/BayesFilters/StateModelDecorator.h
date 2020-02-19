@@ -28,7 +28,7 @@ public:
 
     Eigen::VectorXd getTransitionProbability(const Eigen::Ref<const Eigen::MatrixXd>& prev_states, const Eigen::Ref<const Eigen::MatrixXd>& cur_states) override;
 
-    Eigen::MatrixXd getNoiseCovarianceMatrix() override;
+    Eigen::MatrixXd getNoiseCovarianceMatrix() const override;
 
     Eigen::MatrixXd getNoiseSample(const std::size_t num) override;
 
