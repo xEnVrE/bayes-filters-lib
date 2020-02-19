@@ -30,7 +30,7 @@ bool MeasurementModel::setProperty(const std::string& property)
 }
 
 
-VectorDescription MeasurementModel::getInputStateDescription() const
+VectorDescription MeasurementModel::getInputDescription() const
 {
     /* Not all measurement model have a vector-valued input. */
     throw std::runtime_error("ERROR::MEASUREMENTMODEL::GETINPUTSTATEDESCRIPTION\nERROR:\n\tMethod not implemented.");

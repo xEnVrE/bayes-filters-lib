@@ -40,7 +40,7 @@ public:
 
     virtual bool setProperty(const std::string& property);
 
-    virtual VectorDescription getInputStateDescription() const;
+    virtual VectorDescription getInputDescription() const;
 
     virtual VectorDescription getMeasurementDescription() const;
 };
