@@ -66,9 +66,9 @@ bool MeasurementModelDecorator::freeze(const Data& data)
 }
 
 
-VectorDescription MeasurementModelDecorator::getInputStateDescription() const
+VectorDescription MeasurementModelDecorator::getInputDescription() const
 {
-    return measurement_model->getInputStateDescription();
+    return measurement_model->getInputDescription();
 }
 
 

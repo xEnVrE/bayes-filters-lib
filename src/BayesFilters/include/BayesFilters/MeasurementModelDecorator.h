@@ -32,7 +32,7 @@ public:
 
     bool freeze(const Data& data = Data()) override;
 
-    VectorDescription getInputStateDescription() const override;
+    VectorDescription getInputDescription() const override;
 
     VectorDescription getMeasurementDescription() const override;
 
