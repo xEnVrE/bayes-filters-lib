@@ -39,7 +39,7 @@ public:
 
     Eigen::MatrixXd getNoiseSample(const std::size_t num) override;
 
-    Eigen::MatrixXd getNoiseCovarianceMatrix() override;
+    Eigen::MatrixXd getNoiseCovarianceMatrix() const override;
 
     Eigen::MatrixXd getStateTransitionMatrix() override;
 

@@ -126,7 +126,7 @@ MatrixXd WhiteNoiseAcceleration::getNoiseSample(const std::size_t num)
 }
 
 
-MatrixXd WhiteNoiseAcceleration::getNoiseCovarianceMatrix()
+MatrixXd WhiteNoiseAcceleration::getNoiseCovarianceMatrix() const
 {
     return Q_;
 }
