@@ -35,7 +35,7 @@ void LTIStateModel::propagate(const Eigen::Ref<const Eigen::MatrixXd>& cur_state
 }
 
 
-Eigen::MatrixXd LTIStateModel::getNoiseCovarianceMatrix()
+Eigen::MatrixXd LTIStateModel::getNoiseCovarianceMatrix() const
 {
     return Q_;
 }

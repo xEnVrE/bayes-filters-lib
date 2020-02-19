@@ -26,7 +26,7 @@ public:
 
     void propagate(const Eigen::Ref<const Eigen::MatrixXd>& cur_states, Eigen::Ref<Eigen::MatrixXd> prop_states) override;
 
-    Eigen::MatrixXd getNoiseCovarianceMatrix() override;
+    Eigen::MatrixXd getNoiseCovarianceMatrix() const override;
 
     Eigen::MatrixXd getStateTransitionMatrix() override;
 
