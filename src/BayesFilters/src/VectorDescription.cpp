@@ -32,3 +32,9 @@ VectorDescription::VectorDescription
         total_size = linear_size + circular_size + noise_size;
     }
 }
+
+
+VectorDescription VectorDescription::get_noiseless_description()
+{
+    return VectorDescription(linear_components, circular_components, 0, circular_type);
+}

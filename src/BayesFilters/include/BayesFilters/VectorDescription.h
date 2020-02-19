@@ -26,6 +26,8 @@ public:
 
     ~VectorDescription() = default;
 
+    VectorDescription get_noiseless_description();
+
     std::size_t total_size = 0;
 
     std::size_t linear_size = 0;
