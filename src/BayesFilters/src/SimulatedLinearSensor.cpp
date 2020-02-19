@@ -21,10 +21,8 @@ SimulatedLinearSensor::SimulatedLinearSensor
     LinearModel(sigma_x, sigma_y, seed),
     simulated_state_model_(std::move(simulated_state_model))
 {
-    /* Since a LinearSensor is intended as a sensor that measure
-       the state directly (i.e. no linear combination of the states),
-       then it is possible to extract the output size from the
-       state description of the simulated state model. */
+    /* Since a LinearSensor is intended as a sensor that measure the state directly (i.e. no linear combination of the states),
+       then it is possible to extract the input and measurement descriptions from the state description of the simulated state model. */
     VectorDescription state_description = simulated_state_model_->getStateModel().getStateDescription();
     std::size_t state_linear_size = state_description.linear_size;
     std::size_t state_circular_size = state_description.circular_size;
@@ -42,8 +40,18 @@ SimulatedLinearSensor::SimulatedLinearSensor
             circular_size++;
     }
 
-    input_state_description_ = simulated_state_model_->getStateModel().getStateDescription();
+    /* Set the measurement description. */
     measurement_description_ = VectorDescription(linear_size, circular_size);
+
+    /* Copy the input description from the state description. */
+    input_description_ = simulated_state_model_->getStateModel().getStateDescription();
+
+    /* Take into account the measurement noise size (since this model is additive). */
+    MatrixXd noise_covariance;
+    std::tie(std::ignore, noise_covariance) = getNoiseCovarianceMatrix();
+    input_description_.noise_components = noise_covariance.rows();
+    input_description_.noise_size = input_description_.noise_components;
+    input_description_.total_size += input_description_.noise_components;
 }
 
 
