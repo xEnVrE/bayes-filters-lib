@@ -21,7 +21,7 @@ UKFPrediction::UKFPrediction
 ) noexcept :
     state_model_(std::move(state_model)),
     type_(UKFPredictionType::Generic),
-    ut_weight_(state_model_->getStateDescription(), alpha, beta, kappa)
+    ut_weight_(state_model_->getInputDescription(), alpha, beta, kappa)
 { }
 
 
@@ -36,7 +36,7 @@ UKFPrediction::UKFPrediction
     state_model_(std::move(state_model)),
     exogenous_model_(std::move(exogenous_model)),
     type_(UKFPredictionType::Generic),
-    ut_weight_(state_model_->getStateDescription(), alpha, beta, kappa)
+    ut_weight_(state_model_->getInputDescription(), alpha, beta, kappa)
 { }
 
 
@@ -49,7 +49,7 @@ UKFPrediction::UKFPrediction
 ) noexcept :
     add_state_model_(std::move(state_model)),
     type_(UKFPredictionType::Additive),
-    ut_weight_(add_state_model_->getStateDescription(), alpha, beta, kappa)
+    ut_weight_(add_state_model_->getInputDescription().get_noiseless_description(), alpha, beta, kappa)
 { }
 
 
@@ -64,7 +64,7 @@ UKFPrediction::UKFPrediction
     add_state_model_(std::move(state_model)),
     exogenous_model_(std::move(exogenous_model)),
     type_(UKFPredictionType::Additive),
-    ut_weight_(add_state_model_->getStateDescription(), alpha, beta, kappa)
+    ut_weight_(add_state_model_->getInputDescription().get_noiseless_description(), alpha, beta, kappa)
 { }
 
 
