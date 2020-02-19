@@ -33,7 +33,7 @@ public:
 
     std::pair<bool, bfl::Data> measure(const Data& data = Data()) const override;
 
-    VectorDescription getInputStateDescription() const override;
+    VectorDescription getInputDescription() const override;
 
     VectorDescription getMeasurementDescription() const override;
 
@@ -42,7 +42,7 @@ protected:
 
     Eigen::MatrixXd measurement_;
 
-    VectorDescription input_state_description_;
+    VectorDescription input_description_;
 
     VectorDescription measurement_description_;
 

@@ -90,9 +90,9 @@ std::pair<bool, Data> SimulatedLinearSensor::measure(const Data& data) const
 }
 
 
-VectorDescription SimulatedLinearSensor::getInputStateDescription() const
+VectorDescription SimulatedLinearSensor::getInputDescription() const
 {
-    return input_state_description_;
+    return input_description_;
 }
 
 
