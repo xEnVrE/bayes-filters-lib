@@ -30,7 +30,7 @@ public:
 
     virtual Eigen::VectorXd getTransitionProbability(const Eigen::Ref<const Eigen::MatrixXd>& prev_states, const Eigen::Ref<const Eigen::MatrixXd>& cur_states);
 
-    virtual Eigen::MatrixXd getNoiseCovarianceMatrix();
+    virtual Eigen::MatrixXd getNoiseCovarianceMatrix() const;
 
     virtual Eigen::MatrixXd getNoiseSample(const std::size_t num);
 

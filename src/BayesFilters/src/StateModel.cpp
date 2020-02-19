@@ -23,7 +23,7 @@ Eigen::VectorXd StateModel::getTransitionProbability(const Ref<const MatrixXd>& 
 }
 
 
-Eigen::MatrixXd StateModel::getNoiseCovarianceMatrix()
+Eigen::MatrixXd StateModel::getNoiseCovarianceMatrix() const
 {
     throw std::runtime_error("ERROR::STATEMODEL::GETNOISECOVARIANCEMATRIX\nERROR:\n\tMethod not implemented.");
 }
