@@ -8,6 +8,8 @@
 #ifndef EXOGENOUSMODEL_H
 #define EXOGENOUSMODEL_H
 
+#include <BayesFilters/VectorDescription.h>
+
 #include <Eigen/Dense>
 
 namespace bfl {
@@ -26,7 +28,7 @@ public:
 
     virtual bool setProperty(const std::string& property) = 0;
 
-    virtual std::pair<std::size_t, std::size_t> getOutputSize() const = 0;
+    virtual VectorDescription getStateDescription() const = 0;
 };
 
 #endif /* EXOGENOUSMODEL_H */
