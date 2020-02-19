@@ -18,15 +18,39 @@ using namespace Eigen;
 
 bfl::sigma_point::UTWeight::UTWeight
 (
-    std::size_t n,
+    std::size_t dof,
     const double alpha,
     const double beta,
     const double kappa
 ) :
-    mean((2 * n) + 1),
-    covariance((2 * n) + 1)
+    mean((2 * dof) + 1),
+    covariance((2 * dof) + 1)
 {
-    unscented_weights(n, alpha, beta, kappa, mean, covariance, c);
+    unscented_weights(dof, alpha, beta, kappa, mean, covariance, c);
+}
+
+
+bfl::sigma_point::UTWeight::UTWeight
+(
+    const VectorDescription& vector_description,
+    const double alpha,
+    const double beta,
+    const double kappa
+)
+{
+    /* Degree of freedom associated to input space. */
+    std::size_t dof = vector_description.total_size;
+
+    if (vector_description.circular_type == VectorDescription::CircularType::Quaternion)
+    {
+        /* If quaternions are used, the number of degrees of freedom for the evaluation of the sigma points
+           depends on the dimensions of the tangent space that is R^3. */
+        dof = vector_description.linear_components + vector_description.circular_components * 3;
+    }
+    mean.resize((2 * dof) + 1);
+    covariance.resize((2 * dof) + 1);
+
+    unscented_weights(dof, alpha, beta, kappa, mean, covariance, c);
 }
 
 
