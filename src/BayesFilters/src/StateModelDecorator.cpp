@@ -75,7 +75,7 @@ bool StateModelDecorator::setProperty(const std::string& property)
 }
 
 
-std::pair<std::size_t, std::size_t> StateModelDecorator::getOutputSize() const
+VectorDescription StateModelDecorator::getStateDescription() const
 {
-    return state_model_->getOutputSize();
+    return state_model_->getStateDescription();
 }
