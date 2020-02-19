@@ -23,12 +23,16 @@ SUKFCorrection::SUKFCorrection
     const double kappa,
     const size_t measurement_sub_size,
     const bool use_reduced_noise_covariance_matrix
-) noexcept :
+) :
     measurement_model_(std::move(measurement_model)),
     ut_weight_(measurement_model_->getInputStateDescription(), alpha, beta, kappa),
     measurement_sub_size_(measurement_sub_size),
     use_reduced_noise_covariance_matrix_(use_reduced_noise_covariance_matrix)
-{ }
+{
+    /* FIXME: Add support for circular measurements. */
+    if (measurement_model_->getMeasurementDescription().circular_components != 0)
+        throw(std::runtime_error("ERROR::SUKFCORRECTION::CTOR\nERROR:\n\tCircular measurements not supported in SUKFCorrection."));
+}
 
 
 SUKFCorrection::SUKFCorrection(SUKFCorrection&& sukf_correction) noexcept :
