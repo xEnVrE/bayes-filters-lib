@@ -69,9 +69,15 @@ public:
     }
 
 
-    std::pair<std::size_t, std::size_t> getOutputSize() const override
+    VectorDescription getInputStateDescription() const override
     {
-        return std::pair<int, int>(measurement_.size(), 0);
+        return VectorDescription(3, 0);
+    }
+
+
+    VectorDescription getMeasurementDescription() const override
+    {
+        return VectorDescription(measurement_.size(), 0);
     }
 
 private:
@@ -86,12 +92,6 @@ int main()
     std::cout << "[Test] " << std::endl;
     {
         std::cout << "Constructing a simulated scenario..." << std::endl;
-
-        // Unscented Transform parameters
-        double alpha = 1.0;
-        double beta = 2.0;
-        double kappa = 0.0;
-        sigma_point::UTWeight ut_weight(3, alpha, beta, kappa);
 
         // Predicted state
         Gaussian predicted_state(3);
@@ -121,8 +121,14 @@ int main()
 
         SimulatedMeasurement measurement_model(measurement, predicted);
 
+        // Unscented Transform parameters
+        double alpha = 1.0;
+        double beta = 2.0;
+        double kappa = 0.0;
+        sigma_point::UTWeight ut_weight(measurement_model.getInputStateDescription(), alpha, beta, kappa);
+
         // Propagate belief
-        GaussianMixture predicted_measurement(1, 6);
+        GaussianMixture predicted_measurement;
         MatrixXd cross_covariance;
         std::tie(std::ignore, predicted_measurement, cross_covariance) = sigma_point::unscented_transform(predicted_state, ut_weight, measurement_model);
 
