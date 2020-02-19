@@ -139,23 +139,23 @@ std::tuple<bool, GaussianMixture, MatrixXd> bfl::sigma_point::unscented_transfor
     MatrixXd input_sigma_points = sigma_point::sigma_point(input, weight.c);
 
     /* Propagate sigma points */
-    Data fun_data;
     bool valid_fun_data;
-    bfl::sigma_point::OutputSize output_size;
-    std::tie(valid_fun_data, fun_data, output_size) = function(input_sigma_points);
+    Data fun_data;
+    VectorDescription output_description;
+    std::tie(valid_fun_data, fun_data, output_description) = function(input_sigma_points);
 
     /* Stop here if function evaluation failed. */
     if (!valid_fun_data)
         return std::make_tuple(false, GaussianMixture(), MatrixXd(0, 0));
 
-    /* For now casting Data to MatrixXd. */
+    /* Unscented transforms are available only for vector-valued functions. Hence, casting Data to MatrixXd. */
     MatrixXd prop_sigma_points = bfl::any::any_cast<MatrixXd&&>(std::move(fun_data));
 
     /* Initialize transformed gaussian. */
-    GaussianMixture output(input.components, output_size.first, output_size.second);
+    GaussianMixture output(input.components, output_description.linear_components, output_description.circular_components, output_description.circular_type == VectorDescription::CircularType::Quaternion);
 
-    /* Initialize cross covariance matrix. */
-    MatrixXd cross_covariance(input.dim, output.dim * output.components);
+    /* Initialize cross covariance matrix (noise components in the input are not considered). */
+    MatrixXd cross_covariance(input.dim_covariance - input.dim_noise, output.dim_covariance * output.components);
 
     /* Process all the components of the mixture. */
     std::size_t base = ((input.dim * 2) + 1);
@@ -165,20 +165,43 @@ std::tuple<bool, GaussianMixture, MatrixXd> bfl::sigma_point::unscented_transfor
         Ref<MatrixXd> prop_sigma_points_i = prop_sigma_points.middleCols(base * i, base);
 
         /* Evaluate the mean. */
-        output.mean(i).topRows(output_size.first).noalias() = prop_sigma_points_i.topRows(output_size.first) * weight.mean;
-        output.mean(i).bottomRows(output_size.second) =  directional_mean(prop_sigma_points_i.bottomRows(output_size.second), weight.mean);
+        output.mean(i).topRows(output.dim_linear).noalias() = prop_sigma_points_i.topRows(output.dim_linear) * weight.mean;
+        if (output.dim_circular > 0)
+        {
+            if (output.use_quaternion)
+                for (std::size_t j = 0; j < output.dim_circular; j++)
+                    output.mean(i).middleRows(output.dim_linear + j * 4, 4) = mean_quaternion(prop_sigma_points_i.middleRows(output.dim_linear + j * 4, 4), weight.mean);
+            else
+                output.mean(i).bottomRows(output.dim_circular) =  directional_mean(prop_sigma_points_i.bottomRows(output.dim_circular), weight.mean);
+        }
 
         /* Evaluate the covariance. */
-        prop_sigma_points_i.topRows(output_size.first).colwise() -= output.mean(i).topRows(output_size.first);
-        prop_sigma_points_i.bottomRows(output_size.second) = directional_sub(prop_sigma_points_i.bottomRows(output_size.second), output.mean(i).bottomRows(output_size.second));
-        output.covariance(i).noalias() = prop_sigma_points_i * weight.covariance.asDiagonal() * prop_sigma_points_i.transpose();
+        MatrixXd offsets_from_mean(output.dim_covariance, input_sigma_points.cols());
+        offsets_from_mean.topRows(output.dim_linear) = prop_sigma_points_i.topRows(output.dim_linear).colwise() - output.mean(i).topRows(output.dim_linear);
+        if (output.dim_circular > 0)
+        {
+            if (output.use_quaternion)
+                for (std::size_t j = 0; j < output.dim_circular; j++)
+                    offsets_from_mean.middleRows(output.dim_linear + j * 4, 4) = diff_quaternion(prop_sigma_points_i.middleRows(output.dim_linear + j * 4, 4), output.mean(i).middleRows(output.dim_linear + j * 4, 4));
+            else
+                offsets_from_mean.bottomRows(output.dim_circular) = directional_sub(prop_sigma_points_i.bottomRows(output.dim_circular), output.mean(i).bottomRows(output.dim_circular));
+        }
+        output.covariance(i).noalias() = offsets_from_mean * weight.covariance.asDiagonal() * offsets_from_mean.transpose();
 
-        /* Evaluate the input-output cross covariance matrix
-           (noise components in the input are not considered). */
+        /* Evaluate the input-output cross covariance matrix (noise components in the input are not considered). */
         Ref<MatrixXd> cross_covariance_i = cross_covariance.middleCols(output.dim * i, output.dim);
-        input_sigma_points_i.topRows(input.dim_linear).colwise() -= input.mean(i).topRows(input.dim_linear);
-        input_sigma_points_i.middleRows(input.dim_linear, input.dim_circular) = directional_sub(input_sigma_points_i.middleRows(input.dim_linear, input.dim_circular), input.mean(i).middleRows(input.dim_linear, input.dim_circular));
-        cross_covariance_i.noalias() = input_sigma_points_i.topRows(input.dim_linear + input.dim_circular) * weight.covariance.asDiagonal() * prop_sigma_points_i.transpose();
+        MatrixXd input_offsets_from_mean(input.dim_covariance - input.dim_noise, input_sigma_points.cols());
+        input_offsets_from_mean.topRows(input.dim_linear) = input_sigma_points_i.topRows(input.dim_linear).colwise() - input.mean(i).topRows(input.dim_linear);
+        if (input.dim_circular > 0)
+        {
+            if (input.use_quaternion)
+                for (std::size_t j = 0; j < input.dim_circular; j++)
+                    input_offsets_from_mean.middleRows(input.dim_linear + j * 4, 4) =
+                        diff_quaternion(input_sigma_points_i.middleRows(input.dim_linear + j * 4, 4), input.mean(i).middleRows(input.dim_linear + j * 4, 4));
+            else
+                input_offsets_from_mean.bottomRows(input.dim_circular) = directional_sub(input_sigma_points_i.middleRows(input.dim_linear, input.dim_circular), input.mean(i).middleRows(input.dim_linear, input.dim_circular));
+        }
+        cross_covariance_i.noalias() = input_offsets_from_mean * weight.covariance.asDiagonal() * offsets_from_mean.transpose();
     }
 
     return std::make_tuple(true, output, cross_covariance);
