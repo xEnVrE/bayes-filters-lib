@@ -16,28 +16,26 @@ using namespace Eigen;
 UKFCorrection::UKFCorrection
 (
     std::unique_ptr<MeasurementModel> measurement_model,
-    const size_t n,
     const double alpha,
     const double beta,
     const double kappa
 ) noexcept :
     measurement_model_(std::move(measurement_model)),
     type_(UKFCorrectionType::Generic),
-    ut_weight_(n, alpha, beta, kappa)
-{ }
+    ut_weight_(measurement_model_->getInputStateDescription(), alpha, beta, kappa)
+{}
 
 
 UKFCorrection::UKFCorrection
 (
     std::unique_ptr<AdditiveMeasurementModel> measurement_model,
-    const size_t n,
     const double alpha,
     const double beta,
     const double kappa
 ) noexcept :
     additive_measurement_model_(std::move(measurement_model)),
     type_(UKFCorrectionType::Additive),
-    ut_weight_(n, alpha, beta, kappa)
+    ut_weight_(additive_measurement_model_->getInputStateDescription(), alpha, beta, kappa)
 { }
 
 
