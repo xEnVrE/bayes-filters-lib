@@ -69,15 +69,15 @@ public:
     }
 
 
-    VectorDescription getInputStateDescription() const override
+    VectorDescription getInputDescription() const override
     {
-        return VectorDescription(3, 0);
+        return VectorDescription(3, 0, measurement_.size());
     }
 
 
     VectorDescription getMeasurementDescription() const override
     {
-        return VectorDescription(measurement_.size(), 0);
+        return VectorDescription(measurement_.size());
     }
 
 private:
@@ -125,7 +125,7 @@ int main()
         double alpha = 1.0;
         double beta = 2.0;
         double kappa = 0.0;
-        sigma_point::UTWeight ut_weight(measurement_model.getInputStateDescription(), alpha, beta, kappa);
+        sigma_point::UTWeight ut_weight(measurement_model.getInputDescription().get_noiseless_description(), alpha, beta, kappa);
 
         // Propagate belief
         GaussianMixture predicted_measurement;
