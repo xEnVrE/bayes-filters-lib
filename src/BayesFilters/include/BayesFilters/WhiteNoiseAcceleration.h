@@ -83,7 +83,7 @@ protected:
     /**
      * State description.
      */
-    const VectorDescription state_description_ = VectorDescription(4, 0);
+    const VectorDescription state_description_ = VectorDescription(4);
 
     /**
      * Random number generator function from a Normal distribution.
