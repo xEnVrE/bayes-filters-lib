@@ -216,7 +216,7 @@ std::pair<GaussianMixture, MatrixXd> bfl::sigma_point::unscented_transform
 {
     FunctionEvaluation f = [&state_model](const Ref<const MatrixXd>& state)
                            {
-                               MatrixXd tmp(state.rows(), state.cols());
+                               MatrixXd tmp(state_model.getStateDescription().total_size, state.cols());
 
                                state_model.motion(state, tmp);
 
@@ -240,10 +240,10 @@ std::pair<GaussianMixture, MatrixXd> bfl::sigma_point::unscented_transform
 {
     FunctionEvaluation f = [&state_model, &exogenous_model](const Ref<const MatrixXd>& state)
                            {
-                               MatrixXd tmp_state(state.rows(), state.cols());
+                               MatrixXd tmp_state(state_model.getStateDescription().total_size, state.cols());
                                state_model.motion(state, tmp_state);
 
-                               MatrixXd tmp_exog(tmp_state.rows(), tmp_state.cols());
+                               MatrixXd tmp_exog(exogenous_model.getStateDescription().total_size, tmp_state.cols());
                                exogenous_model.propagate(tmp_state, tmp_exog);
 
                                /* Making the assumption that fields in state_model.getStateDescription()
