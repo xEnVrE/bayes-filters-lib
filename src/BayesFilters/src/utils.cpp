@@ -21,7 +21,8 @@ double bfl::utils::log_sum_exp(const Ref<const VectorXd>& arguments)
 MatrixXd bfl::utils::quaternion_to_rotation_vector(const Ref<const MatrixXd>& quaternion)
 {
     MatrixXd rotation_vectors(3, quaternion.cols());
-    for (std::size_t i = 0; i < quaternion.size(); ++i)
+
+    for (std::size_t i = 0; i < quaternion.cols(); ++i)
     {
         const double norm_n = quaternion.col(i).tail<3>().norm();
         if (norm_n > 0)
