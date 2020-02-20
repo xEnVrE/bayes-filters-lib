@@ -161,8 +161,8 @@ std::tuple<bool, GaussianMixture, MatrixXd> bfl::sigma_point::unscented_transfor
     std::size_t base = ((input.dim_covariance * 2) + 1);
     for (std::size_t i = 0; i < input.components; i++)
     {
-        Ref<MatrixXd> input_sigma_points_i = input_sigma_points.middleCols(base * i, base);
-        Ref<MatrixXd> prop_sigma_points_i = prop_sigma_points.middleCols(base * i, base);
+        const Ref<const MatrixXd> input_sigma_points_i = input_sigma_points.middleCols(base * i, base);
+        const Ref<const MatrixXd> prop_sigma_points_i = prop_sigma_points.middleCols(base * i, base);
 
         /* Evaluate the mean. */
         output.mean(i).topRows(output.dim_linear).noalias() = prop_sigma_points_i.topRows(output.dim_linear) * weight.mean;
