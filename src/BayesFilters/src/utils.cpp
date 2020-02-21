@@ -25,7 +25,7 @@ MatrixXd bfl::utils::quaternion_to_rotation_vector(const Ref<const MatrixXd>& qu
     for (std::size_t i = 0; i < quaternion.cols(); ++i)
     {
         const double norm_n = quaternion.col(i).tail<3>().norm();
-        if (norm_n > 0)
+        if (norm_n > 1e-4)
         {
             const double w = quaternion.col(i)(0);
             if (w < 0)
@@ -47,7 +47,7 @@ MatrixXd bfl::utils::rotation_vector_to_quaternion(const Ref<const MatrixXd>& ro
     for (std::size_t i = 0; i < rotation_vector.cols(); ++i)
     {
         const double norm_r = rotation_vector.col(i).norm();
-        if (norm_r > 0)
+        if (norm_r > 1e-4)
         {
             quaternions.col(i)(0) = std::cos(norm_r / 2.0);
             quaternions.col(i).tail<3>() = std::sin(norm_r / 2.0) * rotation_vector.col(i) / norm_r;
