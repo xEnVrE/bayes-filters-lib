@@ -153,15 +153,15 @@ void UKFCorrection::correctStep(const GaussianMixture& pred_state, GaussianMixtu
     /* Cast innovations once for all. */
     innovations_ = any::any_cast<MatrixXd&&>(std::move(innovation));
 
-    /* Extract measurement size. */
-    std::size_t meas_size = model.getMeasurementDescription().total_size;
+    /* Extract the number of cols of each cross-covariance matrix in Pxy. */
+    std::size_t meas_covariance_dof = predicted_meas_.dim_covariance;
 
     /* Process all the components in the mixture. */
     for (size_t i = 0; i < pred_state.components; i++)
     {
         /* Evaluate the Kalman Gain
            K = Pxy * (Py)^{-1} */
-        MatrixXd K = Pxy.middleCols(meas_size * i, meas_size) * predicted_meas_.covariance(i).inverse();
+        MatrixXd K = Pxy.middleCols(meas_covariance_dof * i, meas_covariance_dof) * predicted_meas_.covariance(i).inverse();
 
         /* If there are measurements with circular components, the innovations have to be handled accordingly.
            However, it is the user duty to take care of this in the provided measurement model. */
@@ -176,9 +176,9 @@ void UKFCorrection::correctStep(const GaussianMixture& pred_state, GaussianMixtu
         {
             if (corr_state.use_quaternion)
             {
-                /*  */
+                /*  Sum the mean predicted quaternion with rotation vectors resulting from the product between K and the innovations.*/
                 for (std::size_t j = 0; j < corr_state.dim_circular; j++)
-                    corr_state.mean(i).middleRows(corr_state.dim_linear + j * 4, 4) = sum_quaternion_rotation_vector(pred_state.mean(i).middleRows(corr_state.dim_linear + j * 4, 4), K_innovations.middleRows(corr_state.dim_linear + j * 4, 4));
+                    corr_state.mean(i).middleRows(corr_state.dim_linear + j * 4, 4) = sum_quaternion_rotation_vector(pred_state.mean(i).middleRows(corr_state.dim_linear + j * 4, 4), K_innovations.middleRows(corr_state.dim_linear + j * 3, 3));
             }
             else
             {
