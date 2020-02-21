@@ -114,7 +114,7 @@ MatrixXd bfl::sigma_point::sigma_point(const GaussianMixture& state, const doubl
                     sp.middleRows(state.dim_linear + j * 4, 4).col(0) = state.mean(i).middleRows(state.dim_linear + j * 4, 4);
 
                     /* Evaluate the remaining sigma points as perturbation of the mean quaternion. */
-                    sp.middleRows(state.dim_linear + j * 4, 4).rightCols(2 * state.dim_covariance) = sum_quaternion_rotation_vector(state.mean(i).middleRows(state.dim_linear + j * 4, 4), perturbations.middleRows(state.dim_linear + j * 3, 3));
+                    sp.middleRows(state.dim_linear + j * 4, 4).rightCols(2 * state.dim_covariance) = sum_quaternion_rotation_vector(state.mean(i).middleRows(state.dim_linear + j * 4, 4), perturbations.middleRows(state.dim_linear + j * 3, 3).rightCols(2 * state.dim_covariance));
                 }
             else
                 sp.middleRows(state.dim_linear, state.dim_circular) = directional_add(perturbations.middleRows(state.dim_linear, state.dim_circular), state.mean(i).middleRows(state.dim_linear, state.dim_circular));
