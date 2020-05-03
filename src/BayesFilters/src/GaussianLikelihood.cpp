@@ -24,7 +24,7 @@ GaussianLikelihood::GaussianLikelihood(const double scale_factor) noexcept :
 
 std::pair<bool, VectorXd> GaussianLikelihood::likelihood
 (
-    const MeasurementModel& measurement_model,
+    MeasurementModel& measurement_model,
     const Ref<const MatrixXd>& pred_states
 )
 {
