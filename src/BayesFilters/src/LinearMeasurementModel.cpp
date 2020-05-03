@@ -13,7 +13,7 @@ using namespace bfl;
 using namespace Eigen;
 
 
-std::pair<bool, bfl::Data> LinearMeasurementModel::predictedMeasure(const Eigen::Ref<const Eigen::MatrixXd>& cur_states) const
+std::pair<bool, bfl::Data> LinearMeasurementModel::predictedMeasure(const Eigen::Ref<const Eigen::MatrixXd>& cur_states)
 {
     MatrixXd prediction = getMeasurementMatrix() * cur_states;
 

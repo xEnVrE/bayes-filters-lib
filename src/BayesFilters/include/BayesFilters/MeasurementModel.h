@@ -32,7 +32,7 @@ public:
 
     virtual std::pair<bool, Data> measure(const Data& data = Data()) const = 0;
 
-    virtual std::pair<bool, Data> predictedMeasure(const Eigen::Ref<const Eigen::MatrixXd>& cur_states) const = 0;
+    virtual std::pair<bool, Data> predictedMeasure(const Eigen::Ref<const Eigen::MatrixXd>& cur_states) = 0;
 
     virtual std::pair<bool, Data> innovation(const Data& predicted_measurements, const Data& measurements) const = 0;
 

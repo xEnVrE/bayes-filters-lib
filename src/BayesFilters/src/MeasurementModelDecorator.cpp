@@ -36,7 +36,7 @@ std::pair<bool, Data> MeasurementModelDecorator::measure(const Data& data) const
 }
 
 
-std::pair<bool, Data> MeasurementModelDecorator::predictedMeasure(const Ref<const MatrixXd>& cur_states) const
+std::pair<bool, Data> MeasurementModelDecorator::predictedMeasure(const Ref<const MatrixXd>& cur_states)
 {
     return measurement_model->predictedMeasure(cur_states);
 }
