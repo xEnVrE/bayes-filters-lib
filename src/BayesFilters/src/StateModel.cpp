@@ -41,3 +41,7 @@ VectorDescription StateModel::getInputDescription() const
        Hence, the description of the input is the same as the state description. */
     return getStateDescription();
 }
+
+
+void StateModel::setSamplingTime(const double& sample_time)
+{}
